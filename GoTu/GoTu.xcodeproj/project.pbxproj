@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60F3D1B31844EEFB00BBF467 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60F3D1B21844EEFB00BBF467 /* temp.jpg */; };
 		709DC0ED1844AD9A0073F1B1 /* drawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC0EA1844AD9A0073F1B1 /* drawingBoardView.m */; };
 		709DC0EE1844AD9A0073F1B1 /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC0EC1844AD9A0073F1B1 /* CGPointExtension.m */; };
 		70CA425918449E1700CDEAEA /* rootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CA425718449E1700CDEAEA /* rootViewController.m */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1381D8A738FB44D1BDE718F5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		60F3D1B21844EEFB00BBF467 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = "<group>"; };
 		709DC0E91844AD9A0073F1B1 /* drawingBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawingBoardView.h; sourceTree = "<group>"; };
 		709DC0EA1844AD9A0073F1B1 /* drawingBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawingBoardView.m; sourceTree = "<group>"; };
 		709DC0EB1844AD9A0073F1B1 /* CGPointExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				709DC0E91844AD9A0073F1B1 /* drawingBoardView.h */,
 				709DC0EA1844AD9A0073F1B1 /* drawingBoardView.m */,
+				60F3D1B21844EEFB00BBF467 /* temp.jpg */,
 				709DC0EB1844AD9A0073F1B1 /* CGPointExtension.h */,
 				709DC0EC1844AD9A0073F1B1 /* CGPointExtension.m */,
 			);
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70E3153D184477240045E4B8 /* InfoPlist.strings in Resources */,
+				60F3D1B31844EEFB00BBF467 /* temp.jpg in Resources */,
 				70E31545184477240045E4B8 /* Images.xcassets in Resources */,
 				70CA425A18449E1700CDEAEA /* rootViewController.xib in Resources */,
 			);

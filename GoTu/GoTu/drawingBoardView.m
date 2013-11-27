@@ -15,6 +15,9 @@
 #define brushWidthMax 1;
 #define brushWidthMin .1;
 
+#define MRScreenWidth      CGRectGetWidth([UIScreen mainScreen].applicationFrame)
+#define MRScreenHeight     CGRectGetHeight([UIScreen mainScreen].applicationFrame)
+
 #import "drawingBoardView.h"
 #import "CGPointExtension.h"
 
@@ -26,7 +29,7 @@
     
     if (self) {
         // Initialization code
-        
+//        self.frame = CGRectMake(0, 0, MRScreenWidth, MRScreenHeight);
         
     }
     return self;
@@ -36,21 +39,34 @@
 {
     [self setBrushColor:[UIColor whiteColor]];
     
-    strokeColor = HexRGBAlpha(0x000000,0.9f);
+    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"temp.jpg"]];
+    [image setFrame:self.frame];
+    [self addSubview:image];
+    [image setUserInteractionEnabled:YES];
     
+    strokeColor = HexRGBAlpha(0x000000,1.0f);
     isCelar = NO;
     
     drawingBoardImg = [[UIImageView alloc] initWithFrame:self.frame];
     [self addSubview:drawingBoardImg];
-    
     
     path = [[UIBezierPath alloc] init];
     path1 = [[UIBezierPath alloc] init];
     path2 = [[UIBezierPath alloc] init];
     actionArray = [[NSMutableArray alloc] init];
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    pan.maximumNumberOfTouches = pan.minimumNumberOfTouches = 1;
+    pan.maximumNumberOfTouches = 1;
+    pan.minimumNumberOfTouches = 1;
     [self addGestureRecognizer:pan];
+    
+    UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan2:)];
+    pan2.maximumNumberOfTouches = 2;
+    pan2.minimumNumberOfTouches = 2;
+    
+    [self addGestureRecognizer:pan2];
+    
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    [self addGestureRecognizer:pinch];
     
     CGPoint _p0 = CGPointMake(0, 0);
     CGPoint _p1 = CGPointMake(1, 1);
@@ -61,13 +77,14 @@
     
 }
 
+
 - (void)pan:(UIPanGestureRecognizer *)pan {
+    
+//    if ()
     
     p1 = [pan locationInView:self];
     
     CGFloat _strokeWidth = ccpLength([pan velocityInView:self]);
-    
-    
     
     _strokeWidth = powf(MIN(1, (_strokeWidth / 1000)), 2);
     _strokeWidth = _strokeWidth * 10;
@@ -167,26 +184,6 @@
         
         [path0 removeAllPoints];
         
-//        NSMutableArray *_pathA = [action objectForKey:@"path"];
-//        
-//        NSMutableArray *_path0 = [_pathA objectAtIndex:0];
-//        NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
-//        NSMutableArray *_path1 = [_pathA objectAtIndex:2];
-//        NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
-//        
-//        [_path0 addObject:NSStringFromCGPoint(p1)];
-//        [_ctrol0 addObject:NSStringFromCGPoint(p1)];
-//        [_path1 addObject:NSStringFromCGPoint(p1)];
-//        [_ctrol1 addObject:NSStringFromCGPoint(p1)];
-//        
-////        [path0 moveToPoint:_mp10];
-////        [path0 addLineToPoint:p1];
-////        [path0 addLineToPoint:_mp11];
-        
-        
-        
-        [path0 removeAllPoints];
-        
         //p10 mp10 p11 mp11
         CGFloat w = strokeWidth;
         
@@ -211,23 +208,18 @@
         [_path1 addObject:NSStringFromCGPoint(mp11)];
         [_ctrol1 addObject:NSStringFromCGPoint(p11)];
         
-//        if (ccpDistance(p1, p0) < w) return;
-            [path0 moveToPoint:_mp10];
-            [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
-            [path0 addLineToPoint:_mp11];
-            [path0 addLineToPoint:_mp10];
-            
-            [path0 moveToPoint:_mp11];
-            [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
-            [path0 addLineToPoint:mp10];
-            [path0 addLineToPoint:_mp11];
-
-//        [path addLineToPoint:p1];
+        if (ccpDistance(p1, p0) < w) return;
         
-//        CGPoint pt = ccpSub(p0, p1);
-//        GLfloat angle = ccpToAngle(pt);
-        //        [path0 removeAllPoints];
-//        [path1 moveToPoint:mP1];
+        [path0 moveToPoint:_mp10];
+        [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+        [path0 addLineToPoint:_mp11];
+        [path0 addLineToPoint:_mp10];
+        
+        [path0 moveToPoint:_mp11];
+        [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+        [path0 addLineToPoint:mp10];
+        [path0 addLineToPoint:_mp11];
+    
         [path1 removeAllPoints];
         [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
 //        [path1 addLineToPoint:mP1];
@@ -237,6 +229,26 @@
     p0 = p1;
     [self imgDraw];
     [self setNeedsDisplay];
+}
+
+
+- (void)pan2:(UIPanGestureRecognizer *)pan {
+    
+    CGPoint localPoint = [pan locationInView:self.superview];
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        _localPoint = localPoint;
+        _frame = self.frame;
+    }else if (pan.state == UIGestureRecognizerStateChanged || pan.state == UIGestureRecognizerStateEnded){
+        CGRect _rect;
+        _rect = CGRectMake(
+                            _frame.origin.x + (localPoint.x - _localPoint.x),
+                            _frame.origin.y + (localPoint.y - _localPoint.y),
+                            _frame.size.width,
+                            _frame.size.height
+                            );
+        [self setFrame:_rect];
+    };
+    
 }
 
 -(IBAction)clearBtn:(id)sender
@@ -280,6 +292,13 @@
     
 }
  */
+
+/* 识别放大缩小 */
+- (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer {
+//    CGPoint location = [gestureRecognizer locationInView:self];
+    gestureRecognizer.view.transform = CGAffineTransformScale(gestureRecognizer.view.transform, gestureRecognizer.scale, gestureRecognizer.scale);
+    gestureRecognizer.scale = 1;
+}
 
 
 -(CGPoint)triangle:(CGPoint)p0 p1:(CGPoint)p1 w:(CGFloat)w

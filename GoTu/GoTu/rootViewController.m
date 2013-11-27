@@ -7,6 +7,7 @@
 //
 
 #import "rootViewController.h"
+#import "drawingBoardView.h"
 
 @interface rootViewController ()
 
@@ -26,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    [self.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width * 2, [[UIScreen mainScreen] bounds].size.height * 2)];
+    
+    drawingBoardView *drawV = [[drawingBoardView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:drawV];
+//    [self.view setTransform:<#(CGAffineTransform)#>];
     // Do any additional setup after loading the view from its nib.
 }
 

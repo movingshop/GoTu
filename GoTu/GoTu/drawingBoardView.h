@@ -36,6 +36,9 @@
     
     UIColor *strokeColor;
     
+    CGPoint _localPoint;
+    CGRect _frame;
+    
     BOOL isCelar;
 }
 
