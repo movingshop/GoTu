@@ -44,5 +44,6 @@
 
 @property (nonatomic) int *brushMode;
 @property (strong,nonatomic) UIColor *brushColor;
+@property (strong,nonatomic) UIImageView *backGroundImageView;
 
 @end

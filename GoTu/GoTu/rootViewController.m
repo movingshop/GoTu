@@ -7,7 +7,7 @@
 //
 
 #import "rootViewController.h"
-#import "drawingBoardView.h"
+#import "drawBoardViewController.h"
 
 @interface rootViewController ()
 
@@ -29,10 +29,22 @@
     [super viewDidLoad];
 //    [self.view setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width * 2, [[UIScreen mainScreen] bounds].size.height * 2)];
     
-    drawingBoardView *drawV = [[drawingBoardView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:drawV];
-//    [self.view setTransform:<#(CGAffineTransform)#>];
+    
+//    [self.view setTransform:(CGAffineTransform)];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(IBAction)showDrawV:(id)sender
+{
+    drawBoardViewController *drawV = [[drawBoardViewController alloc] init];
+    drawV.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:drawV animated:YES completion:nil];
+//    [UIView beginAnimations:@"animationID" context:nil];
+//    [UIView setAnimationDuration:0.7];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+//    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:drawV.view cache:YES];
+//    
+//    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning

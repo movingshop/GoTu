@@ -23,31 +23,33 @@
 
 @implementation drawingBoardView
 
-- (id)initWithFrame:(CGRect)frame
+@synthesize backGroundImageView;
+
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     
     if (self) {
         // Initialization code
-//        self.frame = CGRectMake(0, 0, MRScreenWidth, MRScreenHeight);
-        
+        //        self.frame = CGRectMake(0, 0, MRScreenWidth, MRScreenHeight);
+        [self initWithCustom];
     }
     return self;
 }
 
--(void)willMoveToSuperview:(UIView *)newSuperview
+-(void)initWithCustom
 {
     [self setBrushColor:[UIColor whiteColor]];
     
-    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"temp.jpg"]];
-    [image setFrame:self.frame];
-    [self addSubview:image];
-    [image setUserInteractionEnabled:YES];
+    [self setClipsToBounds:YES];
+    
+    backGroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [self addSubview:backGroundImageView];
     
     strokeColor = HexRGBAlpha(0x000000,1.0f);
     isCelar = NO;
     
-    drawingBoardImg = [[UIImageView alloc] initWithFrame:self.frame];
+    drawingBoardImg = [[UIImageView alloc] initWithFrame:backGroundImageView.frame];
     [self addSubview:drawingBoardImg];
     
     path = [[UIBezierPath alloc] init];
