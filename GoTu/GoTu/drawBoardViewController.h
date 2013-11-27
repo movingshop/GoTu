@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "colorViewController.h"
 
 @class drawingBoardView;
 
-@interface drawBoardViewController : UIViewController
+@interface drawBoardViewController : UIViewController<colorSelectDelegate>
 {
     IBOutlet drawingBoardView *drawBoardV;
     IBOutlet UIView *colorViewBox;
 }
-
 
 @end

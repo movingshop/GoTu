@@ -30,13 +30,19 @@
     [super viewDidLoad];
     
     colorViewController *colorSilder = [[colorViewController alloc] init];
+    colorSilder.myDelegate = self;
+    [colorViewBox setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:colorSilder];
     [colorViewBox addSubview:colorSilder.view];
-    [colorSilder.view setFrame:CGRectMake(0, 0, 160, 160)];
-    
     [drawBoardV.backGroundImageView setImage:[UIImage imageNamed:@"001"]];
     
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)changeColor:(UIColor *)color
+{
+    NSLog(@"changeColor");
+    [drawBoardV setBrushColor:color];
 }
 
 - (void)didReceiveMemoryWarning

@@ -25,6 +25,8 @@
 
 @synthesize backGroundImageView;
 
+@synthesize brushColor;
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -45,6 +47,8 @@
     
     backGroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     [self addSubview:backGroundImageView];
+    
+    brushColor = HexRGBAlpha(0xff0000, 1.0f);
     
     strokeColor = HexRGBAlpha(0x000000,1.0f);
     isCelar = NO;
@@ -266,7 +270,7 @@
 //    [drawingBoardImg.layer renderInContext:UIGraphicsGetCurrentContext()];
     [drawingBoardImg drawRect:self.bounds];
 //    [[UIColor colorWithPatternImage:[UIImage imageNamed:@"stroke_pen.png"]] setFill];
-    [strokeColor setFill];
+    [brushColor setFill];
 //    [path0 fillWithBlendMode:kCGBlendModeClear alpha:.5];
     [path0 fill];
     [path1 fill];

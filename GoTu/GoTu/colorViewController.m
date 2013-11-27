@@ -14,11 +14,14 @@
 
 @implementation colorViewController
 
+@synthesize myDelegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -27,40 +30,74 @@
 {
     [super viewDidLoad];
     tableA = [NSArray arrayWithObjects:
-              HexRGBAlpha(0x000000, .9),
-              HexRGBAlpha(0xff0000, .9),
-              HexRGBAlpha(0x00ff00, .9),
-              HexRGBAlpha(0x0000ff, .9),
-              HexRGBAlpha(0x0ff000, .9),
-              HexRGBAlpha(0x000ff0, .9),
-              HexRGBAlpha(0x0fff00, .9),
-              HexRGBAlpha(0x00fff0, .9),
-              HexRGBAlpha(0x0ffff0, .9),
+              HexRGBAlpha(0x68acff, 1),
+              HexRGBAlpha(0x6874ff, 1),
+              HexRGBAlpha(0xaf28f5, 1),
+              HexRGBAlpha(0xfb4514, 1),
+              HexRGBAlpha(0xff8022, 1),
+              HexRGBAlpha(0xfb1496, 1),
+              HexRGBAlpha(0xfe4a74, 1),
+              
+              HexRGBAlpha(0x68acff, 1),
+              HexRGBAlpha(0x6874ff, 1),
+              HexRGBAlpha(0xaf28f5, 1),
+              HexRGBAlpha(0xfb4514, 1),
+              HexRGBAlpha(0xff8022, 1),
+              HexRGBAlpha(0xfb1496, 1),
+              HexRGBAlpha(0xfe4a74, 1),
               nil];
     
-    [tableV setFrame:self.view.frame];
-    tableV.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    
     tableV.delegate = self;
     tableV.dataSource = self;
+    
+    UIView *headerView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 30, 65)];
+    tableV.tableHeaderView = headerView;
+    
+    UIView *footerView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 30, 65)];
+    tableV.tableFooterView = footerView;
+    
+    tableV.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    [tableV setFrame:CGRectMake(5, 5, 160, 30)];
+    tableV.showsVerticalScrollIndicator = NO;
+    [tableV setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    [tableV setClipsToBounds:YES];
+    [tableV.layer setBorderColor:HexRGBAlpha(0xffffff, 1).CGColor];
+    [tableV.layer setBorderWidth:1.5f];
+    [tableV.layer setCornerRadius:15];
+    
+    NSLog(@"tableVFrame:%@",NSStringFromCGRect(tableV.frame));
+    NSLog(@"tableViewFrame:%@",NSStringFromCGRect(self.view.frame));
+    [tableV reloadData];
+    
+    
+    showColorBox = [[UIView alloc] initWithFrame:CGRectMake(65, 0, 40, 40)];
+    [showColorBox setUserInteractionEnabled:NO];
+    [self.view addSubview:showColorBox];
+    
+    UIImageView *shadowImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"color_show"]];
+    [shadowImg setFrame:CGRectMake(0, 0, 40, 40)];
+    
+    [showColorBox addSubview:shadowImg];
+    
+    
+    showColor = [[UIView alloc] initWithFrame:CGRectMake(4, 4, 32, 32)];
+    [showColor setClipsToBounds:YES];
+    [showColor.layer setBorderColor:HexRGBAlpha(0xffffff, 1).CGColor];
+    [showColor.layer setBorderWidth:1.5f];
+    [showColor.layer setCornerRadius:16];
+    [showColor setBackgroundColor:[tableA objectAtIndex:3]];
+    [showColorBox addSubview:showColor];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 30.0f;
+    return 26.0f;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CustomCellIdentifier = @"colorellIdentifier";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
-//    if (cell == nil)
-//    {
-//         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CustomCellIdentifier];
-//    }
-////    [cell setBackgroundColor:[tableA objectAtIndex:indexPath.row]];
-//    return cell;
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
@@ -68,10 +105,19 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                        reuseIdentifier:CellIdentifier];
-        cell.backgroundColor = (UIColor *)[tableA objectAtIndex:indexPath.row];
+        
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+    cell.backgroundColor = (UIColor *)[tableA objectAtIndex:indexPath.row];
+    cell.selected = NO;
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO animated:YES];
+    [showColor setBackgroundColor:[tableA objectAtIndex:indexPath.row]];
+    [myDelegate changeColor:[tableA objectAtIndex:indexPath.row]];
 }
 
 

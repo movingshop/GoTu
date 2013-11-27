@@ -18,8 +18,6 @@
 		70B746DF1845CA1D007AA2D9 /* Aa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746951845CA1D007AA2D9 /* Aa@2x.png */; };
 		70B746E01845CA1D007AA2D9 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746961845CA1D007AA2D9 /* back.png */; };
 		70B746E11845CA1D007AA2D9 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746971845CA1D007AA2D9 /* back@2x.png */; };
-		70B746E21845CA1D007AA2D9 /* COLOR-副本.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746981845CA1D007AA2D9 /* COLOR-副本.png */; };
-		70B746E31845CA1D007AA2D9 /* COLOR-副本@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746991845CA1D007AA2D9 /* COLOR-副本@2x.png */; };
 		70B746E41845CA1D007AA2D9 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B7469A1845CA1D007AA2D9 /* done.png */; };
 		70B746E51845CA1D007AA2D9 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B7469B1845CA1D007AA2D9 /* done@2x.png */; };
 		70B746E61845CA1D007AA2D9 /* era1.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B7469C1845CA1D007AA2D9 /* era1.png */; };
@@ -48,8 +46,8 @@
 		70B746FD1845CA1D007AA2D9 /* pencl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B31845CA1D007AA2D9 /* pencl@2x.png */; };
 		70B746FE1845CA1D007AA2D9 /* Shape-46.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B41845CA1D007AA2D9 /* Shape-46.png */; };
 		70B746FF1845CA1D007AA2D9 /* Shape-46@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B51845CA1D007AA2D9 /* Shape-46@2x.png */; };
-		70B747001845CA1D007AA2D9 /* Shape-65-副本-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B61845CA1D007AA2D9 /* Shape-65-副本-6.png */; };
-		70B747011845CA1D007AA2D9 /* Shape-65-副本-6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B71845CA1D007AA2D9 /* Shape-65-副本-6@2x.png */; };
+		70B747001845CA1D007AA2D9 /* color_show.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B61845CA1D007AA2D9 /* color_show.png */; };
+		70B747011845CA1D007AA2D9 /* color_show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B71845CA1D007AA2D9 /* color_show@2x.png */; };
 		70B747021845CA1D007AA2D9 /* Sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B81845CA1D007AA2D9 /* Sticker.png */; };
 		70B747031845CA1D007AA2D9 /* Sticker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746B91845CA1D007AA2D9 /* Sticker@2x.png */; };
 		70B747041845CA1D007AA2D9 /* tools-bar-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B746BA1845CA1D007AA2D9 /* tools-bar-2.png */; };
@@ -132,8 +130,6 @@
 		70B746951845CA1D007AA2D9 /* Aa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aa@2x.png"; sourceTree = "<group>"; };
 		70B746961845CA1D007AA2D9 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		70B746971845CA1D007AA2D9 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
-		70B746981845CA1D007AA2D9 /* COLOR-副本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "COLOR-副本.png"; sourceTree = "<group>"; };
-		70B746991845CA1D007AA2D9 /* COLOR-副本@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "COLOR-副本@2x.png"; sourceTree = "<group>"; };
 		70B7469A1845CA1D007AA2D9 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
 		70B7469B1845CA1D007AA2D9 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
 		70B7469C1845CA1D007AA2D9 /* era1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = era1.png; sourceTree = "<group>"; };
@@ -162,8 +158,8 @@
 		70B746B31845CA1D007AA2D9 /* pencl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencl@2x.png"; sourceTree = "<group>"; };
 		70B746B41845CA1D007AA2D9 /* Shape-46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-46.png"; sourceTree = "<group>"; };
 		70B746B51845CA1D007AA2D9 /* Shape-46@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-46@2x.png"; sourceTree = "<group>"; };
-		70B746B61845CA1D007AA2D9 /* Shape-65-副本-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-65-副本-6.png"; sourceTree = "<group>"; };
-		70B746B71845CA1D007AA2D9 /* Shape-65-副本-6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shape-65-副本-6@2x.png"; sourceTree = "<group>"; };
+		70B746B61845CA1D007AA2D9 /* color_show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_show.png; sourceTree = "<group>"; };
+		70B746B71845CA1D007AA2D9 /* color_show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color_show@2x.png"; sourceTree = "<group>"; };
 		70B746B81845CA1D007AA2D9 /* Sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sticker.png; sourceTree = "<group>"; };
 		70B746B91845CA1D007AA2D9 /* Sticker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sticker@2x.png"; sourceTree = "<group>"; };
 		70B746BA1845CA1D007AA2D9 /* tools-bar-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tools-bar-2.png"; sourceTree = "<group>"; };
@@ -260,8 +256,6 @@
 				70B746951845CA1D007AA2D9 /* Aa@2x.png */,
 				70B746961845CA1D007AA2D9 /* back.png */,
 				70B746971845CA1D007AA2D9 /* back@2x.png */,
-				70B746981845CA1D007AA2D9 /* COLOR-副本.png */,
-				70B746991845CA1D007AA2D9 /* COLOR-副本@2x.png */,
 				70B7469A1845CA1D007AA2D9 /* done.png */,
 				70B7469B1845CA1D007AA2D9 /* done@2x.png */,
 				70B7469C1845CA1D007AA2D9 /* era1.png */,
@@ -290,8 +284,8 @@
 				70B746B31845CA1D007AA2D9 /* pencl@2x.png */,
 				70B746B41845CA1D007AA2D9 /* Shape-46.png */,
 				70B746B51845CA1D007AA2D9 /* Shape-46@2x.png */,
-				70B746B61845CA1D007AA2D9 /* Shape-65-副本-6.png */,
-				70B746B71845CA1D007AA2D9 /* Shape-65-副本-6@2x.png */,
+				70B746B61845CA1D007AA2D9 /* color_show.png */,
+				70B746B71845CA1D007AA2D9 /* color_show@2x.png */,
 				70B746B81845CA1D007AA2D9 /* Sticker.png */,
 				70B746B91845CA1D007AA2D9 /* Sticker@2x.png */,
 				70B746BA1845CA1D007AA2D9 /* tools-bar-2.png */,
@@ -558,7 +552,7 @@
 				70B746EB1845CA1D007AA2D9 /* era3@2x.png in Resources */,
 				70E3153D184477240045E4B8 /* InfoPlist.strings in Resources */,
 				70B746F61845CA1D007AA2D9 /* pen-high.png in Resources */,
-				70B747001845CA1D007AA2D9 /* Shape-65-副本-6.png in Resources */,
+				70B747001845CA1D007AA2D9 /* color_show.png in Resources */,
 				70B7471C1845CA1D007AA2D9 /* text3-high.png in Resources */,
 				70B7470E1845CA1D007AA2D9 /* group-bar.png in Resources */,
 				70B746E41845CA1D007AA2D9 /* done.png in Resources */,
@@ -568,7 +562,6 @@
 				70B7470A1845CA1D007AA2D9 /* emotion-high.png in Resources */,
 				70B7471D1845CA1D007AA2D9 /* text3.png in Resources */,
 				70B747061845CA1D007AA2D9 /* tools-bar.png in Resources */,
-				70B746E21845CA1D007AA2D9 /* COLOR-副本.png in Resources */,
 				70B746E91845CA1D007AA2D9 /* era2@2x.png in Resources */,
 				70B746E01845CA1D007AA2D9 /* back.png in Resources */,
 				70B7471E1845CA1D007AA2D9 /* text4-high.png in Resources */,
@@ -599,7 +592,7 @@
 				70B7472F1845E060007AA2D9 /* 001@2x.png in Resources */,
 				70B746F31845CA1D007AA2D9 /* marker-high@2x.png in Resources */,
 				70B746FD1845CA1D007AA2D9 /* pencl@2x.png in Resources */,
-				70B747011845CA1D007AA2D9 /* Shape-65-副本-6@2x.png in Resources */,
+				70B747011845CA1D007AA2D9 /* color_show@2x.png in Resources */,
 				70B747291845CB95007AA2D9 /* drawBoardViewController.xib in Resources */,
 				70B747121845CA1D007AA2D9 /* close.png in Resources */,
 				70B747161845CA1D007AA2D9 /* text-shape-high.png in Resources */,
@@ -616,7 +609,6 @@
 				70B747181845CA1D007AA2D9 /* text1-high.png in Resources */,
 				70B746DE1845CA1D007AA2D9 /* Aa.png in Resources */,
 				70B7471A1845CA1D007AA2D9 /* text2-high.png in Resources */,
-				70B746E31845CA1D007AA2D9 /* COLOR-副本@2x.png in Resources */,
 				70B747111845CA1D007AA2D9 /* Stickers.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
