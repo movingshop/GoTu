@@ -342,7 +342,7 @@
             break;
         case 2:
             // brushMode = 1 铅笔模式
-            [[UIColor colorWithPatternImage:[imageWithGradientTintColor:brushColor]] setStroke];
+            [brushColor setStroke];
 //            [path0 strokeWithBlendMode:kCGBlendModeDestinationIn alpha:1.0f];
             [path0 setLineWidth:8];
             [path0 stroke];
@@ -405,9 +405,28 @@
  
  }
  */
--(void)setBrushColor:(UIColor *)brushColor
+
+-(void)setBrushMode:(int)_brushMode
 {
-    
+    brushMode = _brushMode;
+//    [self setBrushColor:brushColor];
+}
+
+-(void)setBrushColor:(UIColor *)_brushColor
+{
+    brushColor = _brushColor;
+    switch (brushMode) {
+        case 1:
+            brushColor = _brushColor;
+            break;
+        case 2:
+            brushColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"stroke_pencil"] imageWithGradientTintColor:brushColor]];
+            break;
+            
+        default:
+            brushColor = _brushColor;
+            break;
+    }
 }
 
 @end
