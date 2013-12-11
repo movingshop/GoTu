@@ -101,6 +101,9 @@
 		70E3154E184477240045E4B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E31536184477240045E4B8 /* UIKit.framework */; };
 		70E31556184477240045E4B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70E31554184477240045E4B8 /* InfoPlist.strings */; };
 		70E31558184477240045E4B8 /* GoTuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E31557184477240045E4B8 /* GoTuTests.m */; };
+		70F8ED86185842380076C663 /* stroke_pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F8ED85185842380076C663 /* stroke_pencil@2x.png */; };
+		70F8ED8F18584E140076C663 /* 002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F8ED8E18584E140076C663 /* 002@2x.png */; };
+		70F8ED9618584F530076C663 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F8ED9518584F530076C663 /* UIImage+Tint.m */; };
 		98D1ACD4EA3949D980684B22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E64400A2834000BA640E49 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +222,10 @@
 		70E31553184477240045E4B8 /* GoTuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoTuTests-Info.plist"; sourceTree = "<group>"; };
 		70E31555184477240045E4B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70E31557184477240045E4B8 /* GoTuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoTuTests.m; sourceTree = "<group>"; };
+		70F8ED85185842380076C663 /* stroke_pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stroke_pencil@2x.png"; sourceTree = "<group>"; };
+		70F8ED8E18584E140076C663 /* 002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "002@2x.png"; sourceTree = "<group>"; };
+		70F8ED9418584F530076C663 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		70F8ED9518584F530076C663 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		E0E64400A2834000BA640E49 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -354,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				70B7472E1845E060007AA2D9 /* 001@2x.png */,
+				70F8ED8E18584E140076C663 /* 002@2x.png */,
 			);
 			name = testData;
 			sourceTree = "<group>";
@@ -361,6 +369,7 @@
 		70CFDBE31844A4A600F0B6D7 /* drowBoard */ = {
 			isa = PBXGroup;
 			children = (
+				70F8ED85185842380076C663 /* stroke_pencil@2x.png */,
 				70B747251845CB95007AA2D9 /* drawBoardViewController.h */,
 				70B747261845CB95007AA2D9 /* drawBoardViewController.m */,
 				70B747271845CB95007AA2D9 /* drawBoardViewController.xib */,
@@ -412,6 +421,7 @@
 		70E31538184477240045E4B8 /* GoTu */ = {
 			isa = PBXGroup;
 			children = (
+				70F8ED8718584A5F0076C663 /* addOns */,
 				70B747301845E064007AA2D9 /* testData */,
 				70E31541184477240045E4B8 /* AppDelegate.h */,
 				70E31542184477240045E4B8 /* AppDelegate.m */,
@@ -452,6 +462,15 @@
 				70E31554184477240045E4B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70F8ED8718584A5F0076C663 /* addOns */ = {
+			isa = PBXGroup;
+			children = (
+				70F8ED9418584F530076C663 /* UIImage+Tint.h */,
+				70F8ED9518584F530076C663 /* UIImage+Tint.m */,
+			);
+			name = addOns;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,6 +601,8 @@
 				70B747021845CA1D007AA2D9 /* Sticker.png in Resources */,
 				70B746F11845CA1D007AA2D9 /* Frame@2x.png in Resources */,
 				70B746F91845CA1D007AA2D9 /* pen@2x.png in Resources */,
+				70F8ED86185842380076C663 /* stroke_pencil@2x.png in Resources */,
+				70F8ED8F18584E140076C663 /* 002@2x.png in Resources */,
 				70B746E61845CA1D007AA2D9 /* era1.png in Resources */,
 				70B747071845CA1D007AA2D9 /* tools-bar@2x.png in Resources */,
 				70B746F51845CA1D007AA2D9 /* marker@2x.png in Resources */,
@@ -665,6 +686,7 @@
 				709DC0ED1844AD9A0073F1B1 /* drawingBoardView.m in Sources */,
 				70B747281845CB95007AA2D9 /* drawBoardViewController.m in Sources */,
 				709DC0EE1844AD9A0073F1B1 /* CGPointExtension.m in Sources */,
+				70F8ED9618584F530076C663 /* UIImage+Tint.m in Sources */,
 				70E31543184477240045E4B8 /* AppDelegate.m in Sources */,
 				70CA425918449E1700CDEAEA /* rootViewController.m in Sources */,
 				70E3153F184477240045E4B8 /* main.m in Sources */,
