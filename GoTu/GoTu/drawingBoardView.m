@@ -420,7 +420,7 @@
             brushColor = _brushColor;
             break;
         case 2:
-            brushColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"stroke_pencil"] imageWithGradientTintColor:brushColor]];
+            brushColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"stroke_pencil"] imageWithGradientTintColor:_brushColor]];
             break;
             
         default:
