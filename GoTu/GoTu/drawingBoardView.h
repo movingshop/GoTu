@@ -35,6 +35,7 @@
     UIImage *_tempImg;
     
     UIColor *strokeColor;
+//    UIImage *btushImage;
     
     CGPoint _localPoint;
     CGRect _frame;
@@ -44,7 +45,7 @@
     BOOL isCelar;
 }
 
-@property (nonatomic) int *brushMode;
+@property (nonatomic) int brushMode;
 @property (strong,nonatomic) UIColor *brushColor;
 @property (strong,nonatomic) UIImageView *backGroundImageView;
 

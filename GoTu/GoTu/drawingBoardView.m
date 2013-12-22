@@ -20,12 +20,13 @@
 
 #import "drawingBoardView.h"
 #import "CGPointExtension.h"
+#import "UIImage+Tint.h"
 
 @implementation drawingBoardView
 
 @synthesize backGroundImageView;
 
-@synthesize brushColor;
+@synthesize brushColor,brushMode;
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -86,160 +87,220 @@
     
     strokeWidth =0.10f;
     
+<<<<<<< HEAD
     
     zoomScale = 1.0f;
+=======
+    //画笔类型
+    // 1 为 钢笔
+    // 2 为 铅笔
+    // 3 为 彩笔
+    brushMode = 1; //默认是 1；
+    
+    
+    
+>>>>>>> 6dccb40aa7f0e236f9d1d12979cab7442eaac6d8
 }
 
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
     
-//    if ()
-    
     p1 = [pan locationInView:self];
+    CGFloat strokeWidthExpect = ccpLength([pan velocityInView:self]); //预期画笔宽度
     
-    CGFloat _strokeWidth = ccpLength([pan velocityInView:self]);
-    
-    _strokeWidth = powf(MIN(1, (_strokeWidth / 1000)), 2);
-    _strokeWidth = _strokeWidth * 10;
-    CGFloat _scale = powf(2 * (10 - _strokeWidth), .5) ;
-    _scale = _scale * 0.05;
-    NSLog(@"_strokeWidth:%f   _scale:%f",_strokeWidth,_scale);
-//    NSLog(@"stro%")
-    strokeWidth += (_strokeWidth - strokeWidth) *0.05;
-    
-    if (pan.state == UIGestureRecognizerStateBegan) {
-        path = [[UIBezierPath alloc] init];
-        [path moveToPoint:p1];
-        
-        action = [[NSMutableDictionary alloc] init];
-        [action setObject:@"brush" forKey:@"mode"];
-        [action setObject:@"0x000fff" forKey:@"color"];
-        NSMutableArray *_path0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
-        NSMutableArray *_ctrol0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
-        NSMutableArray *_path1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
-        NSMutableArray *_ctrol1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
-        
-        
-        [action setObject:[NSMutableArray arrayWithObjects:_path0,_ctrol0,_path1,_ctrol1, nil] forKey:@"path"];
-        
-        
-        path0 = [[UIBezierPath alloc] init];
-        
-        p00.x = -1000.0f;
-        _mp10 = p1;
-        _mp11 = p1;
-        
-        strokeWidth = 0.1f;
-        
-        [path moveToPoint:p1];
-        
-    }
-    else if (pan.state == UIGestureRecognizerStateChanged){
-        
-        
-        [path0 removeAllPoints];
-        
-        //p10 mp10 p11 mp11
-        CGFloat w = strokeWidth;
-        
-        
-        
-        mP1 = midPoint(p0, p1);
-        
-        CGPoint p10 = [self triangle:p0 p1:p1 w:w];
-        CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
-        CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
-        CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
-        
-        NSMutableArray *_pathA = [action objectForKey:@"path"];
-        
-        NSMutableArray *_path0 = [_pathA objectAtIndex:0];
-        NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
-        NSMutableArray *_path1 = [_pathA objectAtIndex:2];
-        NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
-        
-        [_path0 addObject:NSStringFromCGPoint(mp10)];
-        [_ctrol0 addObject:NSStringFromCGPoint(p10)];
-        [_path1 addObject:NSStringFromCGPoint(mp11)];
-        [_ctrol1 addObject:NSStringFromCGPoint(p11)];
-        
-        if (ccpDistance(p1, p0) < w) return;
-        if (p00.x==-1000.0f){
-        
-//            [path0 addLineToPoint:p10];
-//            [path1 addLineToPoint:p11];
-        }
-        else{
-            [path0 moveToPoint:_mp10];
-            [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
-            [path0 addLineToPoint:_mp11];
-            [path0 addLineToPoint:_mp10];
+    switch (brushMode) {
+        case 1:
+            // brushMode = 1 钢笔模式
             
-            [path0 moveToPoint:_mp11];
-            [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
-            [path0 addLineToPoint:mp10];
-            [path0 addLineToPoint:_mp11];
-        }
-        
-        [path addLineToPoint:p1];
-        p00 = p10;
-        p01 = p11;
-        _mp10 = mp10;
-        _mp11 = mp11;
-        
-        [path1 removeAllPoints];
-        [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
-        
-//        [path0 removeAllPoints];
-        
+            // 速度与画笔宽度关系
+            strokeWidthExpect = powf(MIN(1, (strokeWidthExpect / 1000)), 2);
+            strokeWidthExpect = strokeWidthExpect * 10;
+            CGFloat _scale = powf(2 * (10 - strokeWidthExpect), .5) ;
+            _scale = _scale * 0.05;
+            strokeWidth += (strokeWidthExpect - strokeWidth) *0.05;
+            
+            //画笔计算
+            if (pan.state == UIGestureRecognizerStateBegan) {
+                path = [[UIBezierPath alloc] init];
+                [path moveToPoint:p1];
+                
+                action = [[NSMutableDictionary alloc] init];
+                [action setObject:@"brush" forKey:@"mode"];
+                [action setObject:@"0x000fff" forKey:@"color"];
+                NSMutableArray *_path0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_ctrol0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_path1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_ctrol1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                
+                
+                [action setObject:[NSMutableArray arrayWithObjects:_path0,_ctrol0,_path1,_ctrol1, nil] forKey:@"path"];
+                
+                
+                path0 = [[UIBezierPath alloc] init];
+                
+                p00.x = -1000.0f;
+                _mp10 = p1;
+                _mp11 = p1;
+                
+                strokeWidth = 0.1f;
+                
+                [path moveToPoint:p1];
+                
+            }
+            else if (pan.state == UIGestureRecognizerStateChanged){
+                
+                
+                [path0 removeAllPoints];
+                
+                //p10 mp10 p11 mp11
+                CGFloat w = strokeWidth;
+                
+                
+                
+                mP1 = midPoint(p0, p1);
+                
+                CGPoint p10 = [self triangle:p0 p1:p1 w:w];
+                CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
+                CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
+                CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
+                
+                NSMutableArray *_pathA = [action objectForKey:@"path"];
+                
+                NSMutableArray *_path0 = [_pathA objectAtIndex:0];
+                NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
+                NSMutableArray *_path1 = [_pathA objectAtIndex:2];
+                NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
+                
+                [_path0 addObject:NSStringFromCGPoint(mp10)];
+                [_ctrol0 addObject:NSStringFromCGPoint(p10)];
+                [_path1 addObject:NSStringFromCGPoint(mp11)];
+                [_ctrol1 addObject:NSStringFromCGPoint(p11)];
+                
+                if (ccpDistance(p1, p0) < w) return;
+                if (p00.x==-1000.0f){
+                    
+                    //            [path0 addLineToPoint:p10];
+                    //            [path1 addLineToPoint:p11];
+                }
+                else{
+                    [path0 moveToPoint:_mp10];
+                    [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+                    [path0 addLineToPoint:_mp11];
+                    [path0 addLineToPoint:_mp10];
+                    
+                    [path0 moveToPoint:_mp11];
+                    [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+                    [path0 addLineToPoint:mp10];
+                    [path0 addLineToPoint:_mp11];
+                }
+                
+                [path addLineToPoint:p1];
+                p00 = p10;
+                p01 = p11;
+                _mp10 = mp10;
+                _mp11 = mp11;
+                
+                [path1 removeAllPoints];
+                [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                
+                //        [path0 removeAllPoints];
+                
+            }
+            else if (pan.state == UIGestureRecognizerStateEnded) {
+                
+                [path0 removeAllPoints];
+                
+                //p10 mp10 p11 mp11
+                CGFloat w = strokeWidth;
+                
+                
+                
+                mP1 = midPoint(p0, p1);
+                
+                CGPoint p10 = [self triangle:p0 p1:p1 w:w];
+                CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
+                CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
+                CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
+                
+                NSMutableArray *_pathA = [action objectForKey:@"path"];
+                
+                NSMutableArray *_path0 = [_pathA objectAtIndex:0];
+                NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
+                NSMutableArray *_path1 = [_pathA objectAtIndex:2];
+                NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
+                
+                [_path0 addObject:NSStringFromCGPoint(mp10)];
+                [_ctrol0 addObject:NSStringFromCGPoint(p10)];
+                [_path1 addObject:NSStringFromCGPoint(mp11)];
+                [_ctrol1 addObject:NSStringFromCGPoint(p11)];
+                
+                if (ccpDistance(p1, p0) < w) return;
+                
+                [path0 moveToPoint:_mp10];
+                [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+                [path0 addLineToPoint:_mp11];
+                [path0 addLineToPoint:_mp10];
+                
+                [path0 moveToPoint:_mp11];
+                [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+                [path0 addLineToPoint:mp10];
+                [path0 addLineToPoint:_mp11];
+                
+                [path1 removeAllPoints];
+                [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                //        [path1 addLineToPoint:mP1];
+                
+            }
+            mP0 = mP1;
+            p0 = p1;
+            
+            
+            
+            break;
+        case 2:
+            // brushMode = 1 铅笔模式
+            
+            // 速度与画笔宽度关系
+            strokeWidth = 5.0f;
+            
+            //画笔计算
+            if (pan.state == UIGestureRecognizerStateBegan) {
+                path0 = [[UIBezierPath alloc] init];
+                [path0 setLineWidth:strokeWidth];
+                mP1 = p1;
+                [path0 moveToPoint:p1];
+            }else if (pan.state == UIGestureRecognizerStateChanged){
+                
+//                [path0 removeAllPoints];
+                mP1 = midPoint(p0, p1);
+//                [path0 moveToPoint:mP0];
+                [path0 addQuadCurveToPoint:mP1 controlPoint:p0];
+                
+            }else if (pan.state == UIGestureRecognizerStateEnded){
+                [path0 addLineToPoint:p1];
+            }
+            
+            p0 = p1;
+            mP0 = mP1;
+            
+            break;
+        case 3:
+            
+            break;
+        case 0:
+            // brushMode = 1 橡皮模式
+            break;
+            
+        default:
+            strokeWidth = strokeWidthExpect;
+            break;
     }
-    else if (pan.state == UIGestureRecognizerStateEnded) {
-        
-        [path0 removeAllPoints];
-        
-        //p10 mp10 p11 mp11
-        CGFloat w = strokeWidth;
-        
-        
-        
-        mP1 = midPoint(p0, p1);
-        
-        CGPoint p10 = [self triangle:p0 p1:p1 w:w];
-        CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
-        CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
-        CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
-        
-        NSMutableArray *_pathA = [action objectForKey:@"path"];
-        
-        NSMutableArray *_path0 = [_pathA objectAtIndex:0];
-        NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
-        NSMutableArray *_path1 = [_pathA objectAtIndex:2];
-        NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
-        
-        [_path0 addObject:NSStringFromCGPoint(mp10)];
-        [_ctrol0 addObject:NSStringFromCGPoint(p10)];
-        [_path1 addObject:NSStringFromCGPoint(mp11)];
-        [_ctrol1 addObject:NSStringFromCGPoint(p11)];
-        
-        if (ccpDistance(p1, p0) < w) return;
-        
-        [path0 moveToPoint:_mp10];
-        [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
-        [path0 addLineToPoint:_mp11];
-        [path0 addLineToPoint:_mp10];
-        
-        [path0 moveToPoint:_mp11];
-        [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
-        [path0 addLineToPoint:mp10];
-        [path0 addLineToPoint:_mp11];
     
-        [path1 removeAllPoints];
-        [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
-//        [path1 addLineToPoint:mP1];
-        
-    }
-    mP0 = mP1;
-    p0 = p1;
+    
+    
+    
+    
+    
     [self imgDraw];
     [self setNeedsDisplay];
 }
@@ -274,38 +335,59 @@
 -(void)imgDraw
 {
     UIGraphicsBeginImageContext(drawingBoardImg.frame.size);
-//    UIGraphicsBeginImageContextWithOptions(drawingBoardImg.frame.size, YES, 1.0);
-//    [drawingBoardImg.layer renderInContext:UIGraphicsGetCurrentContext()];
+    /*
+    // 改变清晰度
+    UIGraphicsBeginImageContextWithOptions(drawingBoardImg.frame.size, YES, 1.0);
+    [drawingBoardImg.layer renderInContext:UIGraphicsGetCurrentContext()];
+     */
     [drawingBoardImg drawRect:self.bounds];
-//    [[UIColor colorWithPatternImage:[UIImage imageNamed:@"stroke_pen.png"]] setFill];
-    [brushColor setFill];
-//    [path0 fillWithBlendMode:kCGBlendModeClear alpha:.5];
-    [path0 fill];
-    [path1 fill];
+    
+    
+    //画笔模式
+    switch (brushMode) {
+        case 1:
+            // brushMode = 1 钢笔模式
+            [brushColor setFill];
+            [path0 fill];
+            [path1 fill];
+            break;
+        case 2:
+            // brushMode = 1 铅笔模式
+            [brushColor setStroke];
+//            [path0 strokeWithBlendMode:kCGBlendModeDestinationIn alpha:1.0f];
+            [path0 setLineWidth:8];
+            [path0 stroke];
+//            [path0 setLineWidth:7];
+//            [path0 stroke];
+//            [path0 setLineWidth:6];
+//            [path0 stroke];
+//            [path0 setLineWidth:5];
+//            [path0 stroke];
+            break;
+        case 3:
+            
+            break;
+        case 0:
+            // brushMode = 1 橡皮模式
+            [path0 fillWithBlendMode:kCGBlendModeClear alpha:0];
+            break;
+            
+        default:
+            [brushColor setFill];
+            break;
+    }
+    
+    
+
+    
+    if (path1) [path1 fill];
+    
     drawingBoardImg.image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSaveGState(context);
-//    CGContextTranslateCTM(context, 0, self.bounds.size.height);
-//    CGContextScaleCTM(context, 1.0, -1.0);
-//    if (_tempImg) CGContextDrawImage(context, self.bounds, _tempImg.CGImage);
-//    CGContextRestoreGState(context);
-    
-    [path removeAllPoints];
-    [path appendPath:path0];
-    [path closePath];
-    [path stroke];
-    
-}
- */
+
 
 /* 识别放大缩小 */
 - (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer {
@@ -350,6 +432,37 @@
     return CGPointMake(p1.x + x, p1.y - y);
 }
 
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ 
+ }
+ */
+
+-(void)setBrushMode:(int)_brushMode
+{
+    brushMode = _brushMode;
+//    [self setBrushColor:brushColor];
+}
+
+-(void)setBrushColor:(UIColor *)_brushColor
+{
+    brushColor = _brushColor;
+    switch (brushMode) {
+        case 1:
+            brushColor = _brushColor;
+            break;
+        case 2:
+            brushColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"stroke_pencil"] imageWithGradientTintColor:_brushColor]];
+            break;
+            
+        default:
+            brushColor = _brushColor;
+            break;
+    }
+}
 
 @end
 

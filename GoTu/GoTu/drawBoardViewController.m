@@ -6,9 +6,12 @@
 //  Copyright (c) 2013年 vince. All rights reserved.
 //
 
+#define HexRGBAlpha(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
+
 #import "drawBoardViewController.h"
 #import "drawingBoardView.h"
 #import "colorViewController.h"
+#import "UIImage+Tint.h"
 
 @interface drawBoardViewController ()
 
@@ -43,6 +46,15 @@
 {
     NSLog(@"changeColor");
     [drawBoardV setBrushColor:color];
+}
+
+-(IBAction)changeBrush:(id)sender
+{
+    NSLog(@"changeBrush");
+    UIButton *btn = (UIButton *)sender;
+    int brushMode = btn.tag - 2000;
+    [drawBoardV setBrushMode:brushMode];
+//    [drawBoardV setBrushColor:color];
 }
 
 - (void)didReceiveMemoryWarning
