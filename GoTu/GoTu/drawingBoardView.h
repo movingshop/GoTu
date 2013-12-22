@@ -39,6 +39,8 @@
     CGPoint _localPoint;
     CGRect _frame;
     
+    CGFloat zoomScale;
+    
     BOOL isCelar;
 }
 

@@ -72,7 +72,12 @@
     [self addGestureRecognizer:pan2];
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-    [self addGestureRecognizer:pinch];
+//    [self addGestureRecognizer:pinch];
+    
+    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                       action:@selector(handleDoubleTap:)];
+    [doubleTapGesture setNumberOfTapsRequired:2];
+    [self addGestureRecognizer:doubleTapGesture];
     
     CGPoint _p0 = CGPointMake(0, 0);
     CGPoint _p1 = CGPointMake(1, 1);
@@ -81,6 +86,8 @@
     
     strokeWidth =0.10f;
     
+    
+    zoomScale = 1.0f;
 }
 
 
@@ -241,6 +248,7 @@
 - (void)pan2:(UIPanGestureRecognizer *)pan {
     
     CGPoint localPoint = [pan locationInView:self.superview];
+    UITouch *t0 = 
     if (pan.state == UIGestureRecognizerStateBegan) {
         _localPoint = localPoint;
         _frame = self.frame;
@@ -301,11 +309,35 @@
 
 /* 识别放大缩小 */
 - (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer {
-//    CGPoint location = [gestureRecognizer locationInView:self];
-    gestureRecognizer.view.transform = CGAffineTransformScale(gestureRecognizer.view.transform, gestureRecognizer.scale, gestureRecognizer.scale);
-    gestureRecognizer.scale = 1;
+    CGPoint location = [gestureRecognizer locationInView:self];
+//    [self.layer setAnchorPoint:location];
+    NSLog(@"scale:%f",gestureRecognizer.scale);
+//    gestureRecognizer.view.transform = CGAffineTransformScale(gestureRecognizer.view.transform, gestureRecognizer.scale, gestureRecognizer.scale);
+//    CGRect zoomRect = [self zoomRectForScale:gestureRecognizer.scale withCenter:[gestureRecognizer locationInView:gestureRecognizer.view] target:gestureRecognizer.view];
+//    [gestureRecognizer.view setFrame:zoomRect];
+//    gestureRecognizer.scale = 1;
 }
 
+- (void)handleDoubleTap:(UIGestureRecognizer *)gesture
+{
+//    CGPoint location = [gesture locationInView:self];
+//    float newScale = zoomScale * 1.5;
+//    CGRect zoomRect = [self zoomRectForScale:1.5 withCenter:[gesture locationInView:self] target:self];
+//    [UIView beginAnimations:@"scale" context:NULL];
+//    [self setFrame:zoomRect];
+//    [UIView commitAnimations];
+//    [self zoomToRect:zoomRect animated:YES];
+}
+
+- (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center
+{
+    CGRect zoomRect;
+    zoomRect.size.height = self.bounds.size.height / scale;
+    zoomRect.size.width  = self.bounds.size.width  / scale;
+    zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
+    zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
+    return zoomRect;
+}
 
 -(CGPoint)triangle:(CGPoint)p0 p1:(CGPoint)p1 w:(CGFloat)w
 {
