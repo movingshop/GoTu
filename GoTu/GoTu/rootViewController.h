@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class feedViewController;
+
 @interface rootViewController : UIViewController
+{
+    IBOutlet UIView *boxBtn;
+    IBOutlet UIView *boxTopbar;
+    IBOutlet UIView *boxRootView;
+    
+    feedViewController *feedVC;
+}
 
 @end

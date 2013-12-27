@@ -371,7 +371,7 @@
             // brushMode = 1 橡皮模式
             [path0 fillWithBlendMode:kCGBlendModeClear alpha:0];
             break;
-            
+
         default:
             [brushColor setFill];
             break;

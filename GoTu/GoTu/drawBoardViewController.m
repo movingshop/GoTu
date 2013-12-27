@@ -13,11 +13,14 @@
 #import "colorViewController.h"
 #import "UIImage+Tint.h"
 
+#import "makeSaveViewController.h"
+
 @interface drawBoardViewController ()
 
 @end
 
 @implementation drawBoardViewController
+@synthesize editImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,12 +35,24 @@
 {
     [super viewDidLoad];
     
+    [self setNeedsStatusBarAppearanceUpdate]; //去掉statusBar
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    // 判断是否为根 view
+    isRootViewController = NO;
+    if(self.navigationController.viewControllers.count == 1)
+    {
+        isRootViewController = YES;
+        CGAffineTransform at =CGAffineTransformMakeRotation(-M_PI/2); //逆时针旋转90
+        [backToBtn setTransform:at];
+    }
+    
     colorViewController *colorSilder = [[colorViewController alloc] init];
     colorSilder.myDelegate = self;
     [colorViewBox setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:colorSilder];
     [colorViewBox addSubview:colorSilder.view];
-    [drawBoardV.backGroundImageView setImage:[UIImage imageNamed:@"001"]];
+    [drawBoardV.backGroundImageView setImage:editImage];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -65,7 +80,22 @@
 
 -(IBAction)backTo:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (isRootViewController) [self dismissViewControllerAnimated:YES completion:nil];
+    else [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(IBAction)toSave:(id)sender
+{
+    makeSaveViewController *makesaveVC = [[makeSaveViewController alloc] init];
+    makesaveVC.saveImg = editImage;
+    [self.navigationController pushViewController:makesaveVC animated:YES];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+
 
 @end

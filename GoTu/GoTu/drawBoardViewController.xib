@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="drawBoardViewController">
             <connections>
+                <outlet property="backToBtn" destination="j6H-ep-Ela" id="azK-2a-iI1"/>
                 <outlet property="colorViewBox" destination="3z2-xm-w0z" id="HVE-41-kOp"/>
                 <outlet property="drawBoardV" destination="Ygc-7N-ZHI" id="UP4-b5-xJr"/>
                 <outlet property="view" destination="KEl-e0-bhh" id="M4u-44-KKD"/>
@@ -58,6 +59,9 @@
                     <state key="highlighted">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="toSave:" destination="-1" eventType="touchUpInside" id="fdk-5F-c95"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tools-bar.png" id="aDZ-ga-X1z">
                     <rect key="frame" x="0.0" y="468" width="320" height="80"/>

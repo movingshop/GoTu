@@ -15,6 +15,11 @@
 {
     IBOutlet drawingBoardView *drawBoardV;
     IBOutlet UIView *colorViewBox;
+    IBOutlet UIButton *backToBtn;
+    
+    
+    BOOL isRootViewController;
 }
+@property (strong,nonatomic) UIImage *editImage;
 
 @end
