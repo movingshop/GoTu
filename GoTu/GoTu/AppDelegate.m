@@ -8,11 +8,16 @@
 
 #import "AppDelegate.h"
 #import "rootViewController.h"
-
+//extern NSString *gHostName;
 @implementation AppDelegate
+@synthesize feedDataTool;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    feedDataTool = [[feedData alloc] initWithHostName:@"www.taguxdesign.com/gotu/"];
+    [feedDataTool useCache];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     rootViewController *root = [[rootViewController alloc] init];

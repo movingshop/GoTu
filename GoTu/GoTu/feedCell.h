@@ -21,9 +21,12 @@
     IBOutlet UITableView *tableV;
     NSMutableArray *tableData;
     
-    IBOutlet UIImageView *imageV;
+
     IBOutlet UIButton *editBtn;
 }
+
+@property (strong,nonatomic) IBOutlet UIImageView *picV;
+@property (strong,nonatomic) IBOutlet UIButton *avatarB;
 
 @property (assign, nonatomic) id<cellDelegate> delegate;
 

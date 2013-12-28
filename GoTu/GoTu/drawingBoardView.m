@@ -73,7 +73,7 @@
     [self addGestureRecognizer:pan2];
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-//    [self addGestureRecognizer:pinch];
+    [self addGestureRecognizer:pinch];
     
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                        action:@selector(handleDoubleTap:)];
@@ -87,19 +87,14 @@
     
     strokeWidth =0.10f;
     
-<<<<<<< HEAD
-    
     zoomScale = 1.0f;
-=======
+    
     //画笔类型
     // 1 为 钢笔
     // 2 为 铅笔
     // 3 为 彩笔
     brushMode = 1; //默认是 1；
     
-    
-    
->>>>>>> 6dccb40aa7f0e236f9d1d12979cab7442eaac6d8
 }
 
 
@@ -309,7 +304,7 @@
 - (void)pan2:(UIPanGestureRecognizer *)pan {
     
     CGPoint localPoint = [pan locationInView:self.superview];
-    UITouch *t0 = 
+//    UITouch *t0 = 
     if (pan.state == UIGestureRecognizerStateBegan) {
         _localPoint = localPoint;
         _frame = self.frame;
@@ -391,7 +386,7 @@
 
 /* 识别放大缩小 */
 - (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer {
-    CGPoint location = [gestureRecognizer locationInView:self];
+//    CGPoint location = [gestureRecognizer locationInView:self];
 //    [self.layer setAnchorPoint:location];
     NSLog(@"scale:%f",gestureRecognizer.scale);
 //    gestureRecognizer.view.transform = CGAffineTransformScale(gestureRecognizer.view.transform, gestureRecognizer.scale, gestureRecognizer.scale);

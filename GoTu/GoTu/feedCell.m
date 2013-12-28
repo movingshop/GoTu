@@ -10,10 +10,18 @@
 #import "feedBottomCell.h"
 
 @implementation feedCell
-@synthesize delegate;
+@synthesize delegate,picV,avatarB;
 
 -(void)didMoveToSuperview
 {
+    //圆形头像
+    
+    [avatarB.layer setCornerRadius:avatarB.frame.size.height/2];
+    [avatarB.layer setBorderWidth:3.0f];
+    [avatarB.layer setBorderColor:[UIColor whiteColor].CGColor];
+    
+//    [avatarB addSubview:avatarV];
+    
     
     //tableV 初始化 start
     tableV.separatorStyle = UITableViewCellSeparatorStyleNone; //去掉分割线
@@ -25,8 +33,6 @@
     [tableV setDataSource:self];
     [tableV reloadData];
     //tableV 初始化 over
-    
-    [imageV setImage:[UIImage imageNamed:@"color"]];
     
     [editBtn addTarget:self action:@selector(toEdit) forControlEvents:UIControlEventTouchUpInside]; // 进入编辑模式
     
@@ -42,7 +48,7 @@
 
 -(void)toEdit
 {
-    [delegate toDrawBoard:imageV.image];
+    [delegate toDrawBoard:picV.image];
 }
 
 

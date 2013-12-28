@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 vince. All rights reserved.
 //
 
-#import "MKNetworkEngine.h"
+#import <MKNetworkKit.h>
 
-extern NSString *gHostName;
+//extern NSString *gHostName;
 
 @interface dataBasicTool : MKNetworkEngine
 {
@@ -18,5 +18,6 @@ extern NSString *gHostName;
 +(dataBasicTool *)sharedTool;
 
 -(void)addTarget:(id)target action:(SEL)action;
+
 
 @end

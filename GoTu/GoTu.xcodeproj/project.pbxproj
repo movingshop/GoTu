@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6024BCFC186EBA8E005A8607 /* myTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6024BCFB186EBA8E005A8607 /* myTest.m */; };
+		6024BD01186F2E4A005A8607 /* feedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6024BD00186F2E4A005A8607 /* feedData.m */; };
 		60F3D1B31844EEFB00BBF467 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60F3D1B21844EEFB00BBF467 /* temp.jpg */; };
+		60F6D2BE186F5352000A1235 /* centerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F6D2B9186F5352000A1235 /* centerIcon@2x.png */; };
+		60F6D2BF186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F6D2BB186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m */; };
+		60F6D2C0186F5352000A1235 /* UzysRadialProgressActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F6D2BD186F5352000A1235 /* UzysRadialProgressActivityIndicator.m */; };
 		70955B3F186D302800992BA0 /* dataBasicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 70955B3E186D302800992BA0 /* dataBasicTool.m */; };
 		70955B42186D739800992BA0 /* SO.m in Sources */ = {isa = PBXBuildFile; fileRef = 70955B41186D739800992BA0 /* SO.m */; };
 		709DC0ED1844AD9A0073F1B1 /* drawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC0EA1844AD9A0073F1B1 /* drawingBoardView.m */; };
@@ -263,7 +268,16 @@
 
 /* Begin PBXFileReference section */
 		1381D8A738FB44D1BDE718F5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6024BCFA186EBA8E005A8607 /* myTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = myTest.h; path = dataUnit/myTest.h; sourceTree = "<group>"; };
+		6024BCFB186EBA8E005A8607 /* myTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = myTest.m; path = dataUnit/myTest.m; sourceTree = "<group>"; };
+		6024BCFF186F2E4A005A8607 /* feedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = feedData.h; sourceTree = "<group>"; };
+		6024BD00186F2E4A005A8607 /* feedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = feedData.m; sourceTree = "<group>"; };
 		60F3D1B21844EEFB00BBF467 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = "<group>"; };
+		60F6D2B9186F5352000A1235 /* centerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "centerIcon@2x.png"; sourceTree = "<group>"; };
+		60F6D2BA186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UzysCircularProgressPullToRefresh.h"; sourceTree = "<group>"; };
+		60F6D2BB186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UzysCircularProgressPullToRefresh.m"; sourceTree = "<group>"; };
+		60F6D2BC186F5352000A1235 /* UzysRadialProgressActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysRadialProgressActivityIndicator.h; sourceTree = "<group>"; };
+		60F6D2BD186F5352000A1235 /* UzysRadialProgressActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysRadialProgressActivityIndicator.m; sourceTree = "<group>"; };
 		70955B3D186D302800992BA0 /* dataBasicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dataBasicTool.h; path = dataUnit/dataBasicTool.h; sourceTree = "<group>"; };
 		70955B3E186D302800992BA0 /* dataBasicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dataBasicTool.m; path = dataUnit/dataBasicTool.m; sourceTree = "<group>"; };
 		70955B40186D739800992BA0 /* SO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SO.h; sourceTree = "<group>"; };
@@ -552,11 +566,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60F6D2B8186F5338000A1235 /* uyz */ = {
+			isa = PBXGroup;
+			children = (
+				60F6D2B9186F5352000A1235 /* centerIcon@2x.png */,
+				60F6D2BA186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.h */,
+				60F6D2BB186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m */,
+				60F6D2BC186F5352000A1235 /* UzysRadialProgressActivityIndicator.h */,
+				60F6D2BD186F5352000A1235 /* UzysRadialProgressActivityIndicator.m */,
+			);
+			name = uyz;
+			sourceTree = "<group>";
+		};
 		70955B3C186D2EDA00992BA0 /* dataUnit */ = {
 			isa = PBXGroup;
 			children = (
 				70955B3D186D302800992BA0 /* dataBasicTool.h */,
 				70955B3E186D302800992BA0 /* dataBasicTool.m */,
+				6024BCFA186EBA8E005A8607 /* myTest.h */,
+				6024BCFB186EBA8E005A8607 /* myTest.m */,
+				6024BCFF186F2E4A005A8607 /* feedData.h */,
+				6024BD00186F2E4A005A8607 /* feedData.m */,
 			);
 			name = dataUnit;
 			sourceTree = "<group>";
@@ -991,6 +1021,7 @@
 		70E31538184477240045E4B8 /* GoTu */ = {
 			isa = PBXGroup;
 			children = (
+				60F6D2B8186F5338000A1235 /* uyz */,
 				70D02D861867DFF1006FB8CE /* jason */,
 				70F8ED8718584A5F0076C663 /* addOns */,
 				70B747301845E064007AA2D9 /* testData */,
@@ -1297,6 +1328,7 @@
 				70D02E761867DFF1006FB8CE /* profile-topbar.png in Resources */,
 				70D02E431867DFF1006FB8CE /* popular.png in Resources */,
 				70D02E2D1867DFF1006FB8CE /* pencl-.png in Resources */,
+				60F6D2BE186F5352000A1235 /* centerIcon@2x.png in Resources */,
 				70D02E711867DFF1006FB8CE /* Jason-Zhou.png in Resources */,
 				70B746FD1845CA1D007AA2D9 /* pencl@2x.png in Resources */,
 				70D02E3B1867DFF1006FB8CE /* exmore.png in Resources */,
@@ -1406,10 +1438,14 @@
 				70E28264186AB2470082BC26 /* makeViewController.m in Sources */,
 				70E28258186A8F3A0082BC26 /* feedCell.m in Sources */,
 				70ACF0141845F4A600BBF869 /* colorViewController.m in Sources */,
+				6024BD01186F2E4A005A8607 /* feedData.m in Sources */,
 				709DC0ED1844AD9A0073F1B1 /* drawingBoardView.m in Sources */,
 				70B747281845CB95007AA2D9 /* drawBoardViewController.m in Sources */,
 				709DC0EE1844AD9A0073F1B1 /* CGPointExtension.m in Sources */,
 				70F8ED9618584F530076C663 /* UIImage+Tint.m in Sources */,
+				60F6D2BF186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */,
+				60F6D2C0186F5352000A1235 /* UzysRadialProgressActivityIndicator.m in Sources */,
+				6024BCFC186EBA8E005A8607 /* myTest.m in Sources */,
 				70E31543184477240045E4B8 /* AppDelegate.m in Sources */,
 				70CA425918449E1700CDEAEA /* rootViewController.m in Sources */,
 				70E3153F184477240045E4B8 /* main.m in Sources */,

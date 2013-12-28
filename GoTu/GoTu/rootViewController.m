@@ -10,7 +10,6 @@
 #import "drawBoardViewController.h"
 #import "feedViewController.h"
 #import "makeViewController.h"
-#import "dataBasicTool.h"
 
 @interface rootViewController ()
 
@@ -23,7 +22,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [dataBasicTool sharedTool];
     }
     return self;
 }
@@ -32,6 +30,13 @@
 {
     [super viewDidLoad];
     [self customInit];
+    
+    
+    
+//    if (object == _sharedNetworkQueue && [keyPath isEqualToString:@"operationCount"]) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible =
+//        ([_sharedNetworkQueue.operations count] = 0);
+//    }
 }
 
 -(void)showBoxBtn

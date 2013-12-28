@@ -7,6 +7,7 @@
 //
 
 #import "feedBottomCell.h"
+#import "UzysRadialProgressActivityIndicator.h"
 
 @implementation feedBottomCell
 

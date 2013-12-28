@@ -31,11 +31,10 @@ static dataBasicTool *sharedTool;
 //feedData GET
 -(void)addTarget:(id)target action:(SEL)action
 {
-    NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
-    [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
-    
-    self.engine = [[dataBasicTool alloc] initWithHostName:@"download.finance.yahoo.com"
-                                     customHeaderFields:headerFields];
+//    NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];
+//    [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];
+//    
+//    engine = [engine];
     
     
     #pragma clang diagnostic push

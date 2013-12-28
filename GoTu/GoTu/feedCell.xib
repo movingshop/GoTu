@@ -13,17 +13,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="394"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JwW-O0-Jpy">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JwW-O0-Jpy">
                         <rect key="frame" x="0.0" y="36" width="320" height="240"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2uZ-H8-B31">
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2uZ-H8-B31">
                         <rect key="frame" x="10" y="0.0" width="72" height="72"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <state key="normal" image="user-small.png">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
+                        <size key="titleShadowOffset" width="-5" height="5"/>
+                        <state key="normal" image="user-small.png"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fe shadow.png" id="Ybs-g0-Vfd">
                         <rect key="frame" x="0.0" y="217" width="320" height="60"/>
@@ -65,8 +64,9 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="avatarB" destination="2uZ-H8-B31" id="bv7-8U-UKV"/>
                 <outlet property="editBtn" destination="GdH-SV-9Qs" id="aiG-aV-jbe"/>
-                <outlet property="imageV" destination="JwW-O0-Jpy" id="fPW-rs-gbd"/>
+                <outlet property="picV" destination="JwW-O0-Jpy" id="l2C-ln-8Sb"/>
                 <outlet property="tableV" destination="AQo-lY-WyL" id="51M-x6-Ma6"/>
             </connections>
         </tableViewCell>

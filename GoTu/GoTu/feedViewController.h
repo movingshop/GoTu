@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "feedCell.h"
+@class UzysRadialProgressActivityIndicator;
 
 @interface feedViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,cellDelegate>
 {
-    IBOutlet UITableView *tableV;
+    
     NSMutableArray *tableData;
+    
+    MKNetworkOperation *feedDataTool;
 }
+
+@property (strong,nonatomic) IBOutlet UITableView *tableV;
+@property (nonatomic,strong) UzysRadialProgressActivityIndicator *radialIndicator;
 
 @end
