@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6024BCFC186EBA8E005A8607 /* myTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6024BCFB186EBA8E005A8607 /* myTest.m */; };
 		6024BD01186F2E4A005A8607 /* feedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6024BD00186F2E4A005A8607 /* feedData.m */; };
+		6066EF3B18706F1E00FAB406 /* pushRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6066EF3918706F1E00FAB406 /* pushRefreshViewController.m */; };
+		6066EF3C18706F1E00FAB406 /* pushRefreshViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6066EF3A18706F1E00FAB406 /* pushRefreshViewController.xib */; };
 		60F3D1B31844EEFB00BBF467 /* temp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60F3D1B21844EEFB00BBF467 /* temp.jpg */; };
 		60F6D2BE186F5352000A1235 /* centerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60F6D2B9186F5352000A1235 /* centerIcon@2x.png */; };
 		60F6D2BF186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F6D2BB186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m */; };
@@ -272,6 +274,9 @@
 		6024BCFB186EBA8E005A8607 /* myTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = myTest.m; path = dataUnit/myTest.m; sourceTree = "<group>"; };
 		6024BCFF186F2E4A005A8607 /* feedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = feedData.h; sourceTree = "<group>"; };
 		6024BD00186F2E4A005A8607 /* feedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = feedData.m; sourceTree = "<group>"; };
+		6066EF3818706F1E00FAB406 /* pushRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pushRefreshViewController.h; sourceTree = "<group>"; };
+		6066EF3918706F1E00FAB406 /* pushRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pushRefreshViewController.m; sourceTree = "<group>"; };
+		6066EF3A18706F1E00FAB406 /* pushRefreshViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = pushRefreshViewController.xib; sourceTree = "<group>"; };
 		60F3D1B21844EEFB00BBF467 /* temp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp.jpg; sourceTree = "<group>"; };
 		60F6D2B9186F5352000A1235 /* centerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "centerIcon@2x.png"; sourceTree = "<group>"; };
 		60F6D2BA186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UzysCircularProgressPullToRefresh.h"; sourceTree = "<group>"; };
@@ -566,6 +571,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6066EF2F187066CE00FAB406 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				6066EF3818706F1E00FAB406 /* pushRefreshViewController.h */,
+				6066EF3918706F1E00FAB406 /* pushRefreshViewController.m */,
+				6066EF3A18706F1E00FAB406 /* pushRefreshViewController.xib */,
+			);
+			name = tools;
+			sourceTree = "<group>";
+		};
 		60F6D2B8186F5338000A1235 /* uyz */ = {
 			isa = PBXGroup;
 			children = (
@@ -1021,6 +1036,7 @@
 		70E31538184477240045E4B8 /* GoTu */ = {
 			isa = PBXGroup;
 			children = (
+				6066EF2F187066CE00FAB406 /* tools */,
 				60F6D2B8186F5338000A1235 /* uyz */,
 				70D02D861867DFF1006FB8CE /* jason */,
 				70F8ED8718584A5F0076C663 /* addOns */,
@@ -1200,6 +1216,7 @@
 				70B746F41845CA1D007AA2D9 /* marker.png in Resources */,
 				70D02E741867DFF1006FB8CE /* profile-tab.png in Resources */,
 				70D02E5A1867DFF1006FB8CE /* profilebar.png in Resources */,
+				6066EF3C18706F1E00FAB406 /* pushRefreshViewController.xib in Resources */,
 				70B746FF1845CA1D007AA2D9 /* Shape-46@2x.png in Resources */,
 				70E28251186A8E640082BC26 /* feedViewController.xib in Resources */,
 				70D02E361867DFF1006FB8CE /* edit.xib in Resources */,
@@ -1440,6 +1457,7 @@
 				70ACF0141845F4A600BBF869 /* colorViewController.m in Sources */,
 				6024BD01186F2E4A005A8607 /* feedData.m in Sources */,
 				709DC0ED1844AD9A0073F1B1 /* drawingBoardView.m in Sources */,
+				6066EF3B18706F1E00FAB406 /* pushRefreshViewController.m in Sources */,
 				70B747281845CB95007AA2D9 /* drawBoardViewController.m in Sources */,
 				709DC0EE1844AD9A0073F1B1 /* CGPointExtension.m in Sources */,
 				70F8ED9618584F530076C663 /* UIImage+Tint.m in Sources */,
