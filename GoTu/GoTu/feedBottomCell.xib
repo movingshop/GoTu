@@ -6,14 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedBottomCell" rowHeight="127" id="E9q-Pk-rUs">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedBottomCell" rowHeight="127" id="E9q-Pk-rUs" customClass="feedBottomCell">
             <rect key="frame" x="0.0" y="0.0" width="116" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E9q-Pk-rUs" id="RWb-sD-9La">
                 <rect key="frame" x="0.0" y="0.0" width="116" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqo-yM-u7y">
+                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqo-yM-u7y">
                         <rect key="frame" x="0.0" y="10" width="110" height="80"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -21,21 +21,29 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-5L-ATB">
-                        <rect key="frame" x="16" y="65" width="45" height="45"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-big.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZMw-x8-uE5">
+                        <rect key="frame" x="6" y="64" width="48" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-5L-ATB" customClass="avatarButton">
+                        <rect key="frame" x="8" y="66" width="44" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <state key="normal" image="user-big.png">
+                        <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="0.85882352939999995" green="0.84705882349999995" blue="0.85098039219999999" alpha="1" colorSpace="deviceRGB"/>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarB" destination="ceU-5L-ATB" id="3yd-8Y-QGl"/>
+                <outlet property="picB" destination="Sqo-yM-u7y" id="Fqa-ih-9lY"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="doodle-photo.png" width="114" height="81"/>
-        <image name="user-big.png" width="45" height="45"/>
+        <image name="user-big.png" width="82" height="82"/>
     </resources>
 </document>

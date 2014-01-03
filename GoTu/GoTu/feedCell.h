@@ -7,28 +7,36 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "feedBottomCell.h"
 
-@protocol cellDelegate <NSObject>
+@protocol feedCellDelegate <NSObject>
 
 - (void) toDrawBoard:(UIImage*) image;
 
 @end
 
-@interface feedCell : UITableViewCell<UITableViewDelegate,UITableViewDataSource>
+@interface feedCell : UITableViewCell<UITableViewDelegate,UITableViewDataSource,feedBottomCellDelegate>
 {
 //    id<cellDelegate> delegate;
     
     IBOutlet UITableView *tableV;
     NSMutableArray *tableData;
     
+    IBOutlet UIImageView *picV;
+    IBOutlet UIButton *avatarB;
+    IBOutlet UILabel *nickNameL;
+    IBOutlet UILabel *likeNumL;
+    IBOutlet UILabel *commentNumL;
+    
 
     IBOutlet UIButton *editBtn;
+    
+//    BOOL nedMove
 }
 
-@property (strong,nonatomic) IBOutlet UIImageView *picV;
-@property (strong,nonatomic) IBOutlet UIButton *avatarB;
+@property (strong,nonatomic) NSDictionary *data;
 
-@property (assign, nonatomic) id<cellDelegate> delegate;
+@property (assign, nonatomic) id<feedCellDelegate> delegate;
 
 @end
 

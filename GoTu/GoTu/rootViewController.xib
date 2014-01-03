@@ -6,9 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="rootViewController">
             <connections>
-                <outlet property="boxBtn" destination="Wce-OV-hlU" id="iPy-ON-eh4"/>
-                <outlet property="boxRootView" destination="tJI-Ob-BX2" id="KBT-mU-Zda"/>
-                <outlet property="boxTopbar" destination="crR-Du-QLR" id="gpF-oN-XaA"/>
+                <outlet property="boxRootView" destination="93M-tv-MrU" id="QwX-7k-edb"/>
+                <outlet property="boxTopbar" destination="CCY-bK-XeA" id="c3A-Ig-Xyi"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -17,79 +16,32 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="tJI-Ob-BX2">
-                    <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="93M-tv-MrU">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" id="crR-Du-QLR">
+                    <color key="backgroundColor" red="0.16687983960176989" green="0.16687983960176989" blue="0.16687983960176989" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
+                <view contentMode="scaleToFill" id="CCY-bK-XeA">
                     <rect key="frame" x="0.0" y="20" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoTu.png" id="b8J-fJ-0ee">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" red="0.12549020350000001" green="0.75294125079999996" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
-                        </imageView>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6P7-UN-LGn">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6qd-sV-jA5">
                             <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="feed-homebtn.png">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" image="10701A81-2C6B-4345-BD6B-9EBE13BCF947">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fkb-9F-wFq">
-                            <rect key="frame" x="38" y="12" width="8" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="down.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Lg-ar-Ls3">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wwm-Ld-3xD">
                             <rect key="frame" x="275" y="0.0" width="45" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="excamera.png">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" image="37E6079D-C345-4C23-AD67-8F7A41F77611">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.18464676937326988" green="0.67208239862072161" blue="0.82950774336283184" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="Wce-OV-hlU">
-                    <rect key="frame" x="0.0" y="65" width="320" height="135"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kGe-Jl-Mrq">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="explorebar.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bnl-jK-KpM">
-                            <rect key="frame" x="0.0" y="45" width="320" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="profilebar.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pge-WH-lkn">
-                            <rect key="frame" x="0.0" y="90" width="320" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="newsbar.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fe havenews.png" id="4eJ-Uo-5UM">
-                            <rect key="frame" x="130" y="18" width="10" height="10"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" red="0.26666668059999998" green="0.26666668059999998" blue="0.26666668059999998" alpha="1" colorSpace="deviceRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -99,13 +51,126 @@
         </view>
     </objects>
     <resources>
-        <image name="GoTu.png" width="320" height="45"/>
-        <image name="down.png" width="8" height="6"/>
-        <image name="excamera.png" width="30" height="25"/>
-        <image name="explorebar.png" width="320" height="45"/>
-        <image name="fe havenews.png" width="7" height="7"/>
-        <image name="feed-homebtn.png" width="24" height="23"/>
-        <image name="newsbar.png" width="320" height="45"/>
-        <image name="profilebar.png" width="320" height="45"/>
+        <image name="10701A81-2C6B-4345-BD6B-9EBE13BCF947" width="24" height="23">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
+RkZSZXByZXNlbnRhdGlvboAGgAdPEQlaTU0AKgAACKj///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////IP///4z///9m////Av///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8e////4P//////////
+////l////wL///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///yD////f/////////////////////////6L///8D////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////I////+H/////
+//////////////////////////////+u////Bv///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8n////5P//////////////////////////////////////////
+////uf///wr///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///yn////m
+/////////////////////////////////////////////////////////8P///8P////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////LP///+j/////////////////////////////////////
+///////////////////////////////N////FP///wD///8A////AP///wD///8A////AP///wD///8w
+////6v//////////////////////////////////////////////////////////////////////////
+////1f///xn///8A////AP///wD///8A////AP///zL////t////////////////////////////////
+/////////////////////////////////////////////////////////9z///8g////AP///wD///8A
+////Nv///+//////////////////////////////////////////////////////////////////////
+///////////////////////////////j////KP///wD///88////8P//////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////6f///zL////S////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////+T///9i////y////8z////a
+////////////////////////////////////////////////////////////////////////////////
+/////////+T////d////4////6T///8A////AP///wD///9L////////////////////////////////
+/////////////////////////////////////////////////////////zz///8A////AP///wD///8A
+////AP///wD///9L///////////////////////////////+////lv///4j///+I////of//////////
+/////////////////////////zz///8A////AP///wD///8A////AP///wD///9L////////////////
+///////////////k////AP///wD///8A////AP///////////////////////////////////zz///8A
+////AP///wD///8A////AP///wD///9L///////////////////////////////h////AP///wD///8A
+////AP///////////////////////////////////zz///8A////AP///wD///8A////AP///wD///9L
+///////////////////////////////h////AP///wD///8A////AP//////////////////////////
+/////////zz///8A////AP///wD///8A////AP///wD///9L///////////////////////////////h
+////AP///wD///8A////AP///////////////////////////////////zz///8A////AP///wD///8A
+////AP///wD///9L///////////////////////////////h////AP///wD///8A////AP//////////
+/////////////////////////zz///8A////AP///wD///8A////AP///wD///9L////////////////
+///////////////p////Af///wD///8A////BP///////////////////////////////////zz///8A
+////AP///wD///8A////AP///wD///8r/////P//////////////////////////////uf///6r///+q
+////vv//////////////////////////////+f///xv///8A////AP///wD///8A////AP///wD///8A
+////SP///5X///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+U
+////PP///wD///8A////AP///wAADQEAAAMAAAABABgAAAEBAAMAAAABABcAAAECAAMAAAAEAAAJSgED
+AAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEW
+AAMAAAABABcAAAEXAAQAAAABAAAIoAEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAAJUgAA
+AAAACAAIAAgACAABAAEAAQAB0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VS
+ZXCjJicoXxAQTlNCaXRtYXBJbWFnZVJlcFpOU0ltYWdlUmVwWE5TT2JqZWN00iIjKitXTlNBcnJheaIq
+KNIiIy0uXk5TTXV0YWJsZUFycmF5oy0qKNMwMQkyMzRXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABAD
+gAvSIiM2N1dOU0NvbG9yojYo0iIjOTpXTlNJbWFnZaI5KF8QD05TS2V5ZWRBcmNoaXZlctE9PlRyb290
+gAEACAARABoAIwAtADIANwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCYAJ0AoACiAKQApgCo
+AK0AxADGAMgKJgorCjYKPwpSClYKaQp0Cn0KggqKCo0KkgqhCqUKrAq0CsEKxgrICsoKzwrXCtoK3wrn
+CuoK/Ar/CwQAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAAALBg
+</mutableData>
+        </image>
+        <image name="37E6079D-C345-4C23-AD67-8F7A41F77611" width="30" height="25">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
+RkZSZXByZXNlbnRhdGlvboAGgAdPEQxyTU0AKgAAC8D///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////Kf///67///+7////u////7v///+7////u////7v///+k////E////wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8B////wv//////////////////////////////////////////////m////wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///9a/////////////////////////////////////////////////////f///zT///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////Qf///7T////M////zP///8z////M
+////zP///8z////w/////////////////////////////////////////////////////////+j////M
+////zP///8z////M////zP///8z///+z////QP///wD///8t////+f//////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////+f///yv///93////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////3X///+H////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+4ODg/9vb2//b29v/29vb/9vb2//x8fH//////////4f///+H////////////////////////////////
+/////////////////////////////////////+v6+//q+vv/////////////////////////////////
+w8PD/8PDw//Dw8P/w8PD/8PDw//f39///////////4f///+H////////////////////////////////
+//////////////////////T8/f9+3+X/IMfS/wLAzP8CwMz/H8fS/37f5f/0/P3/////////////////
+1NTU/8/Pz//Pz8//z8/P/8/Pz//q6ur//////////4f///+H////////////////////////////////
+////////////////6vr7/y/L1f8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8uy9X/6Pn6////////////
+/////////////////////////////////////////4f///+H////////////////////////////////
+////////////////QtDZ/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/QdDZ////////////
+/////////////////////////////////////////4f///+H////////////////////////////////
+//////////+97vL/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/7zu8f//////
+/////////////////////////////////////////4f///+H////////////////////////////////
+//////////903OP/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/3Lc4///////
+/////////////////////////////////////////4f///+H////////////////////////////////
+//////////9c1t7/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/1rW3v//////
+/////////////////////////////////////////4f///+H////////////////////////////////
+//////////9v2+L/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/2za4f//////
+/////////////////////////////////////////4f///+H////////////////////////////////
+//////////+v6+//AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/7Dr7///////
+/////////////////////////////////////////4f///+H////////////////////////////////
+///////////9////MczV/wLAzP8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz/L8vV//z+/v//////
+/////////////////////////////////////////4f///+H////////////////////////////////
+////////////////2/b4/x3H0f8CwMz/AsDM/wLAzP8CwMz/AsDM/wLAzP8cxtH/2/b4////////////
+/////////////////////////////////////////4f///+H////////////////////////////////
+/////////////////////+b5+v9f19//CMHN/wLAzP8CwMz/B8HN/13X3v/l+fr/////////////////
+/////////////////////////////////////////4f///+H////////////////////////////////
+////////////////////////////////8/z9/9Dz9v/Q8/b/8vz8////////////////////////////
+/////////////////////////////////////////4f///+H////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////4f///+A////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////3////9I////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////0X///8A////f/////X/////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////1////fv///wD///8A////AP///wP///8R////Ef///xH///8R
+////Ef///xH///8R////Ef///xH///8R////Ef///xH///8R////Ef///xH///8R////Ef///xH///8R
+////Ef///xH///8R////Ef///xH///8C////AP///wAADQEAAAMAAAABAB4AAAEBAAMAAAABABkAAAEC
+AAMAAAAEAAAMYgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEV
+AAMAAAABAAQAAAEWAAMAAAABABkAAAEXAAQAAAABAAALuAEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFT
+AAMAAAAEAAAMagAAAAAACAAIAAgACAABAAEAAQAB0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5T
+Qml0bWFwSW1hZ2VSZXCjJicoXxAQTlNCaXRtYXBJbWFnZVJlcFpOU0ltYWdlUmVwWE5TT2JqZWN00iIj
+KitXTlNBcnJheaIqKNIiIy0uXk5TTXV0YWJsZUFycmF5oy0qKNMwMQkyMzRXTlNXaGl0ZVxOU0NvbG9y
+U3BhY2VEMCAwABADgAvSIiM2N1dOU0NvbG9yojYo0iIjOTpXTlNJbWFnZaI5KF8QD05TS2V5ZWRBcmNo
+aXZlctE9PlRyb290gAEACAARABoAIwAtADIANwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCY
+AJ0AoACiAKQApgCoAK0AxADGAMgNPg1DDU4NVw1qDW4NgQ2MDZUNmg2iDaUNqg25Db0NxA3MDdkN3g3g
+DeIN5w3vDfIN9w3/DgIOFA4XDhwAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAAAOHg
+</mutableData>
+        </image>
     </resources>
 </document>

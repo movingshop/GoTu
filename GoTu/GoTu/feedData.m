@@ -8,7 +8,7 @@
 
 #import "feedData.h"
 
-#define feedUrl(__page__) [NSString stringWithFormat:@"index.php?p=%i", __page__]
+#define feedUrl(__page__) [NSString stringWithFormat:@"feed.php?p=%i", __page__]
 
 @implementation feedData
 

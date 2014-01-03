@@ -10,7 +10,7 @@
 #import "feedBottomCell.h"
 
 @implementation feedCell
-@synthesize delegate,picV,avatarB;
+@synthesize delegate,data;
 
 -(void)didMoveToSuperview
 {
@@ -32,11 +32,12 @@
     [tableV setDelegate:self];
     [tableV setDataSource:self];
     [tableV reloadData];
+    [tableV setScrollsToTop:NO]; //点击UIStatusBar 主UITableView不回到顶部问题解决方法
     //tableV 初始化 over
     
     [editBtn addTarget:self action:@selector(toEdit) forControlEvents:UIControlEventTouchUpInside]; // 进入编辑模式
     
-    
+    [self addObserver:self forKeyPath:@"data" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -52,6 +53,33 @@
 }
 
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (data)
+    {
+        [avatarB setImageWithURL:[data objectForKey:@"avatar"] forState:UIControlStateNormal ];
+        [picV setImageWithURL:[[data objectForKey:@"image"] objectForKey:@"url"]];
+        [nickNameL setText:[data objectForKey:@"nickname"]];
+        [commentNumL setText:[NSString stringWithFormat:@"%@",[data objectForKey:@"comment"]]];
+        [likeNumL setText:[NSString stringWithFormat:@"%@",[data objectForKey:@"like"]]];
+    }
+    
+    tableData = [data objectForKey:@"childrens"];
+    [tableV reloadData];
+    
+    [self setNeedsDisplay];
+}
+
+-(void)showContentWithData:(NSDictionary *)newData
+{
+    NSLog(@"newData");
+    [avatarB setImageWithURL:[newData objectForKey:@"avatar"] forState:UIControlStateNormal ];
+    [picV setImageWithURL:[[newData objectForKey:@"image"] objectForKey:@"url"]];
+    [nickNameL setText:[newData objectForKey:@"nickname"]];
+    [commentNumL setText:[NSString stringWithFormat:@"%@",[newData objectForKey:@"comment"]]];
+    [likeNumL setText:[NSString stringWithFormat:@"%@",[newData objectForKey:@"like"]]];
+}
+
 
 
 
@@ -63,7 +91,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [tableData count];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,7 +110,8 @@
         CGAffineTransform at =CGAffineTransformMakeRotation(M_PI/2); //顺时钟旋转90
         [cell setTransform:at];
     }
-    
+    cell.data = [tableData objectAtIndex:indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 //table End

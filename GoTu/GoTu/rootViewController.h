@@ -9,14 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @class feedViewController;
+@class personViewController;
+@class messageViewController;
 
-@interface rootViewController : UIViewController
+@interface rootViewController : UIViewController<UIScrollViewDelegate>
 {
     IBOutlet UIView *boxBtn;
     IBOutlet UIView *boxTopbar;
-    IBOutlet UIView *boxRootView;
+    IBOutlet UIScrollView *boxRootView;
     
     feedViewController *feedVC;
+    messageViewController *messageVC;
+    personViewController *personVC;;
 }
 
 @end

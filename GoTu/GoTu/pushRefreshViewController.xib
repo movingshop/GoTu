@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="pushRefreshViewController">
             <connections>
+                <outlet property="footerImgV" destination="yDx-aD-u0k" id="FNk-dC-0dA"/>
+                <outlet property="footerV" destination="yDx-aD-u0k" id="8zp-jX-eNh"/>
+                <outlet property="headerImgV" destination="GHC-bc-2KC" id="i03-SS-m9D"/>
+                <outlet property="headerV" destination="ogb-5X-Nrv" id="2a8-0L-JZR"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -18,23 +22,31 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001.png" id="nfX-7o-AFG">
-                            <rect key="frame" x="120" y="10" width="80" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="100_bw.png" id="GHC-bc-2KC">
+                            <rect key="frame" x="135" y="0.0" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view contentMode="scaleToFill" id="ogb-5X-Nrv" customClass="pushRefreshView">
+                            <rect key="frame" x="135" y="0.0" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="2lF-mr-3zM">
-                    <rect key="frame" x="0.0" y="284" width="320" height="285"/>
+                    <rect key="frame" x="0.0" y="282" width="320" height="287"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001.png" id="PP6-8V-5fd">
-                            <rect key="frame" x="120" y="185" width="80" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="100_bw.png" id="yDx-aD-u0k">
+                            <rect key="frame" x="135" y="237" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <view contentMode="scaleToFill" id="cyC-YP-M8b" customClass="pushRefreshView">
+                            <rect key="frame" x="135" y="237" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.12549020350000001" green="0.75294125079999996" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -42,6 +54,6 @@
         </view>
     </objects>
     <resources>
-        <image name="001.png" width="320" height="373"/>
+        <image name="100_bw.png" width="50" height="50"/>
     </resources>
 </document>

@@ -70,7 +70,7 @@
 -(void)showAlum
 {
     
-    [imagePC setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+    [imagePC setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     //
     //[imagePC.navigationBar addSubview:showCameraBtn];
     NSLog(@"%@",imagePC.navigationBar);

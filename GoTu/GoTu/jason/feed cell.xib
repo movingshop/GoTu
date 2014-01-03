@@ -56,7 +56,7 @@
         <image name="doodle-photo.png" width="114" height="81"/>
         <image name="fe shadow.png" width="320" height="61"/>
         <image name="photo2.png" width="320" height="111"/>
-        <image name="user-big.png" width="45" height="45"/>
+        <image name="user-big.png" width="82" height="82"/>
         <image name="user-small.png" width="72" height="72"/>
     </resources>
 </document>

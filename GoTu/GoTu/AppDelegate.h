@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 vince. All rights reserved.
 //
 #define ApplicationDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define bgColor [UIColor colorWithRed:239 green:236 blue:236 alpha:255];
 
 //NSString *gHostName = @"http://taguxdesign.com/gotu/";
 
