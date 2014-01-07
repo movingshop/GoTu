@@ -74,6 +74,7 @@
     //
     //[imagePC.navigationBar addSubview:showCameraBtn];
     NSLog(@"%@",imagePC.navigationBar);
+//    [imagePC.navigationBar.topItem.rightBarButtonItem setTitle:@"自定义" ];
     
     CATransition *  tran=[CATransition animation];
     tran.type = kCATransitionPush;
@@ -109,9 +110,9 @@
     }
     drawBoardViewController *drawBoardVC = [[drawBoardViewController alloc] init];
     drawBoardVC.editImage = image;
-    [self.navigationController pushViewController:drawBoardVC animated:YES];
+//    [self.navigationController pushViewController:drawBoardVC animated:YES];
     
-    //获得编辑过的图片
+//    获得编辑过的图片
 //    UIImage* image = [info objectForKey: @"UIImagePickerControllerEditedImage"];
     
     
@@ -138,7 +139,9 @@
     //初始化相机
     imagePC = [[UIImagePickerController alloc] init];
     imagePC.delegate = self;
-    [imagePC.navigationBar addSubview:showCameraBtn];
+    imagePC.allowsEditing = YES;
+//    [imagePC.navigationBar addSubview:showCameraBtn];
+    
     [showCameraBtn addTarget:self action:@selector(showCamera) forControlEvents:UIControlEventTouchUpInside];
     
     [imagePC setSourceType:UIImagePickerControllerSourceTypeCamera]; //相机模式
@@ -146,6 +149,7 @@
     
     imagePC.showsCameraControls = NO;
     imagePC.cameraOverlayView = customCameraView;
+    
     [self addChildViewController:imagePC];
     [imagePC.view setFrame:customCameraView.frame];
     [self.view insertSubview:imagePC.view atIndex:0];
