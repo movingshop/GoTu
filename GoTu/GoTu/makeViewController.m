@@ -9,6 +9,7 @@
 #import "makeViewController.h"
 #import "drawBoardViewController.h"
 #import "drawingBoardView.h"
+#import "customImagePiclerController.h"
 
 @interface makeViewController ()
 
@@ -133,35 +134,77 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+//    [navigationController setNavigationBarHidden:YES];
+    
+//    for (UIView *tmpView in navigationController.navigationBar )
+//    {
+//        NSLog(@"%@",tmpView);
+//    }
+//    [self.navigationItem.leftBarButtonItem setTitle:@"123"];
+//    [self.navigationItem.rightBarButtonItem setTitle:@"234"];
+//    NSLog(@"%@",navigationController.navigationBar)
+    UIBarButtonItem *_bar = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(showCamera)];
+    navigationController.navigationBar.topItem.rightBarButtonItem = _bar;
+//    NSLog(@"%@",navigationController.navigationBar.topItem.rightBarButtonItem);
+}
+
+
+
 -(void)customInit
 {
     
     //初始化相机
-    imagePC = [[UIImagePickerController alloc] init];
+    imagePC = [[customImagePiclerController alloc] init];
     imagePC.delegate = self;
     imagePC.allowsEditing = YES;
-//    [imagePC.navigationBar addSubview:showCameraBtn];
     
-    [showCameraBtn addTarget:self action:@selector(showCamera) forControlEvents:UIControlEventTouchUpInside];
+//    [imagePC.navigationBar addSubview:showCameraBtn];
+//    [showCameraBtn setHidden:YES];
+    [showCameraBtn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
     
     [imagePC setSourceType:UIImagePickerControllerSourceTypeCamera]; //相机模式
     [imagePC setCameraFlashMode:-1]; //默认关闭闪光灯
     
     imagePC.showsCameraControls = NO;
+//    [customCameraView setHidden:YES];
     imagePC.cameraOverlayView = customCameraView;
     
     [self addChildViewController:imagePC];
     [imagePC.view setFrame:customCameraView.frame];
     [self.view insertSubview:imagePC.view atIndex:0];
     
+    
+    
     [closeBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside]; //关闭
-    [changeCameraBtn addTarget:self action:@selector(changeCamera) forControlEvents:UIControlEventTouchUpInside]; // swap 前后摄像头
+    
+    [changeCameraBtn addTarget:imagePC action:@selector(swapCamera) forControlEvents:UIControlEventTouchUpInside]; // swap 前后摄像头
     [takePhotoBtn addTarget:imagePC action:@selector(takePicture) forControlEvents:UIControlEventTouchUpInside]; // 拍照
     
     [cameraFlashModeBtn setSelected:YES];
     [cameraFlashModeBtn addTarget:self action:@selector(swapFlashMode) forControlEvents:UIControlEventTouchUpInside]; //闪光灯
     
     [showAlumbBtn addTarget:self action:@selector(showAlum) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)test
+{
+//    NSLog(@"viewNum:%i",[imagePC._PLCameraView.subviews count]);
+//    for (UIView *_view in imagePC._PLCameraView.subviews) {
+//        NSLog(@"_view:%@",_view);
+//        NSLog(@"_viewNum:%i",[_view.subviews count]);
+//        for (UIView *_view0 in _view.subviews) {
+//            NSLog(@"_view0:%@",_view0);
+//            NSLog(@"_view0Num:%i",[_view0.subviews count]);
+//            for (UIView *_view1 in _view0.subviews) {
+//                NSLog(@"_view1:%@",_view1);
+//            }
+//        }
+//    }
+//    [closeBtn sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [imagePC.CAMFlipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (BOOL)prefersStatusBarHidden

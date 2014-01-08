@@ -30,7 +30,7 @@
 		701203C418769B52001379D9 /* send@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012032B18769B52001379D9 /* send@2x.png */; };
 		701203C518769B52001379D9 /* text bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012032C18769B52001379D9 /* text bar@2x.png */; };
 		701203C618769B52001379D9 /* Text Box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012032D18769B52001379D9 /* Text Box@2x.png */; };
-		701203C718769B52001379D9 /* top-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012032E18769B52001379D9 /* top-bar@2x.png */; };
+		701203C718769B52001379D9 /* com top-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012032E18769B52001379D9 /* com top-bar@2x.png */; };
 		701203E018769B53001379D9 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012034A18769B52001379D9 /* back@2x.png */; };
 		701203E118769B53001379D9 /* Color-ring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012034B18769B52001379D9 /* Color-ring@2x.png */; };
 		701203E218769B53001379D9 /* color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012034C18769B52001379D9 /* color@2x.png */; };
@@ -104,7 +104,6 @@
 		7012042718769B53001379D9 /* Select bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039418769B52001379D9 /* Select bar@2x.png */; };
 		7012042818769B53001379D9 /* topbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039518769B52001379D9 /* topbar@2x.png */; };
 		7012042918769B53001379D9 /* add-friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039718769B52001379D9 /* add-friend@2x.png */; };
-		7012042A18769B53001379D9 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039818769B52001379D9 /* camera@2x.png */; };
 		7012042B18769B53001379D9 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039918769B52001379D9 /* down@2x.png */; };
 		7012042C18769B53001379D9 /* Jason-Zhou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039A18769B52001379D9 /* Jason-Zhou@2x.png */; };
 		7012042D18769B53001379D9 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012039B18769B52001379D9 /* mask@2x.png */; };
@@ -229,6 +228,9 @@
 		70B7472F1845E060007AA2D9 /* 001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B7472E1845E060007AA2D9 /* 001@2x.png */; };
 		70CA425918449E1700CDEAEA /* rootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CA425718449E1700CDEAEA /* rootViewController.m */; };
 		70CA425A18449E1700CDEAEA /* rootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CA425818449E1700CDEAEA /* rootViewController.xib */; };
+		70CC9672187D358100FF43B7 /* ccViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CC9670187D358100FF43B7 /* ccViewController.m */; };
+		70CC9673187D358100FF43B7 /* ccViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CC9671187D358100FF43B7 /* ccViewController.xib */; };
+		70CC9676187D5E8F00FF43B7 /* customImagePiclerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CC9675187D5E8F00FF43B7 /* customImagePiclerController.m */; };
 		70D02E101867DFF1006FB8CE /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D02D881867DFF1006FB8CE /* camera.png */; };
 		70D02E111867DFF1006FB8CE /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D02D891867DFF1006FB8CE /* close.png */; };
 		70D02E121867DFF1006FB8CE /* camera_photo_Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D02D8A1867DFF1006FB8CE /* camera_photo_Frame.png */; };
@@ -434,7 +436,7 @@
 		7012032B18769B52001379D9 /* send@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send@2x.png"; sourceTree = "<group>"; };
 		7012032C18769B52001379D9 /* text bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text bar@2x.png"; sourceTree = "<group>"; };
 		7012032D18769B52001379D9 /* Text Box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Text Box@2x.png"; sourceTree = "<group>"; };
-		7012032E18769B52001379D9 /* top-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-bar@2x.png"; sourceTree = "<group>"; };
+		7012032E18769B52001379D9 /* com top-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "com top-bar@2x.png"; sourceTree = "<group>"; };
 		7012034A18769B52001379D9 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		7012034B18769B52001379D9 /* Color-ring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Color-ring@2x.png"; sourceTree = "<group>"; };
 		7012034C18769B52001379D9 /* color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color@2x.png"; sourceTree = "<group>"; };
@@ -508,7 +510,6 @@
 		7012039418769B52001379D9 /* Select bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select bar@2x.png"; sourceTree = "<group>"; };
 		7012039518769B52001379D9 /* topbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar@2x.png"; sourceTree = "<group>"; };
 		7012039718769B52001379D9 /* add-friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-friend@2x.png"; sourceTree = "<group>"; };
-		7012039818769B52001379D9 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		7012039918769B52001379D9 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
 		7012039A18769B52001379D9 /* Jason-Zhou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jason-Zhou@2x.png"; sourceTree = "<group>"; };
 		7012039B18769B52001379D9 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask@2x.png"; sourceTree = "<group>"; };
@@ -644,6 +645,11 @@
 		70CA425618449E1700CDEAEA /* rootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rootViewController.h; sourceTree = "<group>"; };
 		70CA425718449E1700CDEAEA /* rootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootViewController.m; sourceTree = "<group>"; };
 		70CA425818449E1700CDEAEA /* rootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rootViewController.xib; sourceTree = "<group>"; };
+		70CC966F187D358100FF43B7 /* ccViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccViewController.h; sourceTree = "<group>"; };
+		70CC9670187D358100FF43B7 /* ccViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccViewController.m; sourceTree = "<group>"; };
+		70CC9671187D358100FF43B7 /* ccViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ccViewController.xib; sourceTree = "<group>"; };
+		70CC9674187D5E8F00FF43B7 /* customImagePiclerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customImagePiclerController.h; sourceTree = "<group>"; };
+		70CC9675187D5E8F00FF43B7 /* customImagePiclerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customImagePiclerController.m; sourceTree = "<group>"; };
 		70D02D881867DFF1006FB8CE /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		70D02D891867DFF1006FB8CE /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		70D02D8A1867DFF1006FB8CE /* camera_photo_Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_photo_Frame.png; sourceTree = "<group>"; };
@@ -914,7 +920,7 @@
 				7012032B18769B52001379D9 /* send@2x.png */,
 				7012032C18769B52001379D9 /* text bar@2x.png */,
 				7012032D18769B52001379D9 /* Text Box@2x.png */,
-				7012032E18769B52001379D9 /* top-bar@2x.png */,
+				7012032E18769B52001379D9 /* com top-bar@2x.png */,
 			);
 			path = "comment@2x";
 			sourceTree = "<group>";
@@ -1024,7 +1030,6 @@
 			isa = PBXGroup;
 			children = (
 				7012039718769B52001379D9 /* add-friend@2x.png */,
-				7012039818769B52001379D9 /* camera@2x.png */,
 				7012039918769B52001379D9 /* down@2x.png */,
 				7012039A18769B52001379D9 /* Jason-Zhou@2x.png */,
 				7012039B18769B52001379D9 /* mask@2x.png */,
@@ -1472,6 +1477,8 @@
 				70E28261186AB2470082BC26 /* makeViewController.h */,
 				70E28262186AB2470082BC26 /* makeViewController.m */,
 				70E28263186AB2470082BC26 /* makeViewController.xib */,
+				70CC9674187D5E8F00FF43B7 /* customImagePiclerController.h */,
+				70CC9675187D5E8F00FF43B7 /* customImagePiclerController.m */,
 				70E28276186AEE140082BC26 /* makeSaveViewController.h */,
 				70E28277186AEE140082BC26 /* makeSaveViewController.m */,
 				70E28278186AEE140082BC26 /* makeSaveViewController.xib */,
@@ -1482,6 +1489,9 @@
 		70E2826B186AC4FA0082BC26 /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				70CC966F187D358100FF43B7 /* ccViewController.h */,
+				70CC9670187D358100FF43B7 /* ccViewController.m */,
+				70CC9671187D358100FF43B7 /* ccViewController.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -1693,6 +1703,7 @@
 				7012044818769B53001379D9 /* 微信@2x.png in Resources */,
 				7012044518769B53001379D9 /* 仅好友可以涂鸦我的照片@2x.png in Resources */,
 				70DF0FB9186C05F20068D9F3 /* light_close.png in Resources */,
+				70CC9673187D358100FF43B7 /* ccViewController.xib in Resources */,
 				701203F618769B53001379D9 /* cam-high@2x.png in Resources */,
 				70D02E7E1867DFF1006FB8CE /* high-pin.png in Resources */,
 				70E2827A186AEE140082BC26 /* makeSaveViewController.xib in Resources */,
@@ -1740,7 +1751,7 @@
 				70B747091845CA1D007AA2D9 /* undo-button@2x.png in Resources */,
 				70D02E101867DFF1006FB8CE /* camera.png in Resources */,
 				70B746E71845CA1D007AA2D9 /* era1@2x.png in Resources */,
-				701203C718769B52001379D9 /* top-bar@2x.png in Resources */,
+				701203C718769B52001379D9 /* com top-bar@2x.png in Resources */,
 				7012043118769B53001379D9 /* profile-topbar@2x.png in Resources */,
 				7012041E18769B53001379D9 /* down@2x.png in Resources */,
 				70D02E1A1867DFF1006FB8CE /* com top-bar.png in Resources */,
@@ -1876,7 +1887,6 @@
 				70D02E1E1867DFF1006FB8CE /* text bar.png in Resources */,
 				701203F318769B53001379D9 /* tools-bar@2x.png in Resources */,
 				7012042918769B53001379D9 /* add-friend@2x.png in Resources */,
-				7012042A18769B53001379D9 /* camera@2x.png in Resources */,
 				70B747191845CA1D007AA2D9 /* text1.png in Resources */,
 				70D02E901867DFF1006FB8CE /* share.xib in Resources */,
 				70D02E811867DFF1006FB8CE /* high-weibo.png in Resources */,
@@ -2081,10 +2091,12 @@
 				709DC0EE1844AD9A0073F1B1 /* CGPointExtension.m in Sources */,
 				70B359E81871538D0096B0E5 /* messageViewController.m in Sources */,
 				70F8ED9618584F530076C663 /* UIImage+Tint.m in Sources */,
+				70CC9672187D358100FF43B7 /* ccViewController.m in Sources */,
 				60F6D2BF186F5352000A1235 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */,
 				60F6D2C0186F5352000A1235 /* UzysRadialProgressActivityIndicator.m in Sources */,
 				6024BCFC186EBA8E005A8607 /* myTest.m in Sources */,
 				70333AB718750F1E00FA1DAF /* messageCell.m in Sources */,
+				70CC9676187D5E8F00FF43B7 /* customImagePiclerController.m in Sources */,
 				7012044F1876B63A001379D9 /* pushRefreshView.m in Sources */,
 				70E31543184477240045E4B8 /* AppDelegate.m in Sources */,
 				70CA425918449E1700CDEAEA /* rootViewController.m in Sources */,

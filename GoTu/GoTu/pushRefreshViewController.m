@@ -75,7 +75,7 @@
         [headerImgV setTransform:_transform];
         headerV.angle =fabsf(_offSize_.y) / 100 * 360;
         
-        if (!isRefresh && headerV.angle >= 360.0f)
+        if (!isRefresh && headerV.angle >= 390.0f)
         {
             isRefresh = YES;
             [tableV setContentInset:UIEdgeInsetsMake(100, 0, 0, 0)];
@@ -105,7 +105,7 @@
         if (!tableV.isDragging && _r > 120)
         {
             [tableV setContentInset:UIEdgeInsetsMake(0, 0, 100, 0)];
-            [delegate footerRefresh];
+//            [delegate footerRefresh];
         }
         
     }
@@ -119,8 +119,9 @@
         [UIView animateWithDuration:.5 animations:^{
             [tableV setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
         } completion:^(BOOL finished) {
-            isRefresh = NO;
+            
         }];
+        isRefresh = NO;
     }
     
 }

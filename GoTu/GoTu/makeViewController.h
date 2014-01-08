@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class customImagePiclerController;
 
 @interface makeViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
-    UIImagePickerController *imagePC;
+    customImagePiclerController *imagePC;
     
     IBOutlet UIView *customCameraView;
     IBOutlet UIButton *closeBtn;

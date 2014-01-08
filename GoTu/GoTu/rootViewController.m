@@ -189,9 +189,9 @@
 -(void)toMake
 {
     makeViewController *makeVC = [[makeViewController alloc] init];
-    UINavigationController *makeNavVC = [[UINavigationController alloc] initWithRootViewController:makeVC];
-    makeNavVC.navigationBarHidden = YES;
-    [self presentViewController:makeNavVC animated:YES completion:nil];
+//    UINavigationController *makeNavVC = [[UINavigationController alloc] initWithRootViewController:makeVC];
+//    makeNavVC.navigationBarHidden = YES;
+    [self presentViewController:makeVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

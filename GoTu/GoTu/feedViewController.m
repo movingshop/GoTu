@@ -109,7 +109,7 @@
     } errorHandler:^(NSError *error) {
         NSLog(@"error:%@",error);
         
-        [pushRefreshVC refreshOver]; //刷新完成
+//        [pushRefreshVC refreshOver]; //刷新完成
     }];
 }
 

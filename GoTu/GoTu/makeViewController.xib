@@ -9,11 +9,11 @@
                 <outlet property="cameraFlashModeBtn" destination="tJn-q8-xlH" id="rwH-C8-bI1"/>
                 <outlet property="changeCameraBtn" destination="z1o-Xq-KLp" id="GQu-Dk-nNo"/>
                 <outlet property="closeBtn" destination="WKi-Qs-i4Z" id="j6J-zn-66R"/>
-                <outlet property="customCameraView" destination="XEa-GM-PDB" id="x4e-Ro-xmV"/>
+                <outlet property="customCameraView" destination="XEa-GM-PDB" id="njn-Hc-fwV"/>
                 <outlet property="showAlumbBtn" destination="FqX-rf-skR" id="ve7-Is-xRh"/>
                 <outlet property="showCameraBtn" destination="jcw-n2-sHr" id="vJJ-x8-wbh"/>
                 <outlet property="takePhotoBtn" destination="3Wx-Ot-5AO" id="pHJ-0d-R56"/>
-                <outlet property="view" destination="AWg-9F-9ck" id="am6-pp-APZ"/>
+                <outlet property="view" destination="AWg-9F-9ck" id="PNY-XH-nIM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
