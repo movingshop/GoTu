@@ -19,10 +19,14 @@
 
 @property (strong,nonatomic) UIButton *swapCameraBtn;
 
+
+
 @property (strong,nonatomic) UIButton *CAMFlipButton;
 
 @property (strong,nonatomic) UIView *PLCameraView;
 
 -(void)swapCamera;
+
+-(void)savePhoto;
 
 @end

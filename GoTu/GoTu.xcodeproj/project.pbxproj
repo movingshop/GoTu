@@ -139,6 +139,23 @@
 		701204511876C51A001379D9 /* 100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 701204501876C51A001379D9 /* 100@2x.png */; };
 		701204531876C6C1001379D9 /* 100_bw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 701204521876C6C1001379D9 /* 100_bw@2x.png */; };
 		701DCFE3187176DA00C06F93 /* tapBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 701DCFE2187176DA00C06F93 /* tapBg.png */; };
+		702F0E1E187E91FB00E51DB2 /* brush_0_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E0D187E91FB00E51DB2 /* brush_0_h.png */; };
+		702F0E1F187E91FB00E51DB2 /* brush_0_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E0E187E91FB00E51DB2 /* brush_0_h@2x.png */; };
+		702F0E20187E91FB00E51DB2 /* brush_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E0F187E91FB00E51DB2 /* brush_0.png */; };
+		702F0E21187E91FB00E51DB2 /* brush_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E10187E91FB00E51DB2 /* brush_0@2x.png */; };
+		702F0E22187E91FB00E51DB2 /* brush_1_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E11187E91FB00E51DB2 /* brush_1_h.png */; };
+		702F0E23187E91FB00E51DB2 /* brush_1_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E12187E91FB00E51DB2 /* brush_1_h@2x.png */; };
+		702F0E24187E91FB00E51DB2 /* brush_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E13187E91FB00E51DB2 /* brush_1.png */; };
+		702F0E25187E91FB00E51DB2 /* brush_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E14187E91FB00E51DB2 /* brush_1@2x.png */; };
+		702F0E26187E91FB00E51DB2 /* brush_2_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E15187E91FB00E51DB2 /* brush_2_h.png */; };
+		702F0E27187E91FB00E51DB2 /* brush_2_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E16187E91FB00E51DB2 /* brush_2_h@2x.png */; };
+		702F0E28187E91FB00E51DB2 /* brush_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E17187E91FB00E51DB2 /* brush_2.png */; };
+		702F0E29187E91FB00E51DB2 /* brush_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E18187E91FB00E51DB2 /* brush_2@2x.png */; };
+		702F0E2A187E91FB00E51DB2 /* brush_3_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E19187E91FB00E51DB2 /* brush_3_h.png */; };
+		702F0E2B187E91FB00E51DB2 /* brush_3_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E1A187E91FB00E51DB2 /* brush_3_h@2x.png */; };
+		702F0E2C187E91FB00E51DB2 /* brush_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E1B187E91FB00E51DB2 /* brush_3.png */; };
+		702F0E2D187E91FB00E51DB2 /* brush_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E1C187E91FB00E51DB2 /* brush_3@2x.png */; };
+		702F0E2E187E91FB00E51DB2 /* Color-ring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 702F0E1D187E91FB00E51DB2 /* Color-ring@2x.png */; };
 		70333AB718750F1E00FA1DAF /* messageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70333AB618750F1E00FA1DAF /* messageCell.m */; };
 		70333AB918750F3000FA1DAF /* messageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70333AB818750F3000FA1DAF /* messageCell.xib */; };
 		70333ABB18754D3800FA1DAF /* profile bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70333ABA18754D3800FA1DAF /* profile bg@2x.png */; };
@@ -546,6 +563,23 @@
 		701204501876C51A001379D9 /* 100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "100@2x.png"; sourceTree = "<group>"; };
 		701204521876C6C1001379D9 /* 100_bw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "100_bw@2x.png"; sourceTree = "<group>"; };
 		701DCFE2187176DA00C06F93 /* tapBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tapBg.png; sourceTree = "<group>"; };
+		702F0E0D187E91FB00E51DB2 /* brush_0_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_0_h.png; sourceTree = "<group>"; };
+		702F0E0E187E91FB00E51DB2 /* brush_0_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_0_h@2x.png"; sourceTree = "<group>"; };
+		702F0E0F187E91FB00E51DB2 /* brush_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_0.png; sourceTree = "<group>"; };
+		702F0E10187E91FB00E51DB2 /* brush_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_0@2x.png"; sourceTree = "<group>"; };
+		702F0E11187E91FB00E51DB2 /* brush_1_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_1_h.png; sourceTree = "<group>"; };
+		702F0E12187E91FB00E51DB2 /* brush_1_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_1_h@2x.png"; sourceTree = "<group>"; };
+		702F0E13187E91FB00E51DB2 /* brush_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_1.png; sourceTree = "<group>"; };
+		702F0E14187E91FB00E51DB2 /* brush_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_1@2x.png"; sourceTree = "<group>"; };
+		702F0E15187E91FB00E51DB2 /* brush_2_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_2_h.png; sourceTree = "<group>"; };
+		702F0E16187E91FB00E51DB2 /* brush_2_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_2_h@2x.png"; sourceTree = "<group>"; };
+		702F0E17187E91FB00E51DB2 /* brush_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_2.png; sourceTree = "<group>"; };
+		702F0E18187E91FB00E51DB2 /* brush_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_2@2x.png"; sourceTree = "<group>"; };
+		702F0E19187E91FB00E51DB2 /* brush_3_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_3_h.png; sourceTree = "<group>"; };
+		702F0E1A187E91FB00E51DB2 /* brush_3_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_3_h@2x.png"; sourceTree = "<group>"; };
+		702F0E1B187E91FB00E51DB2 /* brush_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush_3.png; sourceTree = "<group>"; };
+		702F0E1C187E91FB00E51DB2 /* brush_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush_3@2x.png"; sourceTree = "<group>"; };
+		702F0E1D187E91FB00E51DB2 /* Color-ring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Color-ring@2x.png"; sourceTree = "<group>"; };
 		70333AB518750F1E00FA1DAF /* messageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageCell.h; sourceTree = "<group>"; };
 		70333AB618750F1E00FA1DAF /* messageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageCell.m; sourceTree = "<group>"; };
 		70333AB818750F3000FA1DAF /* messageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageCell.xib; sourceTree = "<group>"; };
@@ -1281,6 +1315,23 @@
 		70D02D9A1867DFF1006FB8CE /* edit */ = {
 			isa = PBXGroup;
 			children = (
+				702F0E0D187E91FB00E51DB2 /* brush_0_h.png */,
+				702F0E0E187E91FB00E51DB2 /* brush_0_h@2x.png */,
+				702F0E0F187E91FB00E51DB2 /* brush_0.png */,
+				702F0E10187E91FB00E51DB2 /* brush_0@2x.png */,
+				702F0E11187E91FB00E51DB2 /* brush_1_h.png */,
+				702F0E12187E91FB00E51DB2 /* brush_1_h@2x.png */,
+				702F0E13187E91FB00E51DB2 /* brush_1.png */,
+				702F0E14187E91FB00E51DB2 /* brush_1@2x.png */,
+				702F0E15187E91FB00E51DB2 /* brush_2_h.png */,
+				702F0E16187E91FB00E51DB2 /* brush_2_h@2x.png */,
+				702F0E17187E91FB00E51DB2 /* brush_2.png */,
+				702F0E18187E91FB00E51DB2 /* brush_2@2x.png */,
+				702F0E19187E91FB00E51DB2 /* brush_3_h.png */,
+				702F0E1A187E91FB00E51DB2 /* brush_3_h@2x.png */,
+				702F0E1B187E91FB00E51DB2 /* brush_3.png */,
+				702F0E1C187E91FB00E51DB2 /* brush_3@2x.png */,
+				702F0E1D187E91FB00E51DB2 /* Color-ring@2x.png */,
 				70D02D9B1867DFF1006FB8CE /* back.png */,
 				70D02D9C1867DFF1006FB8CE /* Color-ring.png */,
 				70D02D9D1867DFF1006FB8CE /* color.png */,
@@ -1677,6 +1728,7 @@
 				70B7472D1845CBC8007AA2D9 /* 编辑@2x.png in Resources */,
 				701203ED18769B53001379D9 /* pencl-tap@2x.png in Resources */,
 				701203EA18769B53001379D9 /* pen-@2x.png in Resources */,
+				702F0E2B187E91FB00E51DB2 /* brush_3_h@2x.png in Resources */,
 				70B746ED1845CA1D007AA2D9 /* era4@2x.png in Resources */,
 				70D02E141867DFF1006FB8CE /* light.png in Resources */,
 				70D02E381867DFF1006FB8CE /* cam.png in Resources */,
@@ -1701,6 +1753,7 @@
 				70D02E3E1867DFF1006FB8CE /* exploretopbar.png in Resources */,
 				70D02E331867DFF1006FB8CE /* size4.png in Resources */,
 				7012044818769B53001379D9 /* 微信@2x.png in Resources */,
+				702F0E21187E91FB00E51DB2 /* brush_0@2x.png in Resources */,
 				7012044518769B53001379D9 /* 仅好友可以涂鸦我的照片@2x.png in Resources */,
 				70DF0FB9186C05F20068D9F3 /* light_close.png in Resources */,
 				70CC9673187D358100FF43B7 /* ccViewController.xib in Resources */,
@@ -1722,10 +1775,12 @@
 				7012044218769B53001379D9 /* Switch-(on)@2x.png in Resources */,
 				70D02E771867DFF1006FB8CE /* profile.png in Resources */,
 				70D02E6D1867DFF1006FB8CE /* news cell.xib in Resources */,
+				702F0E24187E91FB00E51DB2 /* brush_1.png in Resources */,
 				7012040118769B53001379D9 /* search-ground@2x.png in Resources */,
 				701203F018769B53001379D9 /* size2@2x.png in Resources */,
 				7012043C18769B53001379D9 /* high-pin@2x.png in Resources */,
 				701203F118769B53001379D9 /* size3@2x.png in Resources */,
+				702F0E2C187E91FB00E51DB2 /* brush_3.png in Resources */,
 				70D02E701867DFF1006FB8CE /* down.png in Resources */,
 				70D02E5E1867DFF1006FB8CE /* feed cell.xib in Resources */,
 				7012041D18769B53001379D9 /* comment-icon@2x.png in Resources */,
@@ -1738,6 +1793,7 @@
 				6066EF3C18706F1E00FAB406 /* pushRefreshViewController.xib in Resources */,
 				70B746FF1845CA1D007AA2D9 /* Shape-46@2x.png in Resources */,
 				70E28251186A8E640082BC26 /* feedViewController.xib in Resources */,
+				702F0E28187E91FB00E51DB2 /* brush_2.png in Resources */,
 				70D02E361867DFF1006FB8CE /* edit.xib in Resources */,
 				70D02E631867DFF1006FB8CE /* n comment-icon.png in Resources */,
 				70B747081845CA1D007AA2D9 /* undo-button.png in Resources */,
@@ -1813,6 +1869,7 @@
 				70D02E2A1867DFF1006FB8CE /* marker.png in Resources */,
 				70D02E541867DFF1006FB8CE /* fe shadow.png in Resources */,
 				70B7472C1845CBC8007AA2D9 /* 编辑.png in Resources */,
+				702F0E23187E91FB00E51DB2 /* brush_1_h@2x.png in Resources */,
 				7012040A18769B53001379D9 /* 搜索涂鸦或用户@2x.png in Resources */,
 				7012041418769B53001379D9 /* likebtn@2x.png in Resources */,
 				7012042418769B53001379D9 /* news-btn@2x.png in Resources */,
@@ -1875,6 +1932,7 @@
 				70B746EA1845CA1D007AA2D9 /* era3.png in Resources */,
 				7012040618769B53001379D9 /* swich@2x.png in Resources */,
 				70EEFD06187271F5006B151C /* personCell.xib in Resources */,
+				702F0E2E187E91FB00E51DB2 /* Color-ring@2x.png in Resources */,
 				70B746FA1845CA1D007AA2D9 /* pencl-high.png in Resources */,
 				701203E918769B53001379D9 /* marker@2x.png in Resources */,
 				70D02E371867DFF1006FB8CE /* cam-high.png in Resources */,
@@ -1882,14 +1940,17 @@
 				70D02E601867DFF1006FB8CE /* havenews.png in Resources */,
 				70D02E6C1867DFF1006FB8CE /* Select bar.png in Resources */,
 				70D02E891867DFF1006FB8CE /* shphoto.png in Resources */,
+				702F0E2A187E91FB00E51DB2 /* brush_3_h.png in Resources */,
 				70D02E161867DFF1006FB8CE /* top-bar.png in Resources */,
 				7012042618769B53001379D9 /* news@2x.png in Resources */,
 				70D02E1E1867DFF1006FB8CE /* text bar.png in Resources */,
 				701203F318769B53001379D9 /* tools-bar@2x.png in Resources */,
 				7012042918769B53001379D9 /* add-friend@2x.png in Resources */,
 				70B747191845CA1D007AA2D9 /* text1.png in Resources */,
+				702F0E26187E91FB00E51DB2 /* brush_2_h.png in Resources */,
 				70D02E901867DFF1006FB8CE /* share.xib in Resources */,
 				70D02E811867DFF1006FB8CE /* high-weibo.png in Resources */,
+				702F0E29187E91FB00E51DB2 /* brush_2@2x.png in Resources */,
 				701203E018769B53001379D9 /* back@2x.png in Resources */,
 				701203BC18769B52001379D9 /* ground@2x.png in Resources */,
 				701203F418769B53001379D9 /* undo@2x.png in Resources */,
@@ -1899,9 +1960,11 @@
 				70B746F11845CA1D007AA2D9 /* Frame@2x.png in Resources */,
 				7012042318769B53001379D9 /* more-icon@2x.png in Resources */,
 				70B746F91845CA1D007AA2D9 /* pen@2x.png in Resources */,
+				702F0E1E187E91FB00E51DB2 /* brush_0_h.png in Resources */,
 				70D02E4A1867DFF1006FB8CE /* swich.png in Resources */,
 				70D02E781867DFF1006FB8CE /* prouser.png in Resources */,
 				70F8ED8F18584E140076C663 /* 002@2x.png in Resources */,
+				702F0E27187E91FB00E51DB2 /* brush_2_h@2x.png in Resources */,
 				70B746E61845CA1D007AA2D9 /* era1.png in Resources */,
 				701203E618769B53001379D9 /* eraser-tap@2x.png in Resources */,
 				70B747071845CA1D007AA2D9 /* tools-bar@2x.png in Resources */,
@@ -1921,6 +1984,7 @@
 				7012044918769B53001379D9 /* 邀请朋友来涂鸦@2x.png in Resources */,
 				70B746F31845CA1D007AA2D9 /* marker-high@2x.png in Resources */,
 				701DCFE3187176DA00C06F93 /* tapBg.png in Resources */,
+				702F0E1F187E91FB00E51DB2 /* brush_0_h@2x.png in Resources */,
 				70D02E4E1867DFF1006FB8CE /* commentbtn.png in Resources */,
 				70D02E1F1867DFF1006FB8CE /* Text Box.png in Resources */,
 				7012043F18769B53001379D9 /* high-微信@2x.png in Resources */,
@@ -1929,6 +1993,7 @@
 				70D02E761867DFF1006FB8CE /* profile-topbar.png in Resources */,
 				7012042518769B53001379D9 /* news-high@2x.png in Resources */,
 				70D02E431867DFF1006FB8CE /* popular.png in Resources */,
+				702F0E22187E91FB00E51DB2 /* brush_1_h.png in Resources */,
 				70D02E2D1867DFF1006FB8CE /* pencl-.png in Resources */,
 				60F6D2BE186F5352000A1235 /* centerIcon@2x.png in Resources */,
 				70D02E711867DFF1006FB8CE /* Jason-Zhou.png in Resources */,
@@ -1972,10 +2037,12 @@
 				701203FA18769B53001379D9 /* food@2x.png in Resources */,
 				7012042218769B53001379D9 /* like-icon@2x.png in Resources */,
 				70D02E871867DFF1006FB8CE /* shareback.png in Resources */,
+				702F0E2D187E91FB00E51DB2 /* brush_3@2x.png in Resources */,
 				7012042F18769B53001379D9 /* profile-tab@2x.png in Resources */,
 				70B746E81845CA1D007AA2D9 /* era2.png in Resources */,
 				7012040D18769B53001379D9 /* doodle-photo@2x.png in Resources */,
 				7012043A18769B53001379D9 /* facebook@2x.png in Resources */,
+				702F0E20187E91FB00E51DB2 /* brush_0.png in Resources */,
 				70D02E971867E189006FB8CE /* personViewController.xib in Resources */,
 				701203E118769B53001379D9 /* Color-ring@2x.png in Resources */,
 				7012040318769B53001379D9 /* Shape-1@2x.png in Resources */,
@@ -2018,6 +2085,7 @@
 				70D02E151867DFF1006FB8CE /* No-photo.png in Resources */,
 				70B7471A1845CA1D007AA2D9 /* text2-high.png in Resources */,
 				70D02E441867DFF1006FB8CE /* search-ground.png in Resources */,
+				702F0E25187E91FB00E51DB2 /* brush_1@2x.png in Resources */,
 				70B747111845CA1D007AA2D9 /* Stickers.png in Resources */,
 				70D02E2B1867DFF1006FB8CE /* pen-.png in Resources */,
 				70D02E421867DFF1006FB8CE /* pets.png in Resources */,

@@ -7,8 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="drawBoardViewController">
             <connections>
                 <outlet property="backToBtn" destination="j6H-ep-Ela" id="azK-2a-iI1"/>
-                <outlet property="colorViewBox" destination="3z2-xm-w0z" id="HVE-41-kOp"/>
-                <outlet property="drawBoardV" destination="Ygc-7N-ZHI" id="UP4-b5-xJr"/>
+                <outlet property="colorV" destination="tD5-Ws-wt2" id="3WY-re-fqY"/>
+                <outlet property="drawBoardV" destination="b0E-cl-0eT" id="j2T-nm-cUb"/>
                 <outlet property="view" destination="KEl-e0-bhh" id="M4u-44-KKD"/>
             </connections>
         </placeholder>
@@ -17,18 +17,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="Ug3-wB-m9l">
-                    <rect key="frame" x="0.0" y="45" width="320" height="373"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" id="Ygc-7N-ZHI" customClass="drawingBoardView">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="373"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="b0E-cl-0eT" customClass="drawingBoardView">
+                    <rect key="frame" x="0.0" y="45" width="320" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="编辑.png" id="iYD-Fa-Kdd">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -63,56 +55,13 @@
                         <action selector="toSave:" destination="-1" eventType="touchUpInside" id="fdk-5F-c95"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tools-bar.png" id="aDZ-ga-X1z">
-                    <rect key="frame" x="0.0" y="468" width="320" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gx8-5v-mep">
-                    <rect key="frame" x="15" y="496" width="30" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Button" image="Sticker.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tools-bar-2.png" id="9gC-Fy-7S5">
-                    <rect key="frame" x="0.0" y="417" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="0.0" y="365" width="320" height="183"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rmI-hf-Qe0">
-                    <rect key="frame" x="268" y="497" width="41" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Button" image="Aa.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" tag="2001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Lj-R2-3kK">
-                    <rect key="frame" x="82" y="475" width="29" height="77"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Button" image="pen.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" image="pen-high.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="YQp-8E-dnz"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Iig-vD-IT0">
-                    <rect key="frame" x="278" y="426" width="31" height="33"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="282" y="373" width="31" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Button" image="undo-button.png">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -122,72 +71,75 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JdL-fq-NDV">
-                    <rect key="frame" x="15" y="426" width="30" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Button" image="eraser2.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WPW-Ra-gDN">
+                    <rect key="frame" x="266" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="brush_3.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" image="eraser.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ik9-Hs-dUD">
-                    <rect key="frame" x="147" y="474" width="26" height="74"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Button" image="pencl.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" image="pencl-high.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="selected" image="brush_3_h.png"/>
                     <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="DJJ-SY-zX6"/>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="SYY-pN-1L3"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YDK-hJ-spG">
-                    <rect key="frame" x="203" y="474" width="42" height="75"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Button" image="marker.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H4D-RB-Xvq">
+                    <rect key="frame" x="218" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="brush_2.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" image="marker-high.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="selected" image="brush_2_h.png"/>
                     <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="zhQ-Qb-VHl"/>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="Z6k-NQ-0tB"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" id="3z2-xm-w0z" userLabel="colorViewBox">
-                    <rect key="frame" x="80" y="422" width="160" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                </view>
+                <button opaque="NO" tag="2001" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mZG-AI-cVp">
+                    <rect key="frame" x="170" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="brush_1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="brush_1_h.png"/>
+                    <connections>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="oYu-th-g1X"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wbu-of-Goh">
+                    <rect key="frame" x="119" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="brush_0.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="brush_0_h.png"/>
+                    <connections>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="ivm-2T-whM"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Color-ring.png" id="tD5-Ws-wt2">
+                    <rect key="frame" x="15" y="386" width="88" height="88"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
     </objects>
     <resources>
-        <image name="Aa.png" width="41" height="30"/>
-        <image name="Sticker.png" width="30" height="30"/>
+        <image name="Color-ring.png" width="88" height="88"/>
         <image name="back.png" width="19" height="19"/>
+        <image name="brush_0.png" width="54" height="128"/>
+        <image name="brush_0_h.png" width="54" height="128"/>
+        <image name="brush_1.png" width="55" height="128"/>
+        <image name="brush_1_h.png" width="55" height="128"/>
+        <image name="brush_2.png" width="54" height="128"/>
+        <image name="brush_2_h.png" width="54" height="128"/>
+        <image name="brush_3.png" width="55" height="128"/>
+        <image name="brush_3_h.png" width="55" height="128"/>
         <image name="done.png" width="34" height="34"/>
-        <image name="eraser.png" width="30" height="30"/>
-        <image name="eraser2.png" width="30" height="30"/>
-        <image name="marker-high.png" width="42" height="76"/>
-        <image name="marker.png" width="42" height="75"/>
-        <image name="pen-high.png" width="29" height="76"/>
-        <image name="pen.png" width="29" height="75"/>
-        <image name="pencl-high.png" width="26" height="74"/>
-        <image name="pencl.png" width="26" height="74"/>
         <image name="tools-bar-2.png" width="320" height="50"/>
-        <image name="tools-bar.png" width="320" height="80"/>
         <image name="undo-button.png" width="31" height="31"/>
         <image name="编辑.png" width="320" height="45"/>
     </resources>

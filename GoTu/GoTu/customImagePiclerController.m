@@ -34,44 +34,72 @@
 
 -(void)swapCamera
 {
-    if (swapCameraBtn){
+    self.showsCameraControls = YES;
+    PLCameraView=[self findsubView:self.view withName:@"PLCameraView"];
+    swapCameraBtn = (UIButton *)[self findsubView:PLCameraView withName:@"CAMFlipButton"];
+    if (swapCameraBtn) {
         [swapCameraBtn sendActionsForControlEvents:UIControlEventTouchUpInside];
     }
+    self.showsCameraControls = NO;
+}
+
+-(void)savePhoto
+{
+    self.showsCameraControls = YES;
+    PLCameraView=[self findsubView:self.view withName:@"PLCameraView"];
+    UIButton *savePhotoBtn = [self findsubView:PLCameraView withName:@"CAMShutterButton"];
+    if (savePhotoBtn) {
+        [savePhotoBtn sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
+//    self.showsCameraControls = NO;
+    [self.cameraOverlayView setHidden:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     //Add the motion view here, PLCameraView and picker.view are both OK
-    PLCameraView=[self findsubView:self.view withName:@"PLCameraView"];
     
+//    [PLCameraView setHidden:YES];
 //    topBar = [self findsubView:PLCameraView withName:@"CAMTopBar"];
-    
-    
-    
-    swapCameraBtn = [self findsubView:PLCameraView withName:@"CAMFlipButton"];
-    
-    //Get Bottom Bar
+//    self.showsCameraControls = YES;
+    PLCameraView=[self findsubView:self.view withName:@"PLCameraView"];
     UIView *bottomBar = [self findsubView:PLCameraView withName:@"PLCropOverlayBottomBar"];
-    
-    NSLog(@"viewNum:%i",[PLCameraView.subviews count]);
+    NSLog(@"Num:%i",[PLCameraView.subviews count]);
     for (UIView *_view in PLCameraView.subviews) {
-        NSLog(@"_view:%@",_view);
-        NSLog(@"_viewNum:%i",[_view.subviews count]);
+        NSLog(@"   _view:%@",_view);
+//        NSLog(@"   _viewNum:%i",[_view.subviews count]);
         for (UIView *_view0 in _view.subviews) {
-            NSLog(@"_view0:%@",_view0);
-            NSLog(@"_view0Num:%i",[_view0.subviews count]);
+            NSLog(@"      _view0:%@",_view0);
+//            [_view0 setFrame:CGRectMake(0, 0, 10, 10)];
+//            NSLog(@"_view0Num:%i",[_view0.subviews count]);
             for (UIView *_view1 in _view0.subviews) {
-                NSLog(@"_view1:%@",_view1);
+                NSLog(@"         _view1:%@",_view1);
             }
         }
     }
+
+//    UIImageView *bottomBarImageForSave = [bottomBar.subviews objectAtIndex:0];
+//    UIImageView *bottomBarImageForSave = [bottomBar.subviews objectAtIndex:0];
+//    NSLog(@"%@",bottomBarImageForSave);
+//    [bottomBarImageForSave setHidden:YES];
+    
+    
+//    UIImageView *bottomBarImageForCamera = [bottomBar.subviews objectAtIndex:1];
+//    UIButton *cameraButton=[bottomBarImageForCamera.subviews objectAtIndex:0];
+    
+    
+    
+//    [swapCameraBtn setHidden:YES];
+    //Get Bottom Bar
+    
+    
     //Get Top Bar
 //    UIView *topBar
 
 //    //Get ImageView For Save
-    UIImageView *bottomBarImageForSave = [bottomBar.subviews objectAtIndex:0];
-    NSLog(@"bottomBarImageForSave:%@",bottomBarImageForSave);
+    
+//    NSLog(@"bottomBarImageForSave:%@",bottomBarImageForSave);
 //
 //    
 //    //Get ImageView For Camera
@@ -91,15 +119,13 @@
     Class cl = [aView class];
     NSString *desc = [cl description];
     
-    if ([name isEqualToString:desc])
-        return aView;
+    if ([name isEqualToString:desc]) return aView;
     
     for (NSUInteger i = 0; i < [aView.subviews count]; i++)
     {
         UIView *subView = [aView.subviews objectAtIndex:i];
         subView = [self findsubView:subView withName:name];
-        if (subView)
-            return subView;
+        if (subView) return subView;
     }
     return nil;
 }

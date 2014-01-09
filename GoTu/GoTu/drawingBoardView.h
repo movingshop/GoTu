@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface drawingBoardView : UIView
+@interface drawingBoardView : UIScrollView<UIScrollViewDelegate>
 {
+    UIView *drawBoardV;
+    
     UIBezierPath *path;
     NSMutableArray *actionArray;
     NSMutableDictionary *action;
@@ -36,11 +38,12 @@
     
     UIColor *strokeColor;
 //    UIImage *btushImage;
+    UIColor *clearColor;
     
     CGPoint _localPoint;
     CGRect _frame;
     
-    CGFloat zoomScale;
+//    CGFloat zoomScale;
     
     BOOL isCelar;
 }

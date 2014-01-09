@@ -71,6 +71,8 @@
 -(void)showAlum
 {
     
+    [showAlumbBtn setHidden:YES];
+    
     [imagePC setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     //
     //[imagePC.navigationBar addSubview:showCameraBtn];
@@ -87,6 +89,7 @@
 
 -(void)showCamera
 {
+    [showAlumbBtn setHidden:NO];
     [imagePC setSourceType:UIImagePickerControllerSourceTypeCamera];
     
     CATransition *  tran=[CATransition animation];
@@ -99,24 +102,24 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera)
-    {
-        //如果是 来自照相机的image，那么先保存
-        NSLog(@"图片来自于相机");
-        // Save the image to the album
-        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-        
-        
-    }
-    drawBoardViewController *drawBoardVC = [[drawBoardViewController alloc] init];
-    drawBoardVC.editImage = image;
-//    [self.navigationController pushViewController:drawBoardVC animated:YES];
+//    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+//    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera)
+//    {
+//        //如果是 来自照相机的image，那么先保存
+//        NSLog(@"图片来自于相机");
+//        // Save the image to the album
+//        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+//        
+//        
+//    }
+    
     
 //    获得编辑过的图片
-//    UIImage* image = [info objectForKey: @"UIImagePickerControllerEditedImage"];
-    
-    
+    UIImage *image = [info objectForKey: @"UIImagePickerControllerEditedImage"];
+    drawBoardViewController *drawBoardVC = [[drawBoardViewController alloc] init];
+    drawBoardVC.editImage = image;
+    [self.navigationController pushViewController:drawBoardVC animated:YES];
+    NSLog(@"进入编辑模式");
 //    [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -134,22 +137,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-//    [navigationController setNavigationBarHidden:YES];
-    
-//    for (UIView *tmpView in navigationController.navigationBar )
-//    {
-//        NSLog(@"%@",tmpView);
-//    }
-//    [self.navigationItem.leftBarButtonItem setTitle:@"123"];
-//    [self.navigationItem.rightBarButtonItem setTitle:@"234"];
-//    NSLog(@"%@",navigationController.navigationBar)
-    UIBarButtonItem *_bar = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(showCamera)];
-    navigationController.navigationBar.topItem.rightBarButtonItem = _bar;
-//    NSLog(@"%@",navigationController.navigationBar.topItem.rightBarButtonItem);
-}
-
 
 
 -(void)customInit
@@ -161,15 +148,15 @@
     imagePC.allowsEditing = YES;
     
 //    [imagePC.navigationBar addSubview:showCameraBtn];
-//    [showCameraBtn setHidden:YES];
+    [showCameraBtn setHidden:YES];
     [showCameraBtn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
     
     [imagePC setSourceType:UIImagePickerControllerSourceTypeCamera]; //相机模式
     [imagePC setCameraFlashMode:-1]; //默认关闭闪光灯
     
-    imagePC.showsCameraControls = NO;
-//    [customCameraView setHidden:YES];
-    imagePC.cameraOverlayView = customCameraView;
+//    imagePC.showsCameraControls = NO;
+//    imagePC.cameraOverlayView = customCameraView;
+    [customCameraView setHidden:YES];
     
     [self addChildViewController:imagePC];
     [imagePC.view setFrame:customCameraView.frame];
@@ -180,7 +167,7 @@
     [closeBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside]; //关闭
     
     [changeCameraBtn addTarget:imagePC action:@selector(swapCamera) forControlEvents:UIControlEventTouchUpInside]; // swap 前后摄像头
-    [takePhotoBtn addTarget:imagePC action:@selector(takePicture) forControlEvents:UIControlEventTouchUpInside]; // 拍照
+    [takePhotoBtn addTarget:imagePC action:@selector(savePhoto) forControlEvents:UIControlEventTouchUpInside]; // 拍照
     
     [cameraFlashModeBtn setSelected:YES];
     [cameraFlashModeBtn addTarget:self action:@selector(swapFlashMode) forControlEvents:UIControlEventTouchUpInside]; //闪光灯
@@ -202,8 +189,8 @@
 //            }
 //        }
 //    }
-//    [closeBtn sendActionsForControlEvents:UIControlEventTouchUpInside];
-    [imagePC.CAMFlipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+//    [closeBtn sendActionsForControlEvents:UIControlEventTouchUpInside];｀
+    [imagePC.swapCameraBtn sendActionsForControlEvents:UIControlEventTouchUpInside];
     
 }
 

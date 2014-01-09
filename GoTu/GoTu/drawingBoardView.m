@@ -35,6 +35,7 @@
     if (self) {
         // Initialization code
         //        self.frame = CGRectMake(0, 0, MRScreenWidth, MRScreenHeight);
+        self.delegate = self;
         [self initWithCustom];
     }
     return self;
@@ -44,18 +45,34 @@
 {
     [self setBrushColor:[UIColor whiteColor]];
     
-    [self setClipsToBounds:YES];
     
-    backGroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [self addSubview:backGroundImageView];
+    
+//    [self setClipsToBounds:YES];
+    
+    self.panGestureRecognizer.maximumNumberOfTouches = 2;
+    self.panGestureRecognizer.minimumNumberOfTouches = 2;
+    
+    NSLog(@"%@",NSStringFromCGRect(self.frame));
+    
+    drawBoardV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 640, 640)];
+    [self addSubview:drawBoardV];
+    
+    
+//    [self setZoomScale:.];
+//    [self zoomToRect:CGRectMake(0, 0, 320, 320) animated:YES];
+//    [self setMaximumZoomScale:2];
+    
+    backGroundImageView = [[UIImageView alloc] initWithFrame:drawBoardV.frame];
+    [drawBoardV addSubview:backGroundImageView];
+//    backGroundImageView.userInteractionEnabled = YES;
     
     brushColor = HexRGBAlpha(0xff0000, 1.0f);
-    
     strokeColor = HexRGBAlpha(0x000000,1.0f);
+    clearColor = [UIColor clearColor];
     isCelar = NO;
     
-    drawingBoardImg = [[UIImageView alloc] initWithFrame:backGroundImageView.frame];
-    [self addSubview:drawingBoardImg];
+    drawingBoardImg = [[UIImageView alloc] initWithFrame:drawBoardV.frame];
+    [drawBoardV addSubview:drawingBoardImg];
     
     path = [[UIBezierPath alloc] init];
     path1 = [[UIBezierPath alloc] init];
@@ -66,19 +83,18 @@
     pan.minimumNumberOfTouches = 1;
     [self addGestureRecognizer:pan];
     
-    UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan2:)];
-    pan2.maximumNumberOfTouches = 2;
-    pan2.minimumNumberOfTouches = 2;
+//    UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan2:)];
+//    pan2.maximumNumberOfTouches = 2;
+//    pan2.minimumNumberOfTouches = 2;
+//    
+//    [self addGestureRecognizer:pan2];
+//    
+//    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+//    [self addGestureRecognizer:pinch];
     
-    [self addGestureRecognizer:pan2];
-    
-    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-    [self addGestureRecognizer:pinch];
-    
-    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                       action:@selector(handleDoubleTap:)];
-    [doubleTapGesture setNumberOfTapsRequired:2];
-    [self addGestureRecognizer:doubleTapGesture];
+//    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+//    [doubleTapGesture setNumberOfTapsRequired:2];
+//    [self addGestureRecognizer:doubleTapGesture];
     
     CGPoint _p0 = CGPointMake(0, 0);
     CGPoint _p1 = CGPointMake(1, 1);
@@ -87,21 +103,31 @@
     
     strokeWidth =0.10f;
     
-    zoomScale = 1.0f;
+//    zoomScale = 1.0f;
     
     //画笔类型
+    // 0 为 橡皮
     // 1 为 钢笔
     // 2 为 铅笔
     // 3 为 彩笔
     brushMode = 1; //默认是 1；
+    
+    
+    float minimumScale = self.frame.size.width / drawBoardV.frame.size.width;
+    [self setMinimumZoomScale:minimumScale];
+    [self setZoomScale:minimumScale];
+    [self setMaximumZoomScale:2];
     
 }
 
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
     
-    p1 = [pan locationInView:self];
-    CGFloat strokeWidthExpect = ccpLength([pan velocityInView:self]); //预期画笔宽度
+    p1 = [pan locationInView:drawBoardV];
+    CGPoint vp = [pan velocityInView:self];
+//    vp.x = vp.x * self.zoomScale;
+//    vp.y = vp.y * self.zoomScale;
+    CGFloat strokeWidthExpect = ccpLength(vp); //预期画笔宽度
     
     switch (brushMode) {
         case 1:
@@ -253,7 +279,7 @@
             
             break;
         case 2:
-            // brushMode = 1 铅笔模式
+            // brushMode = 2 铅笔模式
             
             // 速度与画笔宽度关系
             strokeWidth = 5.0f;
@@ -280,10 +306,173 @@
             
             break;
         case 3:
+            // brushMode = 3 铅笔模式
             
+            // 速度与画笔宽度关系
+            strokeWidth = 5.0f;
+            
+            //画笔计算
+            if (pan.state == UIGestureRecognizerStateBegan) {
+                path0 = [[UIBezierPath alloc] init];
+                [path0 setLineWidth:strokeWidth];
+                mP1 = p1;
+                [path0 moveToPoint:p1];
+            }else if (pan.state == UIGestureRecognizerStateChanged){
+                
+                //                [path0 removeAllPoints];
+                mP1 = midPoint(p0, p1);
+                //                [path0 moveToPoint:mP0];
+                [path0 addQuadCurveToPoint:mP1 controlPoint:p0];
+                
+            }else if (pan.state == UIGestureRecognizerStateEnded){
+                [path0 addLineToPoint:p1];
+            }
+            
+            p0 = p1;
+            mP0 = mP1;
+            
+
             break;
         case 0:
-            // brushMode = 1 橡皮模式
+            // brushMode = 0 橡皮模式
+            
+            strokeWidth = 8.0f;
+            
+            //画笔计算
+            if (pan.state == UIGestureRecognizerStateBegan) {
+                path = [[UIBezierPath alloc] init];
+                [path moveToPoint:p1];
+                
+                action = [[NSMutableDictionary alloc] init];
+                [action setObject:@"brush" forKey:@"mode"];
+                [action setObject:@"0x000fff" forKey:@"color"];
+                NSMutableArray *_path0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_ctrol0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_path1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_ctrol1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                
+                
+                [action setObject:[NSMutableArray arrayWithObjects:_path0,_ctrol0,_path1,_ctrol1, nil] forKey:@"path"];
+                
+                
+                path0 = [[UIBezierPath alloc] init];
+                
+                p00.x = -1000.0f;
+                _mp10 = p1;
+                _mp11 = p1;
+                
+                strokeWidth = 0.1f;
+                
+                [path moveToPoint:p1];
+                
+            }
+            else if (pan.state == UIGestureRecognizerStateChanged){
+                
+                
+                [path0 removeAllPoints];
+                
+                //p10 mp10 p11 mp11
+                CGFloat w = strokeWidth;
+                
+                
+                
+                mP1 = midPoint(p0, p1);
+                
+                CGPoint p10 = [self triangle:p0 p1:p1 w:w];
+                CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
+                CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
+                CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
+                
+                NSMutableArray *_pathA = [action objectForKey:@"path"];
+                
+                NSMutableArray *_path0 = [_pathA objectAtIndex:0];
+                NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
+                NSMutableArray *_path1 = [_pathA objectAtIndex:2];
+                NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
+                
+                [_path0 addObject:NSStringFromCGPoint(mp10)];
+                [_ctrol0 addObject:NSStringFromCGPoint(p10)];
+                [_path1 addObject:NSStringFromCGPoint(mp11)];
+                [_ctrol1 addObject:NSStringFromCGPoint(p11)];
+                
+                if (ccpDistance(p1, p0) < w) return;
+                if (p00.x==-1000.0f){
+                    
+                    //            [path0 addLineToPoint:p10];
+                    //            [path1 addLineToPoint:p11];
+                }
+                else{
+                    [path0 moveToPoint:_mp10];
+                    [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+                    [path0 addLineToPoint:_mp11];
+                    [path0 addLineToPoint:_mp10];
+                    
+                    [path0 moveToPoint:_mp11];
+                    [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+                    [path0 addLineToPoint:mp10];
+                    [path0 addLineToPoint:_mp11];
+                }
+                
+                [path addLineToPoint:p1];
+                p00 = p10;
+                p01 = p11;
+                _mp10 = mp10;
+                _mp11 = mp11;
+                
+                [path1 removeAllPoints];
+                [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                
+                //        [path0 removeAllPoints];
+                
+            }
+            else if (pan.state == UIGestureRecognizerStateEnded) {
+                
+                [path0 removeAllPoints];
+                
+                //p10 mp10 p11 mp11
+                CGFloat w = strokeWidth;
+                
+                
+                
+                mP1 = midPoint(p0, p1);
+                
+                CGPoint p10 = [self triangle:p0 p1:p1 w:w];
+                CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
+                CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
+                CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
+                
+                NSMutableArray *_pathA = [action objectForKey:@"path"];
+                
+                NSMutableArray *_path0 = [_pathA objectAtIndex:0];
+                NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
+                NSMutableArray *_path1 = [_pathA objectAtIndex:2];
+                NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
+                
+                [_path0 addObject:NSStringFromCGPoint(mp10)];
+                [_ctrol0 addObject:NSStringFromCGPoint(p10)];
+                [_path1 addObject:NSStringFromCGPoint(mp11)];
+                [_ctrol1 addObject:NSStringFromCGPoint(p11)];
+                
+                if (ccpDistance(p1, p0) < w) return;
+                
+                [path0 moveToPoint:_mp10];
+                [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+                [path0 addLineToPoint:_mp11];
+                [path0 addLineToPoint:_mp10];
+                
+                [path0 moveToPoint:_mp11];
+                [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+                [path0 addLineToPoint:mp10];
+                [path0 addLineToPoint:_mp11];
+                
+                [path1 removeAllPoints];
+                [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                //        [path1 addLineToPoint:mP1];
+                
+            }
+            mP0 = mP1;
+            p0 = p1;
+            
             break;
             
         default:
@@ -349,7 +538,7 @@
         case 2:
             // brushMode = 1 铅笔模式
             [brushColor setStroke];
-//            [path0 strokeWithBlendMode:kCGBlendModeDestinationIn alpha:1.0f];
+            [path0 strokeWithBlendMode:kCGBlendModeDestinationIn alpha:1.0f];
             [path0 setLineWidth:8];
             [path0 stroke];
 //            [path0 setLineWidth:7];
@@ -360,11 +549,17 @@
 //            [path0 stroke];
             break;
         case 3:
-            
+            [brushColor setStroke];
+            [path0 setLineWidth:8];
+            [path0 stroke];
             break;
         case 0:
             // brushMode = 1 橡皮模式
+            [clearColor setFill];
             [path0 fillWithBlendMode:kCGBlendModeClear alpha:0];
+            [path0 fill];
+//            [path0 stroke];
+            
             break;
 
         default:
@@ -375,7 +570,7 @@
     
 
     
-    if (path1) [path1 fill];
+//    if (path1) [path1 fill];
     
     drawingBoardImg.image = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -385,15 +580,15 @@
 
 
 /* 识别放大缩小 */
-- (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer {
+//- (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer {
 //    CGPoint location = [gestureRecognizer locationInView:self];
 //    [self.layer setAnchorPoint:location];
-    NSLog(@"scale:%f",gestureRecognizer.scale);
+//    NSLog(@"scale:%f",gestureRecognizer.scale);
 //    gestureRecognizer.view.transform = CGAffineTransformScale(gestureRecognizer.view.transform, gestureRecognizer.scale, gestureRecognizer.scale);
 //    CGRect zoomRect = [self zoomRectForScale:gestureRecognizer.scale withCenter:[gestureRecognizer locationInView:gestureRecognizer.view] target:gestureRecognizer.view];
 //    [gestureRecognizer.view setFrame:zoomRect];
 //    gestureRecognizer.scale = 1;
-}
+//}
 
 - (void)handleDoubleTap:(UIGestureRecognizer *)gesture
 {
@@ -406,14 +601,34 @@
 //    [self zoomToRect:zoomRect animated:YES];
 }
 
+//- (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center
+//{
+//    CGRect zoomRect;
+//    zoomRect.size.height = self.bounds.size.height / scale;
+//    zoomRect.size.width  = self.bounds.size.width  / scale;
+//    zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
+//    zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
+//    return zoomRect;
+//}
+
 - (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center
 {
     CGRect zoomRect;
-    zoomRect.size.height = self.bounds.size.height / scale;
-    zoomRect.size.width  = self.bounds.size.width  / scale;
+    zoomRect.size.height = self.frame.size.height / scale;
+    zoomRect.size.width  = self.frame.size.width  / scale;
     zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
     zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
     return zoomRect;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return drawBoardV;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+{
+    [scrollView setZoomScale:scale animated:NO];
 }
 
 -(CGPoint)triangle:(CGPoint)p0 p1:(CGPoint)p1 w:(CGFloat)w
@@ -458,6 +673,8 @@
             break;
     }
 }
+
+
 
 @end
 

@@ -16,6 +16,7 @@
     IBOutlet drawingBoardView *drawBoardV;
     IBOutlet UIView *colorViewBox;
     IBOutlet UIButton *backToBtn;
+    IBOutlet UIImageView *colorV;
     
     
     BOOL isRootViewController;
