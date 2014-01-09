@@ -71,7 +71,7 @@
     NSLog(@"colorChange:%d",pan.state);
     CGPoint p = [pan locationInView:colorV];
     p.x = p.x *2;
-    p.y = p.y *2;
+    p.y = p.y *2; 
     [self changeColor:[self getPixelColorAtLocation:p]];
 }
 
