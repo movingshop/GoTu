@@ -12,6 +12,7 @@
 #import "drawingBoardView.h"
 #import "colorViewController.h"
 #import "UIImage+Tint.h"
+#import "CGPointExtension.h"
 
 #import "makeSaveViewController.h"
 
@@ -61,24 +62,61 @@
     [colorV addGestureRecognizer:pan];
     UITapGestureRecognizer *pan1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [colorV addGestureRecognizer:pan1];
-    
+    [colorV.layer setCornerRadius:colorV.frame.size.width / 2];
     colorV.userInteractionEnabled = YES;
     
+    [colorShowV.layer setBorderWidth:1.5f];
+    [colorShowV.layer setCornerRadius:colorShowV.frame.size.height/2];
+    [colorShowV setBackgroundColor:HexRGBAlpha(0xff0000, 1.0f)];
+    
+    [colorCV setHidden:YES];
+    
+    pen_test = [UIImage imageNamed:@"pen_test"];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
-    NSLog(@"colorChange:%d",pan.state);
+    
+    
+    if (pan.state==UIGestureRecognizerStateBegan) {
+        NSLog(@"colorChange:%d",pan.state);
+    };
+    if(pan.state==UIGestureRecognizerStateChanged){
+    
+    }
+    
+    [colorCV setHidden:NO];
     CGPoint p = [pan locationInView:colorV];
+    p.x -= 44;
+    p.y -= 44;
+    float r = ccpDistance(CGPointZero, p);
+    if (r > 44) {
+        p.x = p.x * 43 / r;
+        p.y = p.y * 43 / r;
+    }
+    p.x += 44;
+    p.y += 44;
+    CGRect _frame = CGRectMake(p.x - colorShowV.frame.size.width /2 + colorV.frame.origin.x, p.y - colorShowV.frame.size.height / 2 + colorV.frame.origin.y, colorShowV.frame.size.width, colorShowV.frame.size.height);
+    [colorShowV setFrame:_frame];
     p.x = p.x *2;
-    p.y = p.y *2; 
+    p.y = p.y *2;
     [self changeColor:[self getPixelColorAtLocation:p]];
+    if (pan.state == 3)
+    {
+//        [colorCV setHidden:YES];
+    }
+    
 }
 
 -(void)changeColor:(UIColor *)color
 {
     NSLog(@"changeColor");
+    [colorShowV setBackgroundColor:color];
+//    [colorCV setBackgroundColor:[UIColor colorWithPatternImage:[pen_test imageWithTintColor:color]]];
     [drawBoardV setBrushColor:color];
+    [(UIView *)pen1 setBackgroundColor:color];
+//    [(UIView *)pen2 setBackgroundColor:color];
+//    [(UIView *)pen3 setBackgroundColor:color];
 }
 
 -(IBAction)changeBrush:(id)sender

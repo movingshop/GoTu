@@ -7,8 +7,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="drawBoardViewController">
             <connections>
                 <outlet property="backToBtn" destination="j6H-ep-Ela" id="azK-2a-iI1"/>
+                <outlet property="colorShowV" destination="Pyn-Fz-84J" id="vjb-w9-nVy"/>
                 <outlet property="colorV" destination="tD5-Ws-wt2" id="3WY-re-fqY"/>
                 <outlet property="drawBoardV" destination="b0E-cl-0eT" id="j2T-nm-cUb"/>
+                <outlet property="pen0" destination="42U-8d-Ydw" id="QXG-lr-5vc"/>
+                <outlet property="pen1" destination="24d-I0-xN0" id="4EB-Bj-6a0"/>
+                <outlet property="pen2" destination="cpE-6A-sc7" id="tR2-D4-YHj"/>
+                <outlet property="pen3" destination="8OS-uy-lHG" id="dE7-Jj-A7g"/>
                 <outlet property="view" destination="KEl-e0-bhh" id="M4u-44-KKD"/>
             </connections>
         </placeholder>
@@ -71,58 +76,86 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WPW-Ra-gDN">
-                    <rect key="frame" x="266" y="420" width="54" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="brush_3.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="brush_3_h.png"/>
-                    <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="SYY-pN-1L3"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H4D-RB-Xvq">
-                    <rect key="frame" x="218" y="420" width="54" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="brush_2.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="brush_2_h.png"/>
-                    <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="Z6k-NQ-0tB"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2001" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mZG-AI-cVp">
-                    <rect key="frame" x="170" y="420" width="54" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="brush_1.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="brush_1_h.png"/>
-                    <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="oYu-th-g1X"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wbu-of-Goh">
-                    <rect key="frame" x="119" y="420" width="54" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="brush_0.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="brush_0_h.png"/>
-                    <connections>
-                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="ivm-2T-whM"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Color-ring.png" id="tD5-Ws-wt2">
                     <rect key="frame" x="15" y="386" width="88" height="88"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Pyn-Fz-84J">
+                    <rect key="frame" x="140" y="254" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view tag="2000" contentMode="scaleToFill" id="42U-8d-Ydw" customClass="penButton">
+                    <rect key="frame" x="111" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_0.png" id="BHJ-w5-rRH">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_0_h.png" id="xnw-N4-yaK">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="1cf-hn-z1L"/>
+                    </connections>
+                </view>
+                <view tag="2001" contentMode="scaleToFill" id="24d-I0-xN0" customClass="penButton">
+                    <rect key="frame" x="173" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_1.png" id="W8s-Hy-zGj">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_1_h.png" id="CKZ-eS-2AB">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="cE9-9F-sWO"/>
+                    </connections>
+                </view>
+                <view tag="2002" contentMode="scaleToFill" id="cpE-6A-sc7" customClass="penButton">
+                    <rect key="frame" x="219" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_2.png" id="ECt-RR-uZ3">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_2_h.png" id="C6b-fb-xvq">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="AFA-94-wkN"/>
+                    </connections>
+                </view>
+                <view tag="2003" contentMode="scaleToFill" id="8OS-uy-lHG" customClass="penButton">
+                    <rect key="frame" x="266" y="420" width="54" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_3.png" id="RGi-FV-Gtg">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_3_h.png" id="fm1-Hz-ppy">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="Dpb-lE-7lN"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>
@@ -132,12 +165,12 @@
         <image name="back.png" width="19" height="19"/>
         <image name="brush_0.png" width="54" height="128"/>
         <image name="brush_0_h.png" width="54" height="128"/>
-        <image name="brush_1.png" width="55" height="128"/>
-        <image name="brush_1_h.png" width="55" height="128"/>
+        <image name="brush_1.png" width="54" height="128"/>
+        <image name="brush_1_h.png" width="54" height="128"/>
         <image name="brush_2.png" width="54" height="128"/>
         <image name="brush_2_h.png" width="54" height="128"/>
-        <image name="brush_3.png" width="55" height="128"/>
-        <image name="brush_3_h.png" width="55" height="128"/>
+        <image name="brush_3.png" width="54" height="128"/>
+        <image name="brush_3_h.png" width="54" height="128"/>
         <image name="done.png" width="34" height="34"/>
         <image name="tools-bar-2.png" width="320" height="50"/>
         <image name="undo-button.png" width="31" height="31"/>

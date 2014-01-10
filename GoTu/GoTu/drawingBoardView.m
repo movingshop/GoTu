@@ -116,7 +116,7 @@
     float minimumScale = self.frame.size.width / drawBoardV.frame.size.width;
     [self setMinimumZoomScale:minimumScale];
     [self setZoomScale:minimumScale];
-    [self setMaximumZoomScale:2];
+    [self setMaximumZoomScale:3];
     
 }
 
@@ -128,6 +128,8 @@
 //    vp.x = vp.x * self.zoomScale;
 //    vp.y = vp.y * self.zoomScale;
     CGFloat strokeWidthExpect = ccpLength(vp); //预期画笔宽度
+    strokeWidthExpect *= 1 / self.zoomScale;
+   
     
     switch (brushMode) {
         case 1:
@@ -139,6 +141,8 @@
             CGFloat _scale = powf(2 * (10 - strokeWidthExpect), .5) ;
             _scale = _scale * 0.05;
             strokeWidth += (strokeWidthExpect - strokeWidth) *0.05;
+            
+            
             
             //画笔计算
             if (pan.state == UIGestureRecognizerStateBegan) {
@@ -232,6 +236,7 @@
                 [path0 removeAllPoints];
                 
                 //p10 mp10 p11 mp11
+                strokeWidth *= 1 / self.zoomScale;
                 CGFloat w = strokeWidth;
                 
                 
@@ -282,7 +287,9 @@
             // brushMode = 2 铅笔模式
             
             // 速度与画笔宽度关系
-            strokeWidth = 5.0f;
+            strokeWidth = 5.0f * 1 / self.zoomScale;
+            
+            
             
             //画笔计算
             if (pan.state == UIGestureRecognizerStateBegan) {
@@ -310,6 +317,7 @@
             
             // 速度与画笔宽度关系
             strokeWidth = 5.0f;
+            
             
             //画笔计算
             if (pan.state == UIGestureRecognizerStateBegan) {
@@ -539,7 +547,7 @@
             // brushMode = 1 铅笔模式
             [brushColor setStroke];
             [path0 strokeWithBlendMode:kCGBlendModeDestinationIn alpha:1.0f];
-            [path0 setLineWidth:8];
+            [path0 setLineWidth:strokeWidth * 1 / self.zoomScale];
             [path0 stroke];
 //            [path0 setLineWidth:7];
 //            [path0 stroke];
@@ -550,7 +558,7 @@
             break;
         case 3:
             [brushColor setStroke];
-            [path0 setLineWidth:8];
+            [path0 setLineWidth:strokeWidth * 1 / self.zoomScale];
             [path0 stroke];
             break;
         case 0:
