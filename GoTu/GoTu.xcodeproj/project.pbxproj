@@ -76,7 +76,7 @@
 		7012040C18769B53001379D9 /* cup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037818769B52001379D9 /* cup@2x.png */; };
 		7012040D18769B53001379D9 /* doodle-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037918769B52001379D9 /* doodle-photo@2x.png */; };
 		7012040E18769B53001379D9 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037A18769B52001379D9 /* edit@2x.png */; };
-		7012040F18769B53001379D9 /* explore-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037B18769B52001379D9 /* explore-bar@2x.png */; };
+		7012040F18769B53001379D9 /* explorebar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037B18769B52001379D9 /* explorebar@2x.png */; };
 		7012041018769B53001379D9 /* feed-homebtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037C18769B52001379D9 /* feed-homebtn@2x.png */; };
 		7012041118769B53001379D9 /* GoTu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037D18769B52001379D9 /* GoTu@2x.png */; };
 		7012041218769B53001379D9 /* Layer-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7012037E18769B52001379D9 /* Layer-1@2x.png */; };
@@ -492,7 +492,7 @@
 		7012037818769B52001379D9 /* cup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cup@2x.png"; sourceTree = "<group>"; };
 		7012037918769B52001379D9 /* doodle-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doodle-photo@2x.png"; sourceTree = "<group>"; };
 		7012037A18769B52001379D9 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
-		7012037B18769B52001379D9 /* explore-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore-bar@2x.png"; sourceTree = "<group>"; };
+		7012037B18769B52001379D9 /* explorebar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explorebar@2x.png"; sourceTree = "<group>"; };
 		7012037C18769B52001379D9 /* feed-homebtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feed-homebtn@2x.png"; sourceTree = "<group>"; };
 		7012037D18769B52001379D9 /* GoTu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoTu@2x.png"; sourceTree = "<group>"; };
 		7012037E18769B52001379D9 /* Layer-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Layer-1@2x.png"; sourceTree = "<group>"; };
@@ -1014,7 +1014,7 @@
 				7012037818769B52001379D9 /* cup@2x.png */,
 				7012037918769B52001379D9 /* doodle-photo@2x.png */,
 				7012037A18769B52001379D9 /* edit@2x.png */,
-				7012037B18769B52001379D9 /* explore-bar@2x.png */,
+				7012037B18769B52001379D9 /* explorebar@2x.png */,
 				7012037C18769B52001379D9 /* feed-homebtn@2x.png */,
 				7012037D18769B52001379D9 /* GoTu@2x.png */,
 				7012037E18769B52001379D9 /* Layer-1@2x.png */,
@@ -1994,7 +1994,7 @@
 				7012043318769B53001379D9 /* prouser@2x.png in Resources */,
 				70D02E341867DFF1006FB8CE /* tools-bar.png in Resources */,
 				7012040918769B53001379D9 /* 发现@2x.png in Resources */,
-				7012040F18769B53001379D9 /* explore-bar@2x.png in Resources */,
+				7012040F18769B53001379D9 /* explorebar@2x.png in Resources */,
 				70D02E881867DFF1006FB8CE /* sharetopbar.png in Resources */,
 				70D02E731867DFF1006FB8CE /* profile camera.png in Resources */,
 				7012043718769B53001379D9 /* back@2x.png in Resources */,
@@ -2285,7 +2285,7 @@
 				GCC_PREFIX_HEADER = "GoTu/GoTu-Prefix.pch";
 				INFOPLIST_FILE = "GoTu/GoTu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96A9EDA5-8D45-4E10-BAAB-42817613CAE5";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2302,7 +2302,7 @@
 				GCC_PREFIX_HEADER = "GoTu/GoTu-Prefix.pch";
 				INFOPLIST_FILE = "GoTu/GoTu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96A9EDA5-8D45-4E10-BAAB-42817613CAE5";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

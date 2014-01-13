@@ -62,30 +62,34 @@
             
             [defaultImgV setAlpha:0];
 //            [self setTransform:transformMax];
-            CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromSize:sizeMin toSize:sizeMax];
-            animation.duration = 0.75;
-            animation.fillMode = kCAFillModeForwards;
-            animation.removedOnCompletion = NO;
-            [self.layer addAnimation:animation forKey:@"bounds"];
+            
+            
         }];
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromSize:self.layer.bounds.size toSize:sizeMax];
+        animation.duration = 0.5;
+        animation.fillMode = kCAFillModeForwards;
+        animation.removedOnCompletion = NO;
+        [self.layer addAnimation:animation forKey:@"bounds"];
     }else{
         [UIView animateWithDuration:.5 animations:^{
             
-            CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromSize:sizeMax toSize:sizeMin];
-            animation.duration = 0.75;
-            animation.fillMode = kCAFillModeForwards;
-            animation.removedOnCompletion = NO;
-            [self.layer addAnimation:animation forKey:@"bounds"];
+            
             [defaultImgV setAlpha:1];
 //            [self setTransform:transformMin];
         }];
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromSize:self.layer.bounds.size toSize:sizeMin];
+        animation.duration = 0.5;
+        animation.fillMode = kCAFillModeForwards;
+        animation.removedOnCompletion = NO;
+        [self.layer addAnimation:animation forKey:@"bounds"];
     }
 }
 
 -(void)setAnchorPointWidthView:(UIView*)target
 {
+    
     CGRect _frame = target.frame;
-    target.layer.anchorPoint = CGPointMake(0.5, 0.2);
+    target.layer.anchorPoint = CGPointMake(.5, 1);
     [target setFrame:_frame];
 }
 

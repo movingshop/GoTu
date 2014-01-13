@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="rootViewController">
             <connections>
+                <outlet property="boxBtn" destination="BzZ-mB-C00" id="e4v-R7-J3a"/>
                 <outlet property="boxRootView" destination="93M-tv-MrU" id="QwX-7k-edb"/>
                 <outlet property="boxTopbar" destination="CCY-bK-XeA" id="c3A-Ig-Xyi"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -29,7 +30,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" image="10701A81-2C6B-4345-BD6B-9EBE13BCF947">
+                            <state key="normal" image="A23BFBD0-5B20-42D3-80AC-FAD878ACCA84">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -37,11 +38,37 @@
                             <rect key="frame" x="275" y="0.0" width="45" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" image="37E6079D-C345-4C23-AD67-8F7A41F77611">
+                            <state key="normal" image="69CA9FB3-A0D7-4E58-90D3-838C70EBE52E">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                     </subviews>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="BzZ-mB-C00">
+                    <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebar.png" id="Mai-Ml-d4h">
+                            <rect key="frame" x="0.0" y="90" width="320" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsbar.png" id="M3B-1V-1MW">
+                            <rect key="frame" x="0.0" y="45" width="320" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explorebar.png" id="cHr-ih-CrA">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vkg-oz-f1y">
+                            <rect key="frame" x="132" y="12" width="7" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="4D145EBE-48AA-4E58-9060-FBDAD8D0AC17">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12549020350000001" green="0.75294125079999996" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -51,61 +78,28 @@
         </view>
     </objects>
     <resources>
-        <image name="10701A81-2C6B-4345-BD6B-9EBE13BCF947" width="24" height="23">
+        <image name="4D145EBE-48AA-4E58-9060-FBDAD8D0AC17" width="7" height="7">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
 DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
-RkZSZXByZXNlbnRhdGlvboAGgAdPEQlaTU0AKgAACKj///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////IP///4z///9m////Av///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8e////4P//////////
-////l////wL///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///yD////f/////////////////////////6L///8D////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////I////+H/////
-//////////////////////////////+u////Bv///wD///8A////AP///wD///8A////AP///wD///8A
-////AP///wD///8A////AP///wD///8n////5P//////////////////////////////////////////
-////uf///wr///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///yn////m
-/////////////////////////////////////////////////////////8P///8P////AP///wD///8A
-////AP///wD///8A////AP///wD///8A////LP///+j/////////////////////////////////////
-///////////////////////////////N////FP///wD///8A////AP///wD///8A////AP///wD///8w
-////6v//////////////////////////////////////////////////////////////////////////
-////1f///xn///8A////AP///wD///8A////AP///zL////t////////////////////////////////
-/////////////////////////////////////////////////////////9z///8g////AP///wD///8A
-////Nv///+//////////////////////////////////////////////////////////////////////
-///////////////////////////////j////KP///wD///88////8P//////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////6f///zL////S////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////+T///9i////y////8z////a
-////////////////////////////////////////////////////////////////////////////////
-/////////+T////d////4////6T///8A////AP///wD///9L////////////////////////////////
-/////////////////////////////////////////////////////////zz///8A////AP///wD///8A
-////AP///wD///9L///////////////////////////////+////lv///4j///+I////of//////////
-/////////////////////////zz///8A////AP///wD///8A////AP///wD///9L////////////////
-///////////////k////AP///wD///8A////AP///////////////////////////////////zz///8A
-////AP///wD///8A////AP///wD///9L///////////////////////////////h////AP///wD///8A
-////AP///////////////////////////////////zz///8A////AP///wD///8A////AP///wD///9L
-///////////////////////////////h////AP///wD///8A////AP//////////////////////////
-/////////zz///8A////AP///wD///8A////AP///wD///9L///////////////////////////////h
-////AP///wD///8A////AP///////////////////////////////////zz///8A////AP///wD///8A
-////AP///wD///9L///////////////////////////////h////AP///wD///8A////AP//////////
-/////////////////////////zz///8A////AP///wD///8A////AP///wD///9L////////////////
-///////////////p////Af///wD///8A////BP///////////////////////////////////zz///8A
-////AP///wD///8A////AP///wD///8r/////P//////////////////////////////uf///6r///+q
-////vv//////////////////////////////+f///xv///8A////AP///wD///8A////AP///wD///8A
-////SP///5X///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+U
-////PP///wD///8A////AP///wAADQEAAAMAAAABABgAAAEBAAMAAAABABcAAAECAAMAAAAEAAAJSgED
-AAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEW
-AAMAAAABABcAAAEXAAQAAAABAAAIoAEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAAJUgAA
-AAAACAAIAAgACAABAAEAAQAB0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VS
-ZXCjJicoXxAQTlNCaXRtYXBJbWFnZVJlcFpOU0ltYWdlUmVwWE5TT2JqZWN00iIjKitXTlNBcnJheaIq
-KNIiIy0uXk5TTXV0YWJsZUFycmF5oy0qKNMwMQkyMzRXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABAD
-gAvSIiM2N1dOU0NvbG9yojYo0iIjOTpXTlNJbWFnZaI5KF8QD05TS2V5ZWRBcmNoaXZlctE9PlRyb290
-gAEACAARABoAIwAtADIANwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCYAJ0AoACiAKQApgCo
-AK0AxADGAMgKJgorCjYKPwpSClYKaQp0Cn0KggqKCo0KkgqhCqUKrAq0CsEKxgrICsoKzwrXCtoK3wrn
-CuoK/Ar/CwQAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAAALBg
+RkZSZXByZXNlbnRhdGlvboAGgAdPEQF+TU0AKgAAAMwCwMwAAsDMVgLAzNQCwMz5AsDM1ALAzFYCwMwA
+AsDMVALAzP8CwMz/AsDM/wLAzP8CwMz/AsDMVgLAzNQCwMz/AsDM/wLAzP8CwMz/AsDM/wLAzNQCwMz5
+AsDM/wLAzP8CwMz/AsDM/wLAzP8CwMz5AsDM1ALAzP8CwMz/AsDM/wLAzP8CwMz/AsDM1ALAzFUCwMz/
+AsDM/wLAzP8CwMz/AsDM/wLAzFcCwMwAAsDMVwLAzNYCwMz6AsDM1gLAzFcCwMwAAA0BAAADAAAAAQAH
+AAABAQADAAAAAQAHAAABAgADAAAABAAAAW4BAwADAAAAAQABAAABBgADAAAAAQACAAABEQAEAAAAAQAA
+AAgBEgADAAAAAQABAAABFQADAAAAAQAEAAABFgADAAAAAQAHAAABFwAEAAAAAQAAAMQBHAADAAAAAQAB
+AAABUgADAAAAAQACAAABUwADAAAABAAAAXYAAAAAAAgACAAIAAgAAQABAAEAAdIiIyQlWiRjbGFzc25h
+bWVYJGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoyYnKF8QEE5TQml0bWFwSW1hZ2VSZXBaTlNJbWFn
+ZVJlcFhOU09iamVjdNIiIyorV05TQXJyYXmiKijSIiMtLl5OU011dGFibGVBcnJheaMtKijTMDEJMjM0
+V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AL0iIjNjdXTlNDb2xvcqI2KNIiIzk6V05TSW1hZ2Wi
+OShfEA9OU0tleWVkQXJjaGl2ZXLRPT5Ucm9vdIABAAgAEQAaACMALQAyADcARQBLAFQAWwBoAG8AdwB5
+AH4AgACCAIcAkgCUAJYAmACdAKAAogCkAKYAqACtAMQAxgDIAkoCTwJaAmMCdgJ6Ao0CmAKhAqYCrgKx
+ArYCxQLJAtAC2ALlAuoC7ALuAvMC+wL+AwMDCwMOAyADIwMoAAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAA
+AAAAAAAAAyo
 </mutableData>
         </image>
-        <image name="37E6079D-C345-4C23-AD67-8F7A41F77611" width="30" height="25">
+        <image name="69CA9FB3-A0D7-4E58-90D3-838C70EBE52E" width="30" height="25">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -172,5 +166,62 @@ AJ0AoACiAKQApgCoAK0AxADGAMgNPg1DDU4NVw1qDW4NgQ2MDZUNmg2iDaUNqg25Db0NxA3MDdkN3g3g
 DeIN5w3vDfIN9w3/DgIOFA4XDhwAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAAAOHg
 </mutableData>
         </image>
+        <image name="A23BFBD0-5B20-42D3-80AC-FAD878ACCA84" width="24" height="23">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
+RkZSZXByZXNlbnRhdGlvboAGgAdPEQlaTU0AKgAACKj///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////IP///4z///9m////Av///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8e////4P//////////
+////l////wL///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///yD////f/////////////////////////6L///8D////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////I////+H/////
+//////////////////////////////+u////Bv///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8n////5P//////////////////////////////////////////
+////uf///wr///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///yn////m
+/////////////////////////////////////////////////////////8P///8P////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////LP///+j/////////////////////////////////////
+///////////////////////////////N////FP///wD///8A////AP///wD///8A////AP///wD///8w
+////6v//////////////////////////////////////////////////////////////////////////
+////1f///xn///8A////AP///wD///8A////AP///zL////t////////////////////////////////
+/////////////////////////////////////////////////////////9z///8g////AP///wD///8A
+////Nv///+//////////////////////////////////////////////////////////////////////
+///////////////////////////////j////KP///wD///88////8P//////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////6f///zL////S////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////+T///9i////y////8z////a
+////////////////////////////////////////////////////////////////////////////////
+/////////+T////d////4////6T///8A////AP///wD///9L////////////////////////////////
+/////////////////////////////////////////////////////////zz///8A////AP///wD///8A
+////AP///wD///9L///////////////////////////////+////lv///4j///+I////of//////////
+/////////////////////////zz///8A////AP///wD///8A////AP///wD///9L////////////////
+///////////////k////AP///wD///8A////AP///////////////////////////////////zz///8A
+////AP///wD///8A////AP///wD///9L///////////////////////////////h////AP///wD///8A
+////AP///////////////////////////////////zz///8A////AP///wD///8A////AP///wD///9L
+///////////////////////////////h////AP///wD///8A////AP//////////////////////////
+/////////zz///8A////AP///wD///8A////AP///wD///9L///////////////////////////////h
+////AP///wD///8A////AP///////////////////////////////////zz///8A////AP///wD///8A
+////AP///wD///9L///////////////////////////////h////AP///wD///8A////AP//////////
+/////////////////////////zz///8A////AP///wD///8A////AP///wD///9L////////////////
+///////////////p////Af///wD///8A////BP///////////////////////////////////zz///8A
+////AP///wD///8A////AP///wD///8r/////P//////////////////////////////uf///6r///+q
+////vv//////////////////////////////+f///xv///8A////AP///wD///8A////AP///wD///8A
+////SP///5X///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+U
+////PP///wD///8A////AP///wAADQEAAAMAAAABABgAAAEBAAMAAAABABcAAAECAAMAAAAEAAAJSgED
+AAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEW
+AAMAAAABABcAAAEXAAQAAAABAAAIoAEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFTAAMAAAAEAAAJUgAA
+AAAACAAIAAgACAABAAEAAQAB0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VS
+ZXCjJicoXxAQTlNCaXRtYXBJbWFnZVJlcFpOU0ltYWdlUmVwWE5TT2JqZWN00iIjKitXTlNBcnJheaIq
+KNIiIy0uXk5TTXV0YWJsZUFycmF5oy0qKNMwMQkyMzRXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABAD
+gAvSIiM2N1dOU0NvbG9yojYo0iIjOTpXTlNJbWFnZaI5KF8QD05TS2V5ZWRBcmNoaXZlctE9PlRyb290
+gAEACAARABoAIwAtADIANwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCYAJ0AoACiAKQApgCo
+AK0AxADGAMgKJgorCjYKPwpSClYKaQp0Cn0KggqKCo0KkgqhCqUKrAq0CsEKxgrICsoKzwrXCtoK3wrn
+CuoK/Ar/CwQAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAAALBg
+</mutableData>
+        </image>
+        <image name="explorebar.png" width="320" height="45"/>
+        <image name="newsbar.png" width="320" height="45"/>
+        <image name="profilebar.png" width="320" height="45"/>
     </resources>
 </document>

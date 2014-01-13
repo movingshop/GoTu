@@ -89,4 +89,96 @@
     return [self animationWithKeyPath:path function:function fromSize:fromSize toSize:toSize keyframeCount:AHEasingDefaultKeyframeCount];
 }
 
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromFrame:(CGRect)fromFrame toFrame:(CGRect)toFrame keyframeCount:(size_t)keyframeCount
+{
+	NSMutableArray *values = [NSMutableArray arrayWithCapacity:keyframeCount];
+	
+	CGFloat t = 0.0;
+	CGFloat dt = 1.0 / (keyframeCount - 1);
+	for(size_t frame = 0; frame < keyframeCount; ++frame, t += dt)
+	{
+        CGFloat x = fromFrame.origin.x + function(t) * (toFrame.origin.x - fromFrame.origin.x);
+		CGFloat y = fromFrame.origin.y + function(t) * (toFrame.origin.y - fromFrame.origin.y);
+		CGFloat w = fromFrame.size.width + function(t) * (toFrame.size.width - fromFrame.size.width);
+		CGFloat h = fromFrame.size.height + function(t) * (toFrame.size.height - fromFrame.size.height);
+		[values addObject:[NSValue valueWithCGRect:CGRectMake(x, y, w, h)]];
+	}
+	
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:path];
+	[animation setValues:values];
+	return animation;
+}
+
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromFrame:(CGRect)fromFrame toFrame:(CGRect)toFrame
+{
+    return [self animationWithKeyPath:path function:function fromFrame:fromFrame toFrame:toFrame keyframeCount:AHEasingDefaultKeyframeCount];
+}
+
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint delay:(CGFloat)delay keyframeCount:(size_t)keyframeCount
+{
+	NSMutableArray *values = [NSMutableArray arrayWithCapacity:keyframeCount];
+    
+	CGFloat t = 0.0;
+	CGFloat dt = 1.0 / (keyframeCount - 1);
+	for(size_t frame = 0; frame < keyframeCount; ++frame, t += dt)
+	{
+        CGFloat delayT = MAX(0, t);
+		CGFloat x = fromPoint.x + function(delayT) * (toPoint.x - fromPoint.x);
+		CGFloat y = fromPoint.y + function(delayT) * (toPoint.y - fromPoint.y);
+		[values addObject:[NSValue valueWithCGPoint:CGPointMake(x, y)]];
+	}
+	
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:path];
+	[animation setValues:values];
+	return animation;
+}
+
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint delay:(CGFloat)delay
+{
+    return [self animationWithKeyPath:path function:function fromPoint:fromPoint toPoint:toPoint delay:delay keyframeCount:AHEasingDefaultKeyframeCount];
+}
+
+
+//+ (id)animationWithDuration:(CGFloat)duration function:(AHEasingFunction)function fromDic:(NSDictionary *)fromDic toDic:(NSDictionary *)toDic keyframeCount:(size_t)keyframeCount
+//{
+//    NSString *path = @"transform";
+//	NSMutableArray *values = [NSMutableArray arrayWithCapacity:keyframeCount];
+//	
+//	CGFloat t = 0.0;
+//	CGFloat dt = duration / (keyframeCount - 1);
+//	for(size_t frame = 0; frame < keyframeCount; ++frame, t += dt)
+//	{
+////        CATransform3D ca3D = CATransform3DIdentity;
+//        CGAffineTransform transform = CGAffineTransformIdentity;
+//        
+//        CGFloat x = [[fromDic objectForKey:@"x"] floatValue];
+//        CGFloat y = [[fromDic objectForKey:@"y"] floatValue];
+//        CGAffineTransform _position = CGAffineTransformMakeTranslation(x, y);
+//        
+//        CGFloat scaleX = [[fromDic objectForKey:@"scaleX"] floatValue];
+//        CGFloat scaleY = [[fromDic objectForKey:@"scaleY"] floatValue];
+////        CGFloat z = [[fromDic objectForKey:@"z"] floatValue];
+//        CGAffineTransform _scale = CGAffineTransformMakeScale(scaleX, scaleY);
+//        
+//        CGFloat rotation = [[fromDic objectForKey:@"rotaion"] floatValue];
+//        //        CGFloat z = [[fromDic objectForKey:@"z"] floatValue];
+//        CGAffineTransform _rotation = CGAffineTransformMakeRotation(rotation);
+//        
+//        
+//		
+//		CGFloat h = fromSize.height + function(t) * (toSize.height - fromSize.height);
+//		[values addObject:[NSValue valueWithCGRect:CGRectMake(0, 0, w, h)]];
+//	}
+//	
+//	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:path];
+//	[animation setValues:values];
+//	return animation;
+//}
+//
+//-(CGFloat)numberCountWithTime:(CGFloat)t fromValue:(CGFloat)fromV toValue:(CGFloat)toV function:(AHEasingFunction)function
+//{
+//    CGFloat value = fromV + function(t) * (toV - fromV);
+//    return value;
+//}
+
 @end

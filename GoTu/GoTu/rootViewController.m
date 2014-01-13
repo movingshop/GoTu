@@ -13,6 +13,7 @@
 #import "personViewController.h"
 #import "makeViewController.h"
 #import "CATransform3DPerspect.h"
+#import "CAKeyframeAnimation+AHEasing.h"
 
 @interface rootViewController ()
 {
@@ -49,12 +50,47 @@
 
 -(void)showBoxBtn
 {
-    // 动画不完整
-    [boxBtn setHidden:!boxBtn.hidden];
-    if (!boxBtn.hidden) [boxBtn setAlpha:0];
-    [UIView animateWithDuration:1 animations:^{
-        if (!boxBtn.hidden) [boxBtn setAlpha:1];
-    }];
+//    动画不完整
+//    [boxBtn setHidden:!boxBtn.hidden];
+//    if (!boxBtn.hidden) [boxBtn setAlpha:0];
+//    [UIView animateWithDuration:1 animations:^{
+//        if (!boxBtn.hidden) [boxBtn setAlpha:1];
+//    }];
+    
+//    [boxBtn setFrame:self.view.bounds];
+    if (isBoxBtnShow) {
+        isBoxBtnShow = NO;
+        int _index = 0;
+        for (UIView *tempView in [boxBtn subviews]) {
+            CGFloat delay = 0.05 * _index;
+            CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position" function:BackEaseOut fromPoint:CGPointMake(160,-22.5) toPoint:CGPointMake(160, tempView.layer.frame.origin.y + 22.5) delay:delay];
+            animation.duration = .75;
+            animation.beginTime = CACurrentMediaTime()+delay;
+            animation.fillMode = kCAFillModeBoth;
+            animation.removedOnCompletion = NO;
+            
+            [tempView.layer addAnimation:animation forKey:@"show"];
+            _index ++;
+        }
+    }else{
+        isBoxBtnShow = YES;
+        int _index = 0;
+        for (UIView *tempView in [boxBtn subviews]) {
+            CGFloat delay = 0.05 * _index;
+            CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position" function:BackEaseIn  fromPoint:CGPointMake(160, tempView.layer.frame.origin.y + 22.5) toPoint:CGPointMake(160,-22.5) delay:delay];
+            animation.duration = .75;
+            animation.beginTime = CACurrentMediaTime()+delay;
+            animation.fillMode = kCAFillModeBoth;
+            animation.removedOnCompletion = NO;
+            
+            [tempView.layer addAnimation:animation forKey:@"hide"];
+            _index ++;
+        }
+    }
+    
+    
+    
+    
 }
 
 -(void)showAllView
@@ -211,8 +247,9 @@
         switch (i) {
             case 1:
                 // 显示boxBtn
-                [btn addTarget:self action:@selector(showAllView) forControlEvents:UIControlEventTouchUpInside];
-                
+//                [btn addTarget:self action:@selector(showAllView) forControlEvents:UIControlEventTouchUpInside];
+                [btn addTarget:self action:@selector(showBoxBtn) forControlEvents:UIControlEventTouchUpInside];
+                isBoxBtnShow = NO;
                 break;
             case 2:
                 //前往Make界面
@@ -225,7 +262,7 @@
     }
     
     // 发现 消息 我的 切换按钮
-    [boxBtn setHidden:YES];
+//    [boxBtn setHidden:YES];
     for (int i = 1; i<=2 ; i++) {
         UIButton *btn = (UIButton *)[boxBtn viewWithTag:i];
         switch (i) {
@@ -246,6 +283,11 @@
         }
         
     }
+    
+    
+    //动画
+    
+    
     
     //rootViews init
     [boxRootView setScrollsToTop:NO];

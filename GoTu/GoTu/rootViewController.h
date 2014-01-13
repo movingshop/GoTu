@@ -15,6 +15,7 @@
 @interface rootViewController : UIViewController<UIScrollViewDelegate>
 {
     IBOutlet UIView *boxBtn;
+    BOOL isBoxBtnShow;
     IBOutlet UIView *boxTopbar;
     IBOutlet UIScrollView *boxRootView;
     

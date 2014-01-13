@@ -33,4 +33,11 @@
 // Factory method to create a keyframe animation for animating between two sizes, with keyFrameCount set to AHEasingDefaultKeyframeCount
 + (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromSize:(CGSize)fromValue toSize:(CGSize)toValue;
 
+
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromFrame:(CGRect)fromFrame toFrame:(CGRect)toFrame keyframeCount:(size_t)keyframeCount;
+
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromFrame:(CGRect)fromFrame toFrame:(CGRect)toFrame;
+
++ (id)animationWithKeyPath:(NSString *)path function:(AHEasingFunction)function fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint delay:(CGFloat)delay;
+
 @end
