@@ -51,20 +51,14 @@
 -(void)showBoxBtn
 {
 //    动画不完整
-//    [boxBtn setHidden:!boxBtn.hidden];
-//    if (!boxBtn.hidden) [boxBtn setAlpha:0];
-//    [UIView animateWithDuration:1 animations:^{
-//        if (!boxBtn.hidden) [boxBtn setAlpha:1];
-//    }];
-    
-//    [boxBtn setFrame:self.view.bounds];
     if (isBoxBtnShow) {
         isBoxBtnShow = NO;
         int _index = 0;
         for (UIView *tempView in [boxBtn subviews]) {
+            
             CGFloat delay = 0.05 * _index;
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position" function:BackEaseOut fromPoint:CGPointMake(160,-22.5) toPoint:CGPointMake(160, tempView.layer.frame.origin.y + 22.5) delay:delay];
-            animation.duration = .75;
+            animation.duration = 0.6 - 0.15*_index;
             animation.beginTime = CACurrentMediaTime()+delay;
             animation.fillMode = kCAFillModeBoth;
             animation.removedOnCompletion = NO;
@@ -72,13 +66,25 @@
             [tempView.layer addAnimation:animation forKey:@"show"];
             _index ++;
         }
+        CGRect _fromeFrame = boxBtn.frame;
+        _fromeFrame.size.height = 0;
+        CGRect _toFrame = boxBtn.frame;
+        _toFrame.size.height = 45 *3;
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromFrame:_fromeFrame toFrame:_toFrame];
+        animation.duration = .6;
+        animation.fillMode = kCAFillModeBoth;
+        animation.removedOnCompletion = NO;
+        
+        [boxBtn.layer addAnimation:animation forKey:@"bounds"];
+        [boxBtnParent setHidden:NO];
+        
     }else{
         isBoxBtnShow = YES;
         int _index = 0;
         for (UIView *tempView in [boxBtn subviews]) {
             CGFloat delay = 0.05 * _index;
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position" function:BackEaseIn  fromPoint:CGPointMake(160, tempView.layer.frame.origin.y + 22.5) toPoint:CGPointMake(160,-22.5) delay:delay];
-            animation.duration = .75;
+            animation.duration = .5 - 0.15*_index;
             animation.beginTime = CACurrentMediaTime()+delay;
             animation.fillMode = kCAFillModeBoth;
             animation.removedOnCompletion = NO;
@@ -86,11 +92,55 @@
             [tempView.layer addAnimation:animation forKey:@"hide"];
             _index ++;
         }
+        CGRect _fromeFrame = boxBtn.frame;
+        _fromeFrame.size.height = 0;
+        CGRect _toFrame = boxBtn.frame;
+        _toFrame.size.height = 45 *3;
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseIn fromFrame:_toFrame toFrame:_fromeFrame];
+        animation.duration = .5;
+        animation.fillMode = kCAFillModeBoth;
+        animation.removedOnCompletion = NO;
+        animation.delegate=self;
+        [boxBtn.layer addAnimation:animation forKey:@"bounds"];
+        
     }
     
     
     
     
+}
+
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    if (flag == YES) {
+        [boxBtnParent setHidden:YES];
+    }
+}
+
+-(IBAction)showViewWithTag:(id)sender
+{
+    UIButton *_btn = (UIButton *)sender;
+    [_btn addSubview:pointBlueV];
+    [messageVC.view removeFromSuperview];
+    [personVC.view removeFromSuperview];
+    [feedVC.view removeFromSuperview];
+//    NSLog(@"%i",_btn.tag);
+    [self showBoxBtn];
+    switch (_btn.tag) {
+        case 1:
+            
+            [boxRootView addSubview:feedVC.view];
+            break;
+        case 2:
+            [boxRootView addSubview:messageVC.view];
+            break;
+        case 3:
+            [boxRootView addSubview:personVC.view];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 -(void)showAllView
@@ -130,7 +180,7 @@
     }];
 }
 
--(void)showViewWithTag:(id)sender
+-(void)showViewWithTagdd:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
     [boxRootView setContentSize:boxRootView.frame.size];
@@ -199,10 +249,11 @@
 //    return translation;
 }
 
--(void)setAnchorPointWidthView:(UIView*)target
+-(void)setViewAnchorpoint:(UIView*)target withCenter:(CGPoint)centerPoint
 {
     CGRect _frame = target.frame;
-    target.layer.anchorPoint = CGPointMake(0.5, 0.2);
+//    target.layer.anchorPoint = CGPointMake(0.5, 0.2);
+    target.layer.anchorPoint = centerPoint;
     [target setFrame:_frame];
 }
 
@@ -286,6 +337,11 @@
     
     
     //动画
+//    [boxBtn setHidden:YES];
+    [self setViewAnchorpoint:boxBtn withCenter:CGPointMake(0, 0)];
+    [boxBtnParent setHidden:YES];
+    UIButton *_btn = (UIButton *)[boxBtn viewWithTag:1];
+    [_btn addSubview:pointBlueV];
     
     
     
@@ -297,14 +353,16 @@
     personVC =[[personViewController alloc] init];
 //    [self addChildViewController:personVC];
     CGRect _frame = boxRootView.frame;
-    _frame.origin.y = boxRootView.frame.size.height * 2;
+//    _frame.origin.y = boxRootView.frame.size.height * 2;
+    _frame.origin.y = 0;
     [personVC.view setFrame:_frame];
     [boxRootView addSubview:personVC.view];
     
     messageVC =[[messageViewController alloc] init];
     //    [self addChildViewController:messageVC];
     _frame = boxRootView.frame;
-    _frame.origin.y = boxRootView.frame.size.height;
+//    _frame.origin.y = boxRootView.frame.size.height;
+    _frame.origin.y = 0;
     [messageVC.view setFrame:_frame];
     [boxRootView addSubview:messageVC.view];
     
@@ -315,9 +373,7 @@
     [feedVC.view setFrame:_frame];
     [boxRootView addSubview:feedVC.view];
     
-    [self setAnchorPointWidthView:feedVC.view];
-    [self setAnchorPointWidthView:messageVC.view];
-    [self setAnchorPointWidthView:personVC.view];
+   
     
     rootV0 = [[UIButton alloc] initWithFrame:self.view.bounds];
     rootV0.tag = 0;

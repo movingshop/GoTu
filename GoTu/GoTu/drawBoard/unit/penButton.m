@@ -28,6 +28,7 @@
     if (self) {
         // Initialization code
         self.selected = NO;
+        isShow = NO;
         defaultImgV = (UIImageView *)[self viewWithTag:1];
         selectedImgV = (UIImageView *)[self viewWithTag:4];
         
@@ -43,9 +44,10 @@
         sizeMin = CGSizeMake(self.frame.size.width * .8, self.frame.size.height * .8);
         
         frameMax = self.frame;
-        frameMin = CGRectMake(0, 0, 100, 100);
+        frameMin = CGRectMake(0, 0, self.frame.size.width * .8, self.frame.size.height * .8);
         
 //        [self addTarget:self action:@selector(selectedShow) forControlEvents:UIControlEventTouchUpInside];
+//        [self setAnchorPointWidthView:self];
     }
     return self;
 }
@@ -58,30 +60,36 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (self.selected){
-        [UIView animateWithDuration:.5 animations:^{
+        if (isShow) return;
+        [UIView animateWithDuration:.3 animations:^{
             
             [defaultImgV setAlpha:0];
 //            [self setTransform:transformMax];
             
             
         }];
-        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromSize:self.layer.bounds.size toSize:sizeMax];
-        animation.duration = 0.5;
-        animation.fillMode = kCAFillModeForwards;
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale" function:CubicEaseOut fromValue:.8 toValue:1];
+        animation.duration = 0.3;
+        animation.fillMode = kCAFillModeBoth;
         animation.removedOnCompletion = NO;
-        [self.layer addAnimation:animation forKey:@"bounds"];
+        [self.layer addAnimation:animation forKey:@"show"];
+        isShow = YES;
+        
     }else{
-        [UIView animateWithDuration:.5 animations:^{
+        if (!isShow) return;
+        [UIView animateWithDuration:.2 animations:^{
             
             
             [defaultImgV setAlpha:1];
 //            [self setTransform:transformMin];
         }];
-        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"bounds" function:BackEaseOut fromSize:self.layer.bounds.size toSize:sizeMin];
-        animation.duration = 0.5;
-        animation.fillMode = kCAFillModeForwards;
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale" function:CubicEaseInOut fromValue:1  toValue:.8];
+        animation.duration = 0.2;
+        animation.fillMode = kCAFillModeBoth;
         animation.removedOnCompletion = NO;
-        [self.layer addAnimation:animation forKey:@"bounds"];
+        [self.layer addAnimation:animation forKey:@"hide"];
+        
+        isShow = NO;
     }
 }
 

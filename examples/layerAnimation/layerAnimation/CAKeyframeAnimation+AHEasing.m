@@ -102,7 +102,9 @@
 		CGFloat y = fromFrame.origin.y + function(t) * (toFrame.origin.y - fromFrame.origin.y);
 		CGFloat w = fromFrame.size.width + function(t) * (toFrame.size.width - fromFrame.size.width);
 		CGFloat h = fromFrame.size.height + function(t) * (toFrame.size.height - fromFrame.size.height);
-		[values addObject:[NSValue valueWithCGRect:CGRectMake(x, y, w, h)]];
+        CGRect _frame =CGRectMake(x, y, w, h);
+        NSLog(@"%@",NSStringFromCGRect(_frame));
+		[values addObject:[NSValue valueWithCGRect:_frame]];
 	}
 	
 	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:path];

@@ -14,14 +14,16 @@
 
 @interface rootViewController : UIViewController<UIScrollViewDelegate>
 {
+    IBOutlet UIView *boxBtnParent;
     IBOutlet UIView *boxBtn;
+    IBOutlet UIImageView *pointBlueV;
     BOOL isBoxBtnShow;
     IBOutlet UIView *boxTopbar;
     IBOutlet UIScrollView *boxRootView;
     
     feedViewController *feedVC;
     messageViewController *messageVC;
-    personViewController *personVC;;
+    personViewController *personVC;
 }
 
 @end

@@ -313,31 +313,149 @@
             
             break;
         case 3:
-            // brushMode = 3 铅笔模式
+            // brushMode = 3 马克笔模式
             
             // 速度与画笔宽度关系
-            strokeWidth = 5.0f;
+            strokeWidth = 8.0f;
+            
             
             
             //画笔计算
             if (pan.state == UIGestureRecognizerStateBegan) {
+                path = [[UIBezierPath alloc] init];
+                [path moveToPoint:p1];
+                
+                action = [[NSMutableDictionary alloc] init];
+                [action setObject:@"brush" forKey:@"mode"];
+                [action setObject:@"0x000fff" forKey:@"color"];
+                NSMutableArray *_path0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_ctrol0 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_path1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                NSMutableArray *_ctrol1 = [NSMutableArray arrayWithObjects:NSStringFromCGPoint(p1), nil];
+                
+                
+                [action setObject:[NSMutableArray arrayWithObjects:_path0,_ctrol0,_path1,_ctrol1, nil] forKey:@"path"];
+                
+                
                 path0 = [[UIBezierPath alloc] init];
-                [path0 setLineWidth:strokeWidth];
-                mP1 = p1;
-                [path0 moveToPoint:p1];
-            }else if (pan.state == UIGestureRecognizerStateChanged){
                 
-                //                [path0 removeAllPoints];
-                mP1 = midPoint(p0, p1);
-                //                [path0 moveToPoint:mP0];
-                [path0 addQuadCurveToPoint:mP1 controlPoint:p0];
+                p00.x = -1000.0f;
+                _mp10 = p1;
+                _mp11 = p1;
                 
-            }else if (pan.state == UIGestureRecognizerStateEnded){
-                [path0 addLineToPoint:p1];
+                strokeWidth = 0.1f;
+                
+                [path moveToPoint:p1];
+                
             }
-            
-            p0 = p1;
+            else if (pan.state == UIGestureRecognizerStateChanged){
+                
+                
+                [path0 removeAllPoints];
+                
+                //p10 mp10 p11 mp11
+                CGFloat w = strokeWidth;
+                
+                
+                
+                mP1 = midPoint(p0, p1);
+                
+                CGPoint p10 = [self triangle:p0 p1:p1 w:w];
+                CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
+                CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
+                CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
+                
+                NSMutableArray *_pathA = [action objectForKey:@"path"];
+                
+                NSMutableArray *_path0 = [_pathA objectAtIndex:0];
+                NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
+                NSMutableArray *_path1 = [_pathA objectAtIndex:2];
+                NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
+                
+                [_path0 addObject:NSStringFromCGPoint(mp10)];
+                [_ctrol0 addObject:NSStringFromCGPoint(p10)];
+                [_path1 addObject:NSStringFromCGPoint(mp11)];
+                [_ctrol1 addObject:NSStringFromCGPoint(p11)];
+                
+                if (ccpDistance(p1, p0) < w) return;
+                if (p00.x==-1000.0f){
+                    
+                    //            [path0 addLineToPoint:p10];
+                    //            [path1 addLineToPoint:p11];
+                }
+                else{
+                    [path0 moveToPoint:_mp10];
+                    [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+                    [path0 addLineToPoint:_mp11];
+                    [path0 addLineToPoint:_mp10];
+                    
+                    [path0 moveToPoint:_mp11];
+                    [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+                    [path0 addLineToPoint:mp10];
+                    [path0 addLineToPoint:_mp11];
+                }
+                
+                [path addLineToPoint:p1];
+                p00 = p10;
+                p01 = p11;
+                _mp10 = mp10;
+                _mp11 = mp11;
+                
+                [path1 removeAllPoints];
+                [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                
+                //        [path0 removeAllPoints];
+                
+            }
+            else if (pan.state == UIGestureRecognizerStateEnded) {
+                
+                [path0 removeAllPoints];
+                
+                //p10 mp10 p11 mp11
+                strokeWidth *= 1 / self.zoomScale;
+                CGFloat w = strokeWidth;
+                
+                
+                
+                mP1 = midPoint(p0, p1);
+                
+                CGPoint p10 = [self triangle:p0 p1:p1 w:w];
+                CGPoint p11 = [self triangle:p0 p1:p1 w:-w];
+                CGPoint mp10 = [self triangle:mP0 p1:mP1 w:w];
+                CGPoint mp11 = [self triangle:mP0 p1:mP1 w:-w];
+                
+                NSMutableArray *_pathA = [action objectForKey:@"path"];
+                
+                NSMutableArray *_path0 = [_pathA objectAtIndex:0];
+                NSMutableArray *_ctrol0 = [_pathA objectAtIndex:1];
+                NSMutableArray *_path1 = [_pathA objectAtIndex:2];
+                NSMutableArray *_ctrol1 = [_pathA objectAtIndex:3];
+                
+                [_path0 addObject:NSStringFromCGPoint(mp10)];
+                [_ctrol0 addObject:NSStringFromCGPoint(p10)];
+                [_path1 addObject:NSStringFromCGPoint(mp11)];
+                [_ctrol1 addObject:NSStringFromCGPoint(p11)];
+                
+                if (ccpDistance(p1, p0) < w) return;
+                
+                [path0 moveToPoint:_mp10];
+                [path0 addQuadCurveToPoint:mp10 controlPoint:p00];
+                [path0 addLineToPoint:_mp11];
+                [path0 addLineToPoint:_mp10];
+                
+                [path0 moveToPoint:_mp11];
+                [path0 addQuadCurveToPoint:mp11 controlPoint:p01];
+                [path0 addLineToPoint:mp10];
+                [path0 addLineToPoint:_mp11];
+                
+                [path1 removeAllPoints];
+                [path1 addArcWithCenter:mP1 radius:strokeWidth startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                //        [path1 addLineToPoint:mP1];
+                
+            }
             mP0 = mP1;
+            p0 = p1;
+
             
 
             break;
@@ -487,6 +605,7 @@
             strokeWidth = strokeWidthExpect;
             break;
     }
+    
     
     
     

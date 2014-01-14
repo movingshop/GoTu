@@ -103,7 +103,7 @@
     [self changeColor:[self getPixelColorAtLocation:p]];
     if (pan.state == 3)
     {
-//        [colorCV setHidden:YES];
+//        [colorCV setHidden:YES];b  
     }
     
 }
@@ -115,8 +115,8 @@
 //    [colorCV setBackgroundColor:[UIColor colorWithPatternImage:[pen_test imageWithTintColor:color]]];
     [drawBoardV setBrushColor:color];
     [(UIView *)pen1 setBackgroundColor:color];
-//    [(UIView *)pen2 setBackgroundColor:color];
-//    [(UIView *)pen3 setBackgroundColor:color];
+    [(UIView *)pen2 setBackgroundColor:color];
+    [(UIView *)pen3 setBackgroundColor:color];
 }
 
 -(IBAction)changeBrush:(id)sender

@@ -19,6 +19,8 @@
     CGRect frameMin;
     CGRect frameMax;
     
+    BOOL isShow;
+    
 }
 
 @property (strong,nonatomic) UIImageView *defaultImgV;

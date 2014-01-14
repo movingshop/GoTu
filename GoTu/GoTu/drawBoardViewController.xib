@@ -97,7 +97,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.32156863808631897" green="0.32156863808631897" blue="0.32156863808631897" alpha="1" colorSpace="deviceRGB"/>
                     <connections>
                         <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="1cf-hn-z1L"/>
                     </connections>
@@ -115,7 +115,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.32156863808631897" green="0.32156863808631897" blue="0.32156863808631897" alpha="1" colorSpace="deviceRGB"/>
                     <connections>
                         <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="cE9-9F-sWO"/>
                     </connections>
@@ -133,7 +133,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.32156863808631897" green="0.32156863808631897" blue="0.32156863808631897" alpha="1" colorSpace="deviceRGB"/>
                     <connections>
                         <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="AFA-94-wkN"/>
                     </connections>
@@ -151,7 +151,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.32156863808631897" green="0.32156863808631897" blue="0.32156863808631897" alpha="1" colorSpace="deviceRGB"/>
                     <connections>
                         <action selector="changeBrush:" destination="-1" eventType="touchUpInside" id="Dpb-lE-7lN"/>
                     </connections>
