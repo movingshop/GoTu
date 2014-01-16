@@ -183,7 +183,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Color-ring.png" width="75" height="75"/>
+        <image name="Color-ring.png" width="88" height="88"/>
         <image name="Frame.png" width="30" height="139"/>
         <image name="No-photo.png" width="25" height="28"/>
         <image name="back.png" width="19" height="19"/>

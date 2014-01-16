@@ -31,13 +31,21 @@
     CGPoint p00;
     CGPoint p01;
     
+    //马克笔
+    NSMutableArray *brush3PointA0;
+    NSMutableArray *brush3PointA1;
+    
+    //铅笔
+    NSMutableArray *brush2Points;
+    
     CGFloat strokeWidth;
     
     UIImageView *drawingBoardImg;
     UIImage *_tempImg;
     
     UIColor *strokeColor;
-//    UIImage *btushImage;
+    UIImage *brushImage;
+    UIImage *brushImage0;
     UIColor *clearColor;
     
     CGPoint _localPoint;

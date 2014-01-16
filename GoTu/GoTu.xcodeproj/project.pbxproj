@@ -147,6 +147,7 @@
 		701204531876C6C1001379D9 /* 100_bw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 701204521876C6C1001379D9 /* 100_bw@2x.png */; };
 		70333AB718750F1E00FA1DAF /* messageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70333AB618750F1E00FA1DAF /* messageCell.m */; };
 		70333AB918750F3000FA1DAF /* messageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70333AB818750F3000FA1DAF /* messageCell.xib */; };
+		70582D5C1887EE3800730CA6 /* brush2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70582D5B1887EE3800730CA6 /* brush2@2x.png */; };
 		70955B3F186D302800992BA0 /* dataBasicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 70955B3E186D302800992BA0 /* dataBasicTool.m */; };
 		70955B42186D739800992BA0 /* SO.m in Sources */ = {isa = PBXBuildFile; fileRef = 70955B41186D739800992BA0 /* SO.m */; };
 		709DC0ED1844AD9A0073F1B1 /* drawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC0EA1844AD9A0073F1B1 /* drawingBoardView.m */; };
@@ -445,6 +446,7 @@
 		70333AB518750F1E00FA1DAF /* messageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageCell.h; sourceTree = "<group>"; };
 		70333AB618750F1E00FA1DAF /* messageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageCell.m; sourceTree = "<group>"; };
 		70333AB818750F3000FA1DAF /* messageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageCell.xib; sourceTree = "<group>"; };
+		70582D5B1887EE3800730CA6 /* brush2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brush2@2x.png"; sourceTree = "<group>"; };
 		70955B3D186D302800992BA0 /* dataBasicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dataBasicTool.h; path = dataUnit/dataBasicTool.h; sourceTree = "<group>"; };
 		70955B3E186D302800992BA0 /* dataBasicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dataBasicTool.m; path = dataUnit/dataBasicTool.m; sourceTree = "<group>"; };
 		70955B40186D739800992BA0 /* SO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SO.h; sourceTree = "<group>"; };
@@ -1006,6 +1008,7 @@
 				70B747241845CB6E007AA2D9 /* images */,
 				709DC0E91844AD9A0073F1B1 /* drawingBoardView.h */,
 				709DC0EA1844AD9A0073F1B1 /* drawingBoardView.m */,
+				70582D5B1887EE3800730CA6 /* brush2@2x.png */,
 				60F3D1B21844EEFB00BBF467 /* temp.jpg */,
 				709DC0EB1844AD9A0073F1B1 /* CGPointExtension.h */,
 				709DC0EC1844AD9A0073F1B1 /* CGPointExtension.m */,
@@ -1326,6 +1329,7 @@
 				7012040118769B53001379D9 /* search-ground@2x.png in Resources */,
 				701203F018769B53001379D9 /* size2@2x.png in Resources */,
 				7012043C18769B53001379D9 /* high-pin@2x.png in Resources */,
+				70582D5C1887EE3800730CA6 /* brush2@2x.png in Resources */,
 				7004E9D818853A210070260A /* brush_2@2x.png in Resources */,
 				701203F118769B53001379D9 /* size3@2x.png in Resources */,
 				70D02E5E1867DFF1006FB8CE /* feed cell.xib in Resources */,
@@ -1691,6 +1695,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "96A9EDA5-8D45-4E10-BAAB-42817613CAE5";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1724,6 +1729,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "96A9EDA5-8D45-4E10-BAAB-42817613CAE5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

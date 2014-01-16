@@ -79,7 +79,7 @@
     
     
     if (pan.state==UIGestureRecognizerStateBegan) {
-        NSLog(@"colorChange:%d",pan.state);
+//        NSLog(@"colorChange:%d",pan.state);
     };
     if(pan.state==UIGestureRecognizerStateChanged){
     

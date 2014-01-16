@@ -19,12 +19,13 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="KEl-e0-bhh">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="b0E-cl-0eT" customClass="drawingBoardView">
                     <rect key="frame" x="0.0" y="45" width="320" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.66375013830688911" green="1" blue="0.45330024069316577" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="编辑.png" id="iYD-Fa-Kdd">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
@@ -61,7 +62,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tools-bar-2.png" id="9gC-Fy-7S5">
-                    <rect key="frame" x="0.0" y="365" width="320" height="183"/>
+                    <rect key="frame" x="0.0" y="365" width="320" height="203"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Iig-vD-IT0">
@@ -85,7 +86,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <view tag="2000" contentMode="scaleToFill" id="42U-8d-Ydw" customClass="penButton">
-                    <rect key="frame" x="111" y="420" width="54" height="128"/>
+                    <rect key="frame" x="111" y="440" width="54" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_0.png" id="BHJ-w5-rRH">
@@ -103,7 +104,7 @@
                     </connections>
                 </view>
                 <view tag="2001" contentMode="scaleToFill" id="24d-I0-xN0" customClass="penButton">
-                    <rect key="frame" x="173" y="420" width="54" height="128"/>
+                    <rect key="frame" x="173" y="440" width="54" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_1.png" id="W8s-Hy-zGj">
@@ -121,7 +122,7 @@
                     </connections>
                 </view>
                 <view tag="2002" contentMode="scaleToFill" id="cpE-6A-sc7" customClass="penButton">
-                    <rect key="frame" x="219" y="420" width="54" height="128"/>
+                    <rect key="frame" x="219" y="440" width="54" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_2.png" id="ECt-RR-uZ3">
@@ -139,7 +140,7 @@
                     </connections>
                 </view>
                 <view tag="2003" contentMode="scaleToFill" id="8OS-uy-lHG" customClass="penButton">
-                    <rect key="frame" x="266" y="420" width="54" height="128"/>
+                    <rect key="frame" x="266" y="440" width="54" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brush_3.png" id="RGi-FV-Gtg">
@@ -158,6 +159,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
