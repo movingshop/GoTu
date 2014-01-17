@@ -54,6 +54,7 @@
 //    CGFloat zoomScale;
     
     BOOL isCelar;
+    
 }
 
 @property (nonatomic) int brushMode;

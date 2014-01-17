@@ -81,6 +81,6 @@
         <image name="n topbar.png" width="320" height="45"/>
         <image name="news-btn.png" width="25" height="23"/>
         <image name="news-high.png" width="70" height="26"/>
-        <image name="news.png" width="69" height="26"/>
+        <image name="news.png" width="149" height="48"/>
     </resources>
 </document>

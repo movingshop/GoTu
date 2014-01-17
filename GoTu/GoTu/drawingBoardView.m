@@ -284,7 +284,7 @@
                 
             }
             mP0 = mP1;
-            p0 = p1;
+//            p0 = p1;
             
             
             
@@ -307,19 +307,29 @@
 //                [path0 moveToPoint:p1];
             }else if (pan.state == UIGestureRecognizerStateChanged){
                 
-//                [path0 removeAllPoints];
+                [path0 removeAllPoints];
                 mP1 = midPoint(p0, p1);
                 
 //                mP0, p0, mp1;
 //                [path0 removeAllPoints];
 //                path0 = [UIBezierPath bezierPathWithRect:CGRectMake(mP1.x, mP1.y, 500, 500)];
-                [brush2Points removeAllObjects];
-                for (CGFloat t = 0; t <=1; t+=0.01)
+//                [brush2Points removeAllObjects];
+                for (CGFloat t = 0; t <=1; t+=0.1)
                 {
                     //二次Bz曲线的公式
                     CGFloat x = (1 - t) * (1 - t) * mP0.x + 2 * t * (1 - t) * p0.x + t * t * mP1.x;
                     CGFloat y = (1 - t) * (1 - t) * mP0.y + 2 * t * (1 - t) * p0.y + t * t * mP1.y;
-                    [brush2Points addObject:NSStringFromCGPoint(CGPointMake(x, y))];
+//                    [brush2Points addObject:NSStringFromCGPoint(CGPointMake(x, y))];
+//                    path0 = [UIBezierPath bezierPathWithRect:CGRectMake(mP1.x, mP1.y, 2, 2)];
+                    int iMax = arc4random() % 3 + 2;
+                    for (int i = 0; i< iMax; i++) {
+                        int offx = pow(arc4random() % 100 * 0.01, 2) * 5 - 2.5;
+                        int offy = pow(arc4random() % 100 * 0.01, 2) * 5 - 2.5;
+                        CGFloat r = arc4random() % 10 * 0.1 + 0.1  ;
+                        [path0 addArcWithCenter:CGPointMake(x + offx, y +offy) radius:r startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+                        [path0 closePath];
+                    }
+                    
                 }
 //                [path0 moveToPoint:mP0];
 //                [path0 addQuadCurveToPoint:mP1 controlPoint:p0];
@@ -328,7 +338,7 @@
 //                [path0 addLineToPoint:p1];
             }
             
-            p0 = p1;
+//            p0 = p1;
             mP0 = mP1;
            
             
@@ -500,7 +510,7 @@
                 
             }
             mP0 = mP1;
-            p0 = p1;
+//            p0 = p1;
             
             break;
         case 0:
@@ -641,7 +651,7 @@
                 
             }
             mP0 = mP1;
-            p0 = p1;
+            
             
             break;
             
@@ -689,16 +699,22 @@
 
 -(void)imgDraw
 {
+    CGRect _drawFrame = CGRectMake(MIN(p0.x, p1.x), MIN(p0.y, p1.y), abs(p0.x - p0.y), abs(p1.y - p0.y));
     UIGraphicsBeginImageContext(drawingBoardImg.frame.size);
     /*
     // 改变清晰度
     UIGraphicsBeginImageContextWithOptions(drawingBoardImg.frame.size, YES, 1.0);
     [drawingBoardImg.layer renderInContext:UIGraphicsGetCurrentContext()];
      */
-    [drawingBoardImg drawRect:self.bounds];
+    
+    
+    
+    [drawingBoardImg drawRect:_drawFrame];
+    
+    p0 = p1;
 //    CGAffineTransform _transform = CGAffineTransformMakeTranslation(0, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextTranslateCTM(context, 199, 199);
+//    CGContextTranslateCTM(context, _drawFrame.origin.x, _drawFrame.origin.y);
     
     //画笔模式
     switch (brushMode) {
@@ -724,16 +740,18 @@
 //            [path0 setLineWidth:5];
 //            [path0 stroke];
             
-//            [brushColor setFill];
-//            [path0 fill];
             
-            for (int i = 0; i<[brush2Points count]; i++) {
-                CGPoint _p = CGPointFromString([brush2Points objectAtIndex:i]);
-                CGFloat alpha = (arc4random() % 100) * 0.01;
-                [brushImage drawAtPoint:CGPointMake(_p.x, _p.y) blendMode:kCGBlendModeColorBurn |kCGBlendModeLuminosity alpha: alpha];
-                [brushImage0 drawAtPoint:CGPointMake(_p.x, _p.y) blendMode:kCGBlendModeColorBurn| kCGBlendModeLuminosity  alpha: alpha];
-                NSLog(@"%f",alpha);
-            }
+            [brushColor setFill];
+            [path0 fillWithBlendMode:kCGBlendModeColorBurn |kCGBlendModeLuminosity alpha: .5];
+            [path0 fill];
+            
+//            for (int i = 0; i<[brush2Points count]; i++) {
+//                CGPoint _p = CGPointFromString([brush2Points objectAtIndex:i]);
+//                CGFloat alpha = (arc4random() % 100) * 0.01;
+//                [brushImage drawAtPoint:CGPointMake(_p.x, _p.y) blendMode:kCGBlendModeColorBurn |kCGBlendModeLuminosity alpha: alpha];
+//                [brushImage0 drawAtPoint:CGPointMake(_p.x, _p.y) blendMode:kCGBlendModeColorBurn| kCGBlendModeLuminosity  alpha: alpha];
+//                NSLog(@"%f",alpha);
+//            }
             
             
             break;
@@ -761,7 +779,7 @@
     
 
     
-//    if (path1) [path1 fill];
+//    if (path1) [path1 fill];ui
     
     drawingBoardImg.image = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -855,16 +873,21 @@
     switch (brushMode) {
         case 1:
             brushColor = _brushColor;
-            brushColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"temp.jpg"] imageWithGradientTintColor:_brushColor]];
+//            brushColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"temp.jpg"] imageWithGradientTintColor:_brushColor]];
             break;
         case 2:
-            brushImage =[[UIImage imageNamed:@"brush2"] imageWithGradientTintColor:_brushColor];
-            brushImage0 =[UIImage imageNamed:@"brush2"];
-            brushColor = [UIColor colorWithPatternImage:brushImage];
+//            brushImage =[[UIImage imageNamed:@"brush2"] imageWithGradientTintColor:_brushColor];
+//            brushImage0 =[UIImage imageNamed:@"brush2"];
+//            brushColor = [UIColor colorWithPatternImage:brushImage];
+//            brushColor = _brushColor;
+//            brushCol
+            brushColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:.5];
             break;
             
         default:
             brushColor = _brushColor;
+//            brushImage =[[UIImage imageNamed:@"brush2"] imageWithGradientTintColor:_brushColor];
+//            brushColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"brush2"]];
             break;
     }
 }
